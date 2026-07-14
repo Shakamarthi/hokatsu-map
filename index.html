@@ -1,58 +1,168 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#ffffff">
-<title>西葛西・清新町 保育園候補マップ</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3ynhWPJzYJ5xR+q7rYf6dN7j7aXHc=" crossorigin="">
-<style>
-:root{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;color:#172033;background:#f4f6f8;--blue:#2468b4;--orange:#e7831f;--line:#dce2ea;--muted:#5c6674}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#f4f6f8}body{padding-bottom:env(safe-area-inset-bottom)}
-header{position:sticky;top:0;z-index:1000;padding:calc(10px + env(safe-area-inset-top)) 14px 10px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
-h1{font-size:18px;margin:0 0 3px}header p{font-size:12px;color:var(--muted);margin:0}.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px;background:#fff}.tabs button,.filters button{min-height:44px;border:1px solid #b8c2cf;background:#fff;border-radius:12px;font-size:14px}.tabs button.active{background:#172033;color:#fff}.filters{display:flex;gap:8px;overflow:auto;padding:0 12px 10px;background:#fff}.filters button{padding:0 14px;white-space:nowrap}.filters button.active{font-weight:700;border-color:#172033}
-#map{height:58vh;min-height:410px;background:#e8edf2}.status{padding:8px 12px;background:#fff;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted)}#listWrap{display:none;padding:10px 12px 28px}.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px;margin-bottom:10px}.head{display:flex;gap:8px}.head h2{font-size:15px;margin:0;flex:1}.badge{font-size:11px;border-radius:999px;padding:3px 8px}.licensed{background:#e7f0ff;color:#174d8c}.other{background:#fff0dc;color:#8b4b00}.meta{font-size:13px;color:var(--muted);line-height:1.65;margin-top:8px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.actions a,.actions button{min-height:44px;border-radius:11px;border:1px solid #b8c2cf;background:#fff;color:#0759aa;text-decoration:none;display:flex;align-items:center;justify-content:center;font-size:13px}.marker{width:25px;height:25px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:2px solid #fff;box-shadow:0 1px 5px #555}.marker.blue{background:var(--blue)}.marker.orange{background:var(--orange)}.marker-dot{width:7px;height:7px;background:#fff;border-radius:50%;margin:7px}.leaflet-div-icon{background:transparent;border:0}.hidden{display:none!important}.warning{margin:12px;background:#fff8e8;border:1px solid #ead8ad;border-radius:12px;padding:10px;font-size:12px;line-height:1.55}
-@media(min-width:820px){header{position:static}.tabs{display:none}.desktop{display:grid;grid-template-columns:2fr 1fr;height:calc(100vh - 104px)}#map{height:100%}#listWrap{display:block!important;overflow:auto;border-left:1px solid var(--line)}.status{position:absolute;z-index:800;margin:10px;border-radius:8px;border:1px solid var(--line)}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>西葛西・清新町 保育園候補マップ</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://tile.openstreetmap.org">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    :root {
+      --bg:#f3f6f9; --panel:#fff; --text:#152033; --muted:#647184; --line:#dce3eb;
+      --licensed:#1769aa; --other:#e87919; --active:#152033;
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text)}
+    body{padding-bottom:env(safe-area-inset-bottom)}
+    header{position:sticky;top:0;z-index:1200;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);padding:calc(10px + env(safe-area-inset-top)) 14px 10px}
+    h1{font-size:18px;margin:0 0 2px;line-height:1.35} .sub{font-size:12px;color:var(--muted)}
+    .toolbar{display:flex;gap:8px;overflow:auto;padding:10px 12px;background:var(--panel);border-bottom:1px solid var(--line)}
+    .toolbar button,.tabs button{border:1px solid #bcc7d3;background:#fff;border-radius:12px;min-height:44px;padding:0 14px;font-size:14px;white-space:nowrap}
+    .toolbar button.active,.tabs button.active{background:var(--active);color:#fff;border-color:var(--active)}
+    .tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 12px;background:#fff}
+    #status{font-size:12px;padding:7px 12px;background:#fff;color:var(--muted);border-bottom:1px solid var(--line)}
+    #map{height:calc(100dvh - 188px);min-height:430px;width:100%;background:#e8edf2}
+    #list{display:none;padding:10px 12px 28px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px;margin-bottom:10px}
+    .head{display:flex;gap:8px;align-items:flex-start}.head h2{font-size:15px;margin:1px 0 0;flex:1}
+    .badge{font-size:11px;padding:3px 8px;border-radius:999px;white-space:nowrap}.badge.licensed{background:#e7f1fb;color:#0d528b}.badge.other{background:#fff0df;color:#8d4800}
+    .meta{font-size:13px;color:var(--muted);line-height:1.65;margin-top:8px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+    .actions a,.actions button{min-height:44px;border:1px solid #bcc7d3;border-radius:11px;background:#fff;color:#075daa;text-decoration:none;display:flex;align-items:center;justify-content:center;font-size:13px}
+    .empty{padding:24px;text-align:center;color:var(--muted)}
+    .leaflet-container{font:14px/1.5 -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif}
+    .pin{width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);position:relative}
+    .pin::after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:#fff;top:8px;left:8px}.pin.blue{background:var(--licensed)}.pin.orange{background:var(--other)}
+    .leaflet-div-icon{background:transparent;border:none}
+    .leaflet-popup-content{margin:12px 14px;line-height:1.55}.leaflet-popup-content strong{display:block;margin-bottom:4px}
+    .desktop-grid{display:block}
+    @media(min-width:840px){
+      header{position:static}.tabs{display:none}.desktop-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(320px,1fr);height:calc(100vh - 111px)}
+      #mapPane{display:block!important}.listPane{display:block!important;overflow:auto;border-left:1px solid var(--line)}
+      #map{height:100%}#list{display:block!important}.toolbar{grid-column:1/-1}.desktop-grid{position:relative}
+      #status{position:absolute;left:10px;top:10px;z-index:900;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.95)}
+    }
+  </style>
 </head>
 <body>
-<header><h1>西葛西・清新町 保育園候補マップ</h1><p>住所反映版 v7｜Safari・Edge対応</p></header>
-<nav class="tabs"><button id="tabMap" class="active">地図</button><button id="tabList">一覧</button></nav>
-<div class="filters"><button data-filter="all" class="active">全件</button><button data-filter="licensed">認可</button><button data-filter="other">認可外・企業主導型</button></div>
-<div class="desktop"><section id="mapWrap"><div class="status" id="status">ピンを読み込み中…</div><div id="map"></div><div class="warning">表示時の住所検索を廃止し、座標をHTML内に直接埋め込んでいます。ご指定の2園の住所を追加し、全12園を表示しています。各園の「Google Mapsで確認」から建物位置を照合できます。</div></section><section id="listWrap"><div id="list"></div></section></div>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<header>
+  <h1>西葛西・清新町 保育園候補マップ</h1>
+  <div class="sub">新規開発版 v1｜Safari・Edge・Chrome対応</div>
+</header>
+<div class="tabs" aria-label="表示切替">
+  <button id="tabMap" class="active" type="button">地図</button>
+  <button id="tabList" type="button">一覧</button>
+</div>
+<div class="toolbar" aria-label="施設区分フィルター">
+  <button type="button" class="active" data-filter="all">全12園</button>
+  <button type="button" data-filter="licensed">認可7園</button>
+  <button type="button" data-filter="other">認可外5園</button>
+</div>
+<div class="desktop-grid">
+  <section id="mapPane">
+    <div id="status" role="status" aria-live="polite">地図を準備しています…</div>
+    <div id="map" aria-label="西葛西・清新町の保育園候補地図"></div>
+  </section>
+  <section class="listPane"><div id="list"></div></section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const N=[
-{name:"西葛西ちとせ保育園",kind:"認可",address:"東京都江戸川区西葛西2丁目17番15号",lat:35.6681,lng:139.8566,status:"見学済"},
-{name:"キッズラボ西葛西園",kind:"認可",address:"東京都江戸川区西葛西8丁目4番13号",lat:35.6580,lng:139.8588,status:"見学済"},
-{name:"このえ清新町保育園",kind:"認可",address:"東京都江戸川区清新町2丁目7番8号",lat:35.6551,lng:139.8528,status:"見学予定"},
-{name:"ふきのとう保育園",kind:"認可",address:"東京都江戸川区中葛西6丁目4番7号",lat:35.6607,lng:139.8685,status:"見学済"},
-{name:"ほっぺるランド中葛西",kind:"認可",address:"東京都江戸川区中葛西1丁目1番15号",lat:35.6738,lng:139.8723,status:"見学済"},
-{name:"グローバルキッズ宇喜田町園",kind:"認可",address:"東京都江戸川区宇喜田町1279",lat:35.6760,lng:139.8615,status:"見学済"},
-{name:"白百合保育園",kind:"認可",address:"東京都江戸川区北葛西4丁目3番9号",lat:35.6744,lng:139.8552,status:"見学済"},
-{name:"HybridMom Nursery Preschool 清新町",kind:"認可外・企業主導型",address:"東京都江戸川区清新町2丁目2番20号",lat:35.6568,lng:139.8507,status:"見学予定"},
-{name:"カメリアキッズ西葛西園",kind:"認可外・企業主導型",address:"東京都江戸川区西葛西6丁目8番4号",lat:35.6630,lng:139.8597,status:"見学予定"},
-{name:"おれんじオハナ西葛西保育園",kind:"認可外・企業主導型",address:"東京都江戸川区西葛西5丁目8番3号",lat:35.6663,lng:139.8621,status:"見学予定"},
-{name:"ぱずくる保育園",kind:"認可外・企業主導型",address:"東京都江戸川区西葛西3-13-13 ツインコート1F-B",lat:35.66735,lng:139.85810,status:"見学予定"},
-{name:"西葛西きらきら保育園",kind:"認可外・企業主導型",address:"東京都江戸川区西葛西6-17-1-206",lat:35.66375,lng:139.86045,status:"見学予定"}
-];
-let map,markers=[],filter='all';
-function maps(a){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(a)}
-function icon(kind){return L.divIcon({className:'',html:`<div class="marker ${kind==='認可'?'blue':'orange'}"><div class="marker-dot"></div></div>`,iconSize:[27,27],iconAnchor:[13,26],popupAnchor:[0,-24]})}
-function show(kind){return filter==='all'||(filter==='licensed'&&kind==='認可')||(filter==='other'&&kind!=='認可')}
-function init(){
- if(!window.L){document.getElementById('status').textContent='Leafletを読み込めませんでした。通信を確認してください。';return}
- map=L.map('map').setView([35.664,139.861],14);
- L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(map);
- const pts=[];
- N.forEach((n,i)=>{if(Number.isFinite(n.lat)&&Number.isFinite(n.lng)){const m=L.marker([n.lat,n.lng],{icon:icon(n.kind)}).bindPopup(`<strong>${n.name}</strong><br>${n.address}<br>${n.status}<br><a target="_blank" rel="noopener" href="${maps(n.address)}">Google Mapsで確認</a>`).addTo(map);markers.push({m,kind:n.kind,i});pts.push([n.lat,n.lng]);}});
- if(pts.length)map.fitBounds(pts,{padding:[25,25],maxZoom:15});
- document.getElementById('status').textContent=`${markers.length}件のピンを表示`;
-}
-function render(){const root=document.getElementById('list');N.forEach((n,i)=>{const c=document.createElement('article');c.className='card';c.dataset.kind=n.kind;c.innerHTML=`<div class="head"><span class="badge ${n.kind==='認可'?'licensed':'other'}">${n.kind}</span><h2>${n.name}</h2></div><div class="meta">${n.address}<br>${n.status}${n.lat?`<br>座標：${n.lat.toFixed(4)}, ${n.lng.toFixed(4)}`:'<br>ピン未表示'}</div><div class="actions">${n.lat?`<a target="_blank" rel="noopener" href="${maps(n.address)}">Google Maps</a><button data-i="${i}">地図で表示</button>`:'<span></span><span></span>'}</div>`;root.appendChild(c)});root.addEventListener('click',e=>{const b=e.target.closest('button[data-i]');if(!b)return;const x=markers.find(v=>v.i===Number(b.dataset.i));if(x){showMap();setTimeout(()=>{map.invalidateSize();map.setView(x.m.getLatLng(),17);x.m.openPopup()},100)}})}
-function apply(){document.querySelectorAll('.card').forEach(c=>c.classList.toggle('hidden',!show(c.dataset.kind)));markers.forEach(x=>{if(show(x.kind)){if(!map.hasLayer(x.m))x.m.addTo(map)}else if(map.hasLayer(x.m))map.removeLayer(x.m)})}
-function showMap(){document.getElementById('mapWrap').style.display='block';document.getElementById('listWrap').style.display='none';tabMap.classList.add('active');tabList.classList.remove('active');setTimeout(()=>map&&map.invalidateSize(),100)}
-function showList(){document.getElementById('mapWrap').style.display='none';document.getElementById('listWrap').style.display='block';tabList.classList.add('active');tabMap.classList.remove('active')}
-tabMap.addEventListener('click',showMap);tabList.addEventListener('click',showList);document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));apply()}));render();init();
+(function(){
+  'use strict';
+  const facilities = [
+    {name:'西葛西ちとせ保育園',kind:'認可',address:'東京都江戸川区西葛西2-17-15',lat:35.66810,lng:139.85660,status:'見学済'},
+    {name:'キッズラボ西葛西園',kind:'認可',address:'東京都江戸川区西葛西8-4-13 1F',lat:35.65800,lng:139.85880,status:'見学済'},
+    {name:'このえ清新町保育園',kind:'認可',address:'東京都江戸川区清新町2-7-8',lat:35.65510,lng:139.85280,status:'見学予定'},
+    {name:'ふきのとう保育園',kind:'認可',address:'東京都江戸川区中葛西6-4-7',lat:35.66070,lng:139.86850,status:'見学済'},
+    {name:'ほっぺるランド中葛西',kind:'認可',address:'東京都江戸川区中葛西1-1-15',lat:35.67380,lng:139.87230,status:'見学済'},
+    {name:'グローバルキッズ宇喜田町園',kind:'認可',address:'東京都江戸川区宇喜田町1279',lat:35.67600,lng:139.86150,status:'見学済'},
+    {name:'白百合保育園',kind:'認可',address:'東京都江戸川区北葛西4-3-9',lat:35.67440,lng:139.85520,status:'見学済'},
+    {name:'HybridMom Nursery Preschool 清新町',kind:'認可外・企業主導型',address:'東京都江戸川区清新町2-2-20',lat:35.65680,lng:139.85070,status:'見学予定'},
+    {name:'カメリアキッズ西葛西園',kind:'認可外・企業主導型',address:'東京都江戸川区西葛西6-8-4',lat:35.66300,lng:139.85970,status:'見学予定'},
+    {name:'おれんじオハナ西葛西保育園',kind:'認可外・企業主導型',address:'東京都江戸川区西葛西5-8-3',lat:35.66630,lng:139.86210,status:'見学予定'},
+    {name:'ぱずくる保育園',kind:'認可外・企業主導型',address:'東京都江戸川区西葛西3-13-13 ツインコート1F-B',lat:35.66735,lng:139.85810,status:'見学予定'},
+    {name:'西葛西きらきら保育園',kind:'認可外・企業主導型',address:'東京都江戸川区西葛西6-17-1-206',lat:35.66375,lng:139.86045,status:'見学予定'}
+  ];
+  let map = null;
+  let currentFilter = 'all';
+  const markerRecords = [];
+  const $ = id => document.getElementById(id);
+  const googleMapsUrl = address => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address);
+  const visibleFor = item => currentFilter === 'all' || (currentFilter === 'licensed' && item.kind === '認可') || (currentFilter === 'other' && item.kind !== '認可');
+
+  function markerIcon(kind){
+    const cls = kind === '認可' ? 'blue' : 'orange';
+    return L.divIcon({className:'',html:'<div class="pin '+cls+'"></div>',iconSize:[30,30],iconAnchor:[15,29],popupAnchor:[0,-27]});
+  }
+  function escapeHtml(value){return String(value).replace(/[&<>'"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));}
+  function popupHtml(item){
+    return '<strong>'+escapeHtml(item.name)+'</strong>'+escapeHtml(item.address)+'<br>'+escapeHtml(item.status)+'<br><a target="_blank" rel="noopener" href="'+googleMapsUrl(item.address)+'">Google Mapsで確認</a>';
+  }
+  function initMap(){
+    if(!window.L){$('status').textContent='地図ライブラリを読み込めませんでした。通信状態を確認してください。';return;}
+    try{
+      map = L.map('map',{zoomControl:true,preferCanvas:true}).setView([35.6645,139.8605],14);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(map);
+      facilities.forEach((item,index)=>{
+        const marker = L.marker([item.lat,item.lng],{icon:markerIcon(item.kind),title:item.name,keyboard:true});
+        marker.bindPopup(popupHtml(item));
+        marker.addTo(map);
+        markerRecords.push({item,index,marker});
+      });
+      fitVisibleMarkers();
+      $('status').textContent='12件のピンを表示中';
+      window.addEventListener('resize',()=>setTimeout(()=>map.invalidateSize(),100));
+      setTimeout(()=>map.invalidateSize(),250);
+    }catch(error){
+      $('status').textContent='地図の初期化に失敗しました：'+error.message;
+      console.error(error);
+    }
+  }
+  function fitVisibleMarkers(){
+    if(!map)return;
+    const points = markerRecords.filter(r=>visibleFor(r.item)).map(r=>[r.item.lat,r.item.lng]);
+    if(points.length) map.fitBounds(points,{padding:[28,28],maxZoom:15});
+  }
+  function renderList(){
+    const list = $('list');
+    list.innerHTML='';
+    const shown = facilities.map((item,index)=>({item,index})).filter(x=>visibleFor(x.item));
+    if(!shown.length){list.innerHTML='<div class="empty">表示対象がありません。</div>';return;}
+    shown.forEach(({item,index})=>{
+      const article=document.createElement('article');article.className='card';
+      const badgeClass=item.kind==='認可'?'licensed':'other';
+      article.innerHTML='<div class="head"><span class="badge '+badgeClass+'">'+escapeHtml(item.kind)+'</span><h2>'+escapeHtml(item.name)+'</h2></div><div class="meta">'+escapeHtml(item.address)+'<br>'+escapeHtml(item.status)+'</div><div class="actions"><a target="_blank" rel="noopener" href="'+googleMapsUrl(item.address)+'">Google Maps</a><button type="button" data-index="'+index+'">地図で表示</button></div>';
+      list.appendChild(article);
+    });
+  }
+  function applyFilter(){
+    markerRecords.forEach(r=>{
+      if(visibleFor(r.item)){if(!map.hasLayer(r.marker))r.marker.addTo(map);}else if(map.hasLayer(r.marker)){map.removeLayer(r.marker);}
+    });
+    renderList();fitVisibleMarkers();
+    $('status').textContent=markerRecords.filter(r=>visibleFor(r.item)).length+'件のピンを表示中';
+  }
+  function showMap(){
+    $('mapPane').style.display='block';document.querySelector('.listPane').style.display='none';$('tabMap').classList.add('active');$('tabList').classList.remove('active');
+    setTimeout(()=>{if(map)map.invalidateSize();},120);
+  }
+  function showList(){
+    $('mapPane').style.display='none';document.querySelector('.listPane').style.display='block';$('tabList').classList.add('active');$('tabMap').classList.remove('active');
+  }
+  $('tabMap').addEventListener('click',showMap);$('tabList').addEventListener('click',showList);
+  document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
+    currentFilter=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===button));applyFilter();
+  }));
+  $('list').addEventListener('click',event=>{
+    const button=event.target.closest('button[data-index]');if(!button)return;
+    const record=markerRecords.find(r=>r.index===Number(button.dataset.index));if(!record||!map)return;
+    if(window.innerWidth<840)showMap();
+    setTimeout(()=>{map.invalidateSize();map.setView(record.marker.getLatLng(),17);record.marker.openPopup();},160);
+  });
+  renderList();initMap();
+})();
 </script>
-</body></html>
+</body>
+</html>

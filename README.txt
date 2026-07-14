@@ -1,10 +1,19 @@
-保育園候補マップ 住所反映版 v7
+西葛西・清新町 保育園候補マップ 新規開発版 v1
 
-追加住所
-・ぱずくる保育園：東京都江戸川区西葛西3-13-13 ツインコート1F-B
-・西葛西きらきら保育園：東京都江戸川区西葛西6-17-1-206
+GitHub Pagesへの反映方法
+1. ZIPを展開します。
+2. リポジトリ直下の既存 index.html を、このフォルダの index.html で置き換えます。
+3. Commit changes を押します。
+4. 1〜3分待って以下を開きます。
+   https://shakamarthi.github.io/hokatsu-map/?v=new1
 
-GitHub Pagesでは既存の index.html を本ファイルで置き換えてください。
-公開確認URL例：https://shakamarthi.github.io/hokatsu-map/?v=7
+主な仕様
+- Safari / Edge / Chrome / PC対応
+- 外部住所検索（ジオコード）なし
+- 12園の座標をHTMLへ埋め込み
+- 地図／一覧タブ
+- 認可／認可外フィルター
+- Google Mapsリンク
 
-注意：ピン座標は住所位置に合わせた固定値です。建物入口単位の最終確認は、各ピンの「Google Mapsで確認」リンクをご利用ください。
+注意
+背景地図とLeaflet本体はインターネット経由で読み込みます。
