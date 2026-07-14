@@ -1,14 +1,10 @@
-GitHub Pages 差し替え手順
+保育園候補マップ 住所反映版 v7
 
-1. このフォルダ内の index.html を、GitHubリポジトリ直下の既存 index.html と置き換える。
-2. manifest.webmanifest と sw.js は削除して構いません。v5はサービスワーカーを使いません。
-3. Commit changes を押す。
-4. 1〜3分待ち、Safariで以下を開く。
-   https://shakamarthi.github.io/hokatsu-map/?v=5
-5. 古い表示が残る場合はSafariでページを再読み込み。必要なら設定→Safari→詳細→Webサイトデータから github.io を削除。
+追加住所
+・ぱずくる保育園：東京都江戸川区西葛西3-13-13 ツインコート1F-B
+・西葛西きらきら保育園：東京都江戸川区西葛西6-17-1-206
 
-v5の変更点
-- Safariで失敗していたfetch/CORS方式を廃止
-- JSONP方式で住所照合
-- 旧サービスワーカーを自動解除
-- キャッシュ抑止
+GitHub Pagesでは既存の index.html を本ファイルで置き換えてください。
+公開確認URL例：https://shakamarthi.github.io/hokatsu-map/?v=7
+
+注意：ピン座標は住所位置に合わせた固定値です。建物入口単位の最終確認は、各ピンの「Google Mapsで確認」リンクをご利用ください。
