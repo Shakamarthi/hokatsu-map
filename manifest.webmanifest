@@ -1,0 +1,10 @@
+{
+  "name": "西葛西・清新町 保育園候補マップ",
+  "short_name": "保育園マップ",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#ffffff",
+  "lang": "ja",
+  "description": "西葛西・清新町エリアの保育園候補マップ"
+}
