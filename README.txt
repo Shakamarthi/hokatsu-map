@@ -1,20 +1,14 @@
-西葛西・清新町 保育園候補マップ v4（iPhone Edge／Web公開用）
+GitHub Pages 差し替え手順
 
-【重要】
-iPhoneのEdgeで安定して使うには、index.htmlをローカルファイルとして開くのではなく、Web上に公開したURLで開きます。
+1. このフォルダ内の index.html を、GitHubリポジトリ直下の既存 index.html と置き換える。
+2. manifest.webmanifest と sw.js は削除して構いません。v5はサービスワーカーを使いません。
+3. Commit changes を押す。
+4. 1〜3分待ち、Safariで以下を開く。
+   https://shakamarthi.github.io/hokatsu-map/?v=5
+5. 古い表示が残る場合はSafariでページを再読み込み。必要なら設定→Safari→詳細→Webサイトデータから github.io を削除。
 
-【最短の公開方法：GitHub Pages】
-1. GitHubで新しいリポジトリを作成
-2. このフォルダ内の index.html / manifest.webmanifest / sw.js をアップロード
-3. Settings → Pages → Deploy from a branch → main / root → Save
-4. 表示されたURLをiPhoneのEdgeで開く
-
-【iPhone Edgeでホーム画面に追加】
-1. 公開URLをEdgeで開く
-2. 画面下部または右下の「…」をタップ
-3. 「共有」または「ホーム画面に追加」を選択
-
-【注意】
-- 地図表示と住所照合にはインターネット接続が必要です。
-- 初回表示後は一部データをキャッシュします。
-- 位置は登録住所をOpenStreetMapで照合します。建物単位にならない場合はGoogle Mapsリンクで確認してください。
+v5の変更点
+- Safariで失敗していたfetch/CORS方式を廃止
+- JSONP方式で住所照合
+- 旧サービスワーカーを自動解除
+- キャッシュ抑止

@@ -6,6 +6,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#ffffff">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <link rel="manifest" href="manifest.webmanifest">
 <title>西葛西・清新町 保育園候補マップ</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -25,13 +28,13 @@ h1{font-size:18px;line-height:1.3;margin:0 0 3px}header p{font-size:12px;color:v
 </style>
 </head>
 <body>
-<header><h1>西葛西・清新町 保育園候補マップ</h1><p>iPhone Edge・Safari・Android・PC対応</p></header>
+<header><h1>西葛西・清新町 保育園候補マップ</h1><p>Safari・Edge・Chrome・PC対応（v5）</p></header>
 <div class="install"><strong>iPhone Edgeでの使い方</strong>このページをEdgeで開き、メニュー（…）から「ホーム画面に追加」または「共有」を選ぶと、次回からすぐ開けます。HTMLファイルを直接開くのではなく、Web公開したURLで利用してください。</div>
 <nav class="tabs" aria-label="表示切替"><button id="tabMap" class="active" type="button">地図</button><button id="tabList" type="button">一覧</button></nav>
-<div class="filters"><button data-filter="all" class="active" type="button">全件</button><button data-filter="licensed" type="button">認可</button><button data-filter="other" type="button">認可外・企業主導型</button><button id="retry" type="button">位置を再取得</button></div>
+<div class="filters"><button data-filter="all" class="active" type="button">全件</button><button data-filter="licensed" type="button">認可</button><button data-filter="other" type="button">認可外・企業主導型</button><button id="retry" type="button">ピンを再読込</button></div>
 <div class="desktop">
 <section id="mapWrap"><div class="map-status" id="status">準備中</div><div id="map"></div></section>
-<section id="listWrap"><div id="list"></div><div class="note"><strong>位置精度について</strong><br>ピンは登録住所をOpenStreetMapで自動照合します。建物単位で認識されない場合は町丁目中心になることがあります。各カードの「Google Mapsで確認」を併用してください。住所未確定の園はピンを表示しません。</div></section>
+<section id="listWrap"><div id="list"></div><div class="note"><strong>位置精度について</strong><br>ピンは住所をOpenStreetMapの検索サービスで照合して表示します。SafariのCORS制限を避けるJSONP方式を採用しています。住所未確定の園はピンを表示しません。各カードの「Google Maps」で最終確認してください。</div></section>
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
@@ -57,13 +60,55 @@ function icon(kind){const cls=kind==='認可'?'marker-licensed':'marker-other';r
 function renderList(){const root=document.getElementById('list');root.innerHTML='';NURSERIES.forEach((n,i)=>{const card=document.createElement('article');card.className='card';card.dataset.kind=n.kind;card.innerHTML=`<div class="head"><span class="badge ${n.kind==='認可'?'licensed':'other'}">${n.kind}</span><h2>${n.name}</h2></div><div class="meta">${n.address||'住所未確定'}<br>${n.status}／優先度 ${n.priority}<br><span class="coord" id="coord-${i}">座標：未取得</span></div><div class="actions">${n.address?`<a target="_blank" rel="noopener" href="${mapsUrl(n.address)}">Google Maps</a>`:'<span></span>'}${n.web?`<a target="_blank" rel="noopener" href="${n.web}">公式サイト</a>`:'<span></span>'}<button type="button" data-index="${i}">地図で表示</button></div>`;root.appendChild(card)});root.querySelectorAll('button[data-index]').forEach(b=>b.addEventListener('click',()=>focusMarker(Number(b.dataset.index))));applyFilter()}
 function applyFilter(){document.querySelectorAll('.card').forEach(el=>{const show=current==='all'||(current==='licensed'&&el.dataset.kind==='認可')||(current==='other'&&el.dataset.kind!=='認可');el.classList.toggle('hidden',!show)});markers.forEach(x=>{const show=current==='all'||(current==='licensed'&&x.kind==='認可')||(current==='other'&&x.kind!=='認可');if(show){if(!map.hasLayer(x.marker))x.marker.addTo(map)}else if(map.hasLayer(x.marker))map.removeLayer(x.marker)})}
 function focusMarker(i){const x=markers.find(m=>m.index===i);if(!x){alert('この園は位置未取得または住所未確定です。');return}showMap();setTimeout(()=>{map.invalidateSize();map.setView(x.marker.getLatLng(),17);x.marker.openPopup()},120)}
-async function geocodeOne(n,i){if(!n.address){document.getElementById(`coord-${i}`).textContent='座標：住所未確定';return null}try{const url=`https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&countrycodes=jp&q=${encodeURIComponent(n.address)}`;const r=await fetch(url,{headers:{'Accept-Language':'ja'}});if(!r.ok)throw new Error(String(r.status));const data=await r.json();if(!data.length)throw new Error('該当なし');const hit=data.find(x=>String(x.display_name).includes('江戸川区'))||data[0];const lat=Number(hit.lat),lon=Number(hit.lon);document.getElementById(`coord-${i}`).textContent=`座標：${lat.toFixed(6)}, ${lon.toFixed(6)}`;const marker=L.marker([lat,lon],{icon:icon(n.kind)}).bindPopup(`<strong>${n.name}</strong><br>${n.address}<br>${n.status}／${n.priority}<br><a target="_blank" rel="noopener" href="${mapsUrl(n.address)}">Google Mapsで確認</a>`);marker.addTo(map);markers.push({marker,kind:n.kind,index:i});return [lat,lon]}catch(e){document.getElementById(`coord-${i}`).textContent='座標：取得失敗';return null}}
-async function geocodeAll(){if(!map)return;markers.forEach(x=>map.removeLayer(x.marker));markers=[];statusEl.textContent='住所を照合中…';const pts=[];for(let i=0;i<NURSERIES.length;i++){const p=await geocodeOne(NURSERIES[i],i);if(p)pts.push(p);await new Promise(r=>setTimeout(r,1100))}if(pts.length)map.fitBounds(pts,{padding:[30,30],maxZoom:15});statusEl.textContent=`${pts.length}件の住所を照合済み`;applyFilter()}
+function jsonpGeocode(address, index){
+  return new Promise((resolve,reject)=>{
+    const cb=`nominatimCb_${Date.now()}_${index}`;
+    const script=document.createElement('script');
+    const timer=setTimeout(()=>finish(new Error('timeout')),15000);
+    function cleanup(){clearTimeout(timer);delete window[cb];script.remove()}
+    function finish(value,isOk=false){cleanup();isOk?resolve(value):reject(value)}
+    window[cb]=(data)=>finish(data,true);
+    script.onerror=()=>finish(new Error('script error'));
+    script.src=`https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&countrycodes=jp&accept-language=ja&json_callback=${encodeURIComponent(cb)}&q=${encodeURIComponent(address)}`;
+    document.head.appendChild(script);
+  });
+}
+async function geocodeOne(n,i){
+  if(!n.address){document.getElementById(`coord-${i}`).textContent='座標：住所未確定';return null}
+  try{
+    const data=await jsonpGeocode(n.address,i);
+    if(!Array.isArray(data)||!data.length)throw new Error('該当なし');
+    const hit=data.find(x=>String(x.display_name||'').includes('江戸川区'))||data[0];
+    const lat=Number(hit.lat),lon=Number(hit.lon);
+    if(!Number.isFinite(lat)||!Number.isFinite(lon))throw new Error('座標不正');
+    document.getElementById(`coord-${i}`).textContent=`座標：${lat.toFixed(6)}, ${lon.toFixed(6)}`;
+    const marker=L.marker([lat,lon],{icon:icon(n.kind)}).bindPopup(`<strong>${n.name}</strong><br>${n.address}<br>${n.status}／${n.priority}<br><a target="_blank" rel="noopener" href="${mapsUrl(n.address)}">Google Mapsで確認</a>`);
+    marker.addTo(map);markers.push({marker,kind:n.kind,index:i});return [lat,lon]
+  }catch(e){
+    document.getElementById(`coord-${i}`).textContent='座標：取得失敗（Google Mapsで確認）';
+    return null
+  }
+}
+async function geocodeAll(){
+  if(!map)return;
+  markers.forEach(x=>map.removeLayer(x.marker));markers=[];
+  statusEl.textContent='住所を照合中…（約15秒）';
+  const pts=[];
+  for(let i=0;i<NURSERIES.length;i++){
+    const p=await geocodeOne(NURSERIES[i],i);
+    if(p)pts.push(p);
+    await new Promise(r=>setTimeout(r,1050));
+    statusEl.textContent=`住所を照合中… ${i+1}/${NURSERIES.length}`;
+  }
+  if(pts.length)map.fitBounds(pts,{padding:[30,30],maxZoom:15});
+  statusEl.textContent=`${pts.length}件のピンを表示`;
+  applyFilter()
+}
 function showMap(){document.getElementById('mapWrap').style.display='block';document.getElementById('listWrap').style.display='none';document.getElementById('tabMap').classList.add('active');document.getElementById('tabList').classList.remove('active');if(map)setTimeout(()=>map.invalidateSize(),100)}
 function showList(){document.getElementById('mapWrap').style.display='none';document.getElementById('listWrap').style.display='block';document.getElementById('tabList').classList.add('active');document.getElementById('tabMap').classList.remove('active')}
 document.getElementById('tabMap').addEventListener('click',showMap);document.getElementById('tabList').addEventListener('click',showList);document.querySelectorAll('.filters button[data-filter]').forEach(b=>b.addEventListener('click',()=>{current=b.dataset.filter;document.querySelectorAll('.filters button[data-filter]').forEach(x=>x.classList.toggle('active',x===b));applyFilter()}));document.getElementById('retry').addEventListener('click',geocodeAll);
 renderList();if(initMap())geocodeAll();
-if ('serviceWorker' in navigator && location.protocol.startsWith('http')) { navigator.serviceWorker.register('./sw.js').catch(()=>{}); }
+if ('serviceWorker' in navigator) { navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister())).catch(()=>{}); }
 </script>
 </body>
 </html>
