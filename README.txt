@@ -1,22 +1,29 @@
-保活ダッシュボード v1
+保活管理システム v2
 
 【GitHub Pagesへの反映】
 1. ZIPを展開します。
-2. GitHubリポジトリ hokatsu-map の既存 index.html を、本ファイルの index.html に置き換えます。
+2. GitHubリポジトリ hokatsu-map の既存 index.html を、この index.html に置き換えます。
 3. Commit changes を実行します。
-4. 数分後、既存URLを再読み込みします。
-   https://shakamarthi.github.io/hokatsu-map/?v=dashboard1
+4. 数分後、以下を開きます。
+   https://shakamarthi.github.io/hokatsu-map/?v=2
 
-【機能】
-- Googleマイマップの閲覧／編集リンク
-- 認可・認可外の一覧と絞り込み
-- Googleマップ／Appleマップへの個別リンク
-- 見学進捗
-- 次のアクション
+【保存仕様】
+- 見学状況、評価、志望順位、メモはブラウザの localStorage に自動保存されます。
+- 同じ端末・同じブラウザでは再表示後も保持されます。
+- SafariとEdgeの間では自動同期されません。
+- キャッシュ削除、機種変更、ブラウザ変更に備えて「JSON書き出し」でバックアップしてください。
+- 別端末では「JSON読み込み」で復元できます。
 
-【Googleマイマップ】
-閲覧用:
-https://www.google.com/maps/d/viewer?hl=ja&mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o&ll=35.659354873453466%2C139.85510693372467&z=16
+【入力機能】
+- 見学状況：未見学／見学予定／見学済
+- 評価：星1～5
+- 志望順位：未定／第1～第20希望
+- 同じ志望順位を別園に設定すると、以前その順位だった園は未定へ戻ります
+- メモ：自動保存
 
-編集用:
-https://www.google.com/maps/d/edit?hl=ja&mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o&ll=35.659354873453466%2C139.85510693372467&z=16
+【ダッシュボード反映】
+- 見学済件数
+- 認可／認可外の見学進捗
+- 平均評価
+- 志望順位設定済件数
+- 志望順位一覧

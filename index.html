@@ -4,46 +4,52 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f4f6f8">
-<title>保活ダッシュボード</title>
+<title>保活管理システム v2</title>
 <style>
-:root {
+:root{
   font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
   color:#172033;background:#f4f6f8;
-  --border:#dce2ea;--muted:#687383;--dark:#172033;--blue:#1e5f9f;--orange:#b95f00;
+  --border:#dce2ea;--muted:#687383;--dark:#172033;
 }
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;background:#f4f6f8}
 body{padding-bottom:calc(28px + env(safe-area-inset-bottom))}
+button,select,textarea,input{font:inherit}
 header{
-  padding:calc(18px + env(safe-area-inset-top)) 18px 18px;
-  background:#fff;border-bottom:1px solid var(--border)
+  padding:calc(18px + env(safe-area-inset-top)) 18px 16px;
+  background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20
 }
-h1{margin:0;font-size:24px}
-.subtitle{margin:6px 0 0;color:var(--muted);font-size:14px}
-.wrap{max-width:900px;margin:0 auto;padding:14px}
+h1{margin:0;font-size:23px}
+.subtitle{margin:5px 0 0;color:var(--muted);font-size:13px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
 .grid{display:grid;gap:12px}
 .panel{background:#fff;border:1px solid var(--border);border-radius:18px;padding:16px}
 .panel h2{margin:0 0 12px;font-size:18px}
-.map-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.map-actions a,.primary-link{
-  display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:13px;
-  text-decoration:none;font-weight:700;font-size:15px
+.map-actions,.data-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.action-link,.action-btn{
+  min-height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+  text-decoration:none;font-weight:700;font-size:14px;border:1px solid #c1cbd5;background:#fff;color:#172033
 }
-.view{background:var(--dark);color:#fff}
-.edit{background:#eef2f6;color:#172033;border:1px solid #c7d0da}
-.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.metric{background:#f6f8fa;border-radius:13px;padding:12px;text-align:center}
-.metric strong{display:block;font-size:21px;margin-top:3px}
-.metric span{font-size:12px;color:var(--muted)}
-.progress-row{margin-top:14px}
+.primary{background:#172033;color:#fff;border-color:#172033}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.metric{background:#f6f8fa;border-radius:13px;padding:11px;text-align:center}
+.metric strong{display:block;font-size:20px;margin-top:2px}
+.metric span{font-size:11px;color:var(--muted)}
+.progress-row{margin-top:13px}
 .progress-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
 .progress{height:10px;border-radius:999px;background:#e7ebef;overflow:hidden}
 .progress>span{display:block;height:100%;background:#335f8c;border-radius:999px}
-.controls{display:flex;gap:8px;overflow:auto;padding:2px 0 12px;-webkit-overflow-scrolling:touch}
-.controls button{flex:0 0 auto;min-height:42px;border-radius:999px;padding:0 14px;border:1px solid #bac4cf;background:#fff;font-size:14px}
-.controls button.active{background:#172033;color:#fff;border-color:#172033}
-.facility-grid{display:grid;gap:10px}
-.facility{border:1px solid var(--border);border-radius:15px;padding:14px;background:#fff}
+.rank-list{margin:0;padding:0;list-style:none;display:grid;gap:7px}
+.rank-list li{display:flex;gap:8px;align-items:center;background:#f7f8fa;border-radius:10px;padding:9px 10px;font-size:13px}
+.rank-num{font-weight:700;min-width:32px}
+.toolbar{display:grid;gap:9px;margin-bottom:12px}
+.filters,.sorts{display:flex;gap:8px;overflow:auto;-webkit-overflow-scrolling:touch}
+.filters button,.sorts button{
+  flex:0 0 auto;min-height:40px;border-radius:999px;padding:0 13px;border:1px solid #bac4cf;background:#fff;font-size:13px
+}
+.filters button.active,.sorts button.active{background:#172033;color:#fff;border-color:#172033}
+.facility-grid{display:grid;gap:12px}
+.facility{border:1px solid var(--border);border-radius:16px;padding:14px;background:#fff}
 .facility-head{display:flex;gap:10px;align-items:flex-start}
 .index{width:28px;height:28px;border-radius:50%;background:#eef2f6;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:0 0 28px}
 h3{margin:1px 0 7px;font-size:16px;line-height:1.35}
@@ -53,23 +59,40 @@ h3{margin:1px 0 7px;font-size:16px;line-height:1.35}
 .unlicensed{background:#fff0dc;color:#8a4a00}
 .done{background:#e6f6ea;color:#216b36}
 .planned{background:#f1eefc;color:#5d3e93}
+.unvisited{background:#f3f4f6;color:#4a5563}
 .address{font-size:14px;line-height:1.55;margin:12px 0 0;color:#3e4957}
-.note{margin-top:8px;background:#fff7df;color:#765100;padding:8px 10px;border-radius:10px;font-size:13px}
+.field{margin-top:12px}
+.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
+.segmented{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.segmented button{min-height:40px;border-radius:10px;border:1px solid #c7d0d9;background:#fff;font-size:12px}
+.segmented button.active{background:#172033;color:#fff;border-color:#172033}
+.stars{display:flex;gap:5px}
+.star{border:0;background:transparent;padding:0;font-size:30px;line-height:1;color:#c4cbd3;min-width:34px}
+.star.on{color:#f1a400}
+select,textarea{
+  width:100%;border:1px solid #c7d0d9;border-radius:11px;padding:10px;background:#fff;color:#172033
+}
+textarea{min-height:78px;resize:vertical}
 .facility-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-.facility-actions a{min-height:44px;border-radius:11px;border:1px solid #bcc6d0;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:14px;font-weight:650;color:#1c4f82}
-.todo{margin:0;padding-left:20px;line-height:1.8;font-size:14px}
-.hidden{display:none}
-footer{padding:6px 18px;color:var(--muted);font-size:12px;text-align:center}
-@media(min-width:720px){
+.facility-actions a{min-height:44px;border-radius:11px;border:1px solid #bcc6d0;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:13px;font-weight:650;color:#1c4f82}
+.saved{font-size:11px;color:#2d6a3f;margin-top:8px;min-height:16px}
+.hidden{display:none!important}
+.notice{font-size:12px;color:var(--muted);line-height:1.6;margin-top:10px}
+footer{padding:8px 18px;color:var(--muted);font-size:12px;text-align:center}
+@media(min-width:760px){
   .top-grid{grid-template-columns:1fr 1fr}
   .facility-grid{grid-template-columns:1fr 1fr}
+  .toolbar{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+  .metrics{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
 <body>
 <header>
-  <h1>保活ダッシュボード</h1>
-  <p class="subtitle">西葛西・清新町｜マップ・見学進捗・候補園を一元確認</p>
+  <h1>保活管理システム v2</h1>
+  <p class="subtitle">見学状況・評価・志望順位を更新し、ダッシュボードへ即時反映</p>
 </header>
 
 <main class="wrap grid">
@@ -77,302 +100,320 @@ footer{padding:6px 18px;color:var(--muted);font-size:12px;text-align:center}
     <div class="panel">
       <h2>🗺 Googleマイマップ</h2>
       <div class="map-actions">
-        <a class="view" href="https://www.google.com/maps/d/viewer?hl=ja&mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o&ll=35.659354873453466%2C139.85510693372467&z=16" target="_blank" rel="noopener">マップを閲覧</a>
-        <a class="edit" href="https://www.google.com/maps/d/edit?hl=ja&mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o&ll=35.659354873453466%2C139.85510693372467&z=16" target="_blank" rel="noopener">マップを編集</a>
+        <a class="action-link primary" href="https://www.google.com/maps/d/viewer?hl=ja&mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o&ll=35.659354873453466%2C139.85510693372467&z=16" target="_blank" rel="noopener">マップを閲覧</a>
+        <a class="action-link" href="https://www.google.com/maps/d/edit?hl=ja&mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o&ll=35.659354873453466%2C139.85510693372467&z=16" target="_blank" rel="noopener">マップを編集</a>
       </div>
     </div>
-
     <div class="panel">
-      <h2>📊 見学進捗</h2>
-      <div class="metrics">
-        <div class="metric"><span>対象園</span><strong>12</strong></div>
-        <div class="metric"><span>見学済</span><strong>6</strong></div>
-        <div class="metric"><span>見学予定</span><strong>6</strong></div>
+      <h2>💾 データ管理</h2>
+      <div class="data-actions">
+        <button class="action-btn" id="exportBtn" type="button">JSON書き出し</button>
+        <button class="action-btn" id="importBtn" type="button">JSON読み込み</button>
+        <input id="importFile" type="file" accept="application/json,.json" hidden>
+        <button class="action-btn" id="resetBtn" type="button">初期値へ戻す</button>
+        <button class="action-btn" id="copyBtn" type="button">一覧をコピー</button>
       </div>
-      <div class="progress-row">
-        <div class="progress-label"><span>認可</span><span>6 / 7</span></div>
-        <div class="progress"><span style="width:85.7%"></span></div>
-      </div>
-      <div class="progress-row">
-        <div class="progress-label"><span>認可外・企業主導型</span><span>0 / 5</span></div>
-        <div class="progress"><span style="width:0%"></span></div>
-      </div>
+      <div class="notice">入力内容はこのブラウザに自動保存されます。機種変更やキャッシュ削除に備え、定期的なJSON書き出しを推奨します。</div>
     </div>
   </section>
 
   <section class="panel">
-    <h2>🏫 保育園一覧</h2>
-    <div class="controls" aria-label="絞り込み">
-      <button type="button" class="active" data-filter="all">全件</button>
-      <button type="button" data-filter="認可">認可</button>
-      <button type="button" data-filter="認可外・企業主導型">認可外</button>
-      <button type="button" data-filter="見学済">見学済</button>
-      <button type="button" data-filter="見学予定">見学予定</button>
+    <h2>📊 ダッシュボード</h2>
+    <div class="metrics">
+      <div class="metric"><span>対象園</span><strong id="metricTotal">0</strong></div>
+      <div class="metric"><span>見学済</span><strong id="metricDone">0</strong></div>
+      <div class="metric"><span>平均評価</span><strong id="metricRating">-</strong></div>
+      <div class="metric"><span>順位設定済</span><strong id="metricRanked">0</strong></div>
     </div>
-    <div id="summary" style="font-size:13px;color:var(--muted);margin-bottom:10px">12件を表示</div>
-    <div class="facility-grid">
-      
-    <article class="facility" data-category="認可" data-visit="見学済">
-      <div class="facility-head">
-        <span class="index">1</span>
-        <div>
-          <h3>西葛西ちとせ保育園</h3>
-          <div class="badges">
-            <span class="badge licensed">認可</span>
-            <span class="badge done">見学済</span>
-          </div>
-        </div>
-      </div>
-      <p class="address">東京都江戸川区西葛西2丁目17番15号</p>
-      <div class="note">本命候補</div>
-      <div class="facility-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E8%A5%BF%E8%91%9B%E8%A5%BF2%E4%B8%81%E7%9B%AE17%E7%95%AA15%E5%8F%B7" target="_blank" rel="noopener">Googleマップ</a>
-        <a href="https://maps.apple.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E8%A5%BF%E8%91%9B%E8%A5%BF2%E4%B8%81%E7%9B%AE17%E7%95%AA15%E5%8F%B7" target="_blank" rel="noopener">Appleマップ</a>
-      </div>
-    </article>
-    
-    <article class="facility" data-category="認可" data-visit="見学済">
-      <div class="facility-head">
-        <span class="index">2</span>
-        <div>
-          <h3>キッズラボ西葛西園</h3>
-          <div class="badges">
-            <span class="badge licensed">認可</span>
-            <span class="badge done">見学済</span>
-          </div>
-        </div>
-      </div>
-      <p class="address">東京都江戸川区西葛西8丁目4番13号 1F</p>
-      
-      <div class="facility-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E8%A5%BF%E8%91%9B%E8%A5%BF8%E4%B8%81%E7%9B%AE4%E7%95%AA13%E5%8F%B7%201F" target="_blank" rel="noopener">Googleマップ</a>
-        <a href="https://maps.apple.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E8%A5%BF%E8%91%9B%E8%A5%BF8%E4%B8%81%E7%9B%AE4%E7%95%AA13%E5%8F%B7%201F" target="_blank" rel="noopener">Appleマップ</a>
-      </div>
-    </article>
-    
-    <article class="facility" data-category="認可" data-visit="見学予定">
-      <div class="facility-head">
-        <span class="index">3</span>
-        <div>
-          <h3>このえ清新町保育園</h3>
-          <div class="badges">
-            <span class="badge licensed">認可</span>
-            <span class="badge planned">見学予定</span>
-          </div>
-        </div>
-      </div>
-      <p class="address">東京都江戸川区清新町2丁目7番8号</p>
-      
-      <div class="facility-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E6%B8%85%E6%96%B0%E7%94%BA2%E4%B8%81%E7%9B%AE7%E7%95%AA8%E5%8F%B7" target="_blank" rel="noopener">Googleマップ</a>
-        <a href="https://maps.apple.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E6%B8%85%E6%96%B0%E7%94%BA2%E4%B8%81%E7%9B%AE7%E7%95%AA8%E5%8F%B7" target="_blank" rel="noopener">Appleマップ</a>
-      </div>
-    </article>
-    
-    <article class="facility" data-category="認可" data-visit="見学済">
-      <div class="facility-head">
-        <span class="index">4</span>
-        <div>
-          <h3>ふきのとう保育園</h3>
-          <div class="badges">
-            <span class="badge licensed">認可</span>
-            <span class="badge done">見学済</span>
-          </div>
-        </div>
-      </div>
-      <p class="address">東京都江戸川区中葛西6丁目4番7号</p>
-      
-      <div class="facility-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E4%B8%AD%E8%91%9B%E8%A5%BF6%E4%B8%81%E7%9B%AE4%E7%95%AA7%E5%8F%B7" target="_blank" rel="noopener">Googleマップ</a>
-        <a href="https://maps.apple.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E4%B8%AD%E8%91%9B%E8%A5%BF6%E4%B8%81%E7%9B%AE4%E7%95%AA7%E5%8F%B7" target="_blank" rel="noopener">Appleマップ</a>
-      </div>
-    </article>
-    
-    <article class="facility" data-category="認可" data-visit="見学済">
-      <div class="facility-head">
-        <span class="index">5</span>
-        <div>
-          <h3>ほっぺるランド中葛西</h3>
-          <div class="badges">
-            <span class="badge licensed">認可</span>
-            <span class="badge done">見学済</span>
-          </div>
-        </div>
-      </div>
-      <p class="address">東京都江戸川区中葛西1丁目1番15号</p>
-      
-      <div class="facility-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E4%B8%AD%E8%91%9B%E8%A5%BF1%E4%B8%81%E7%9B%AE1%E7%95%AA15%E5%8F%B7" target="_blank" rel="noopener">Googleマップ</a>
-        <a href="https://maps.apple.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E4%B8%AD%E8%91%9B%E8%A5%BF1%E4%B8%81%E7%9B%AE1%E7%95%AA15%E5%8F%B7" target="_blank" rel="noopener">Appleマップ</a>
-      </div>
-    </article>
-    
-    <article class="facility" data-category="認可" data-visit="見学済">
-      <div class="facility-head">
-        <span class="index">6</span>
-        <div>
-          <h3>グローバルキッズ宇喜田町園</h3>
-          <div class="badges">
-            <span class="badge licensed">認可</span>
-            <span class="badge done">見学済</span>
-          </div>
-        </div>
-      </div>
-      <p class="address">東京都江戸川区宇喜田町1279</p>
-      
-      <div class="facility-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E5%AE%87%E5%96%9C%E7%94%B0%E7%94%BA1279" target="_blank" rel="noopener">Googleマップ</a>
-        <a href="https://maps.apple.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E5%AE%87%E5%96%9C%E7%94%B0%E7%94%BA1279" target="_blank" rel="noopener">Appleマップ</a>
-      </div>
-    </article>
-    
-    <article class="facility" data-category="認可" data-visit="見学済">
-      <div class="facility-head">
-        <span class="index">7</span>
-        <div>
-          <h3>白百合保育園</h3>
-          <div class="badges">
-            <span class="badge licensed">認可</span>
-            <span class="badge done">見学済</span>
-          </div>
-        </div>
-      </div>
-      <p class="address">東京都江戸川区北葛西4丁目3番9号</p>
-      
-      <div class="facility-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E5%8C%97%E8%91%9B%E8%A5%BF4%E4%B8%81%E7%9B%AE3%E7%95%AA9%E5%8F%B7" target="_blank" rel="noopener">Googleマップ</a>
-        <a href="https://maps.apple.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E5%8C%97%E8%91%9B%E8%A5%BF4%E4%B8%81%E7%9B%AE3%E7%95%AA9%E5%8F%B7" target="_blank" rel="noopener">Appleマップ</a>
-      </div>
-    </article>
-    
-    <article class="facility" data-category="認可外・企業主導型" data-visit="見学予定">
-      <div class="facility-head">
-        <span class="index">8</span>
-        <div>
-          <h3>HybridMom Nursery Preschool 清新町</h3>
-          <div class="badges">
-            <span class="badge unlicensed">認可外・企業主導型</span>
-            <span class="badge planned">見学予定</span>
-          </div>
-        </div>
-      </div>
-      <p class="address">東京都江戸川区清新町2-2-20 バウス西葛西清新町内</p>
-      <div class="note">最優先候補</div>
-      <div class="facility-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E6%B8%85%E6%96%B0%E7%94%BA2-2-20%20%E3%83%90%E3%82%A6%E3%82%B9%E8%A5%BF%E8%91%9B%E8%A5%BF%E6%B8%85%E6%96%B0%E7%94%BA%E5%86%85" target="_blank" rel="noopener">Googleマップ</a>
-        <a href="https://maps.apple.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E6%B8%85%E6%96%B0%E7%94%BA2-2-20%20%E3%83%90%E3%82%A6%E3%82%B9%E8%A5%BF%E8%91%9B%E8%A5%BF%E6%B8%85%E6%96%B0%E7%94%BA%E5%86%85" target="_blank" rel="noopener">Appleマップ</a>
-      </div>
-    </article>
-    
-    <article class="facility" data-category="認可外・企業主導型" data-visit="見学予定">
-      <div class="facility-head">
-        <span class="index">9</span>
-        <div>
-          <h3>カメリアキッズ西葛西園</h3>
-          <div class="badges">
-            <span class="badge unlicensed">認可外・企業主導型</span>
-            <span class="badge planned">見学予定</span>
-          </div>
-        </div>
-      </div>
-      <p class="address">東京都江戸川区西葛西6丁目8番4号</p>
-      
-      <div class="facility-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E8%A5%BF%E8%91%9B%E8%A5%BF6%E4%B8%81%E7%9B%AE8%E7%95%AA4%E5%8F%B7" target="_blank" rel="noopener">Googleマップ</a>
-        <a href="https://maps.apple.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E8%A5%BF%E8%91%9B%E8%A5%BF6%E4%B8%81%E7%9B%AE8%E7%95%AA4%E5%8F%B7" target="_blank" rel="noopener">Appleマップ</a>
-      </div>
-    </article>
-    
-    <article class="facility" data-category="認可外・企業主導型" data-visit="見学予定">
-      <div class="facility-head">
-        <span class="index">10</span>
-        <div>
-          <h3>おれんじオハナ西葛西保育園</h3>
-          <div class="badges">
-            <span class="badge unlicensed">認可外・企業主導型</span>
-            <span class="badge planned">見学予定</span>
-          </div>
-        </div>
-      </div>
-      <p class="address">東京都江戸川区西葛西5丁目8番3号</p>
-      
-      <div class="facility-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E8%A5%BF%E8%91%9B%E8%A5%BF5%E4%B8%81%E7%9B%AE8%E7%95%AA3%E5%8F%B7" target="_blank" rel="noopener">Googleマップ</a>
-        <a href="https://maps.apple.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E8%A5%BF%E8%91%9B%E8%A5%BF5%E4%B8%81%E7%9B%AE8%E7%95%AA3%E5%8F%B7" target="_blank" rel="noopener">Appleマップ</a>
-      </div>
-    </article>
-    
-    <article class="facility" data-category="認可外・企業主導型" data-visit="見学予定">
-      <div class="facility-head">
-        <span class="index">11</span>
-        <div>
-          <h3>ぱずくる保育園</h3>
-          <div class="badges">
-            <span class="badge unlicensed">認可外・企業主導型</span>
-            <span class="badge planned">見学予定</span>
-          </div>
-        </div>
-      </div>
-      <p class="address">東京都江戸川区西葛西3-13-13 ツインコート1F-B</p>
-      
-      <div class="facility-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E8%A5%BF%E8%91%9B%E8%A5%BF3-13-13%20%E3%83%84%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%881F-B" target="_blank" rel="noopener">Googleマップ</a>
-        <a href="https://maps.apple.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E8%A5%BF%E8%91%9B%E8%A5%BF3-13-13%20%E3%83%84%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%881F-B" target="_blank" rel="noopener">Appleマップ</a>
-      </div>
-    </article>
-    
-    <article class="facility" data-category="認可外・企業主導型" data-visit="見学予定">
-      <div class="facility-head">
-        <span class="index">12</span>
-        <div>
-          <h3>西葛西きらきら保育園</h3>
-          <div class="badges">
-            <span class="badge unlicensed">認可外・企業主導型</span>
-            <span class="badge planned">見学予定</span>
-          </div>
-        </div>
-      </div>
-      <p class="address">東京都江戸川区西葛西6-17-1-206</p>
-      
-      <div class="facility-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E8%A5%BF%E8%91%9B%E8%A5%BF6-17-1-206" target="_blank" rel="noopener">Googleマップ</a>
-        <a href="https://maps.apple.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E8%A5%BF%E8%91%9B%E8%A5%BF6-17-1-206" target="_blank" rel="noopener">Appleマップ</a>
-      </div>
-    </article>
-    
+    <div class="progress-row">
+      <div class="progress-label"><span>認可</span><span id="licensedProgressText">0 / 0</span></div>
+      <div class="progress"><span id="licensedProgressBar" style="width:0%"></span></div>
     </div>
+    <div class="progress-row">
+      <div class="progress-label"><span>認可外・企業主導型</span><span id="unlicensedProgressText">0 / 0</span></div>
+      <div class="progress"><span id="unlicensedProgressBar" style="width:0%"></span></div>
+    </div>
+    <h2 style="margin-top:18px">🏅 志望順位</h2>
+    <ol class="rank-list" id="rankList"></ol>
   </section>
 
   <section class="panel">
-    <h2>📝 次のアクション</h2>
-    <ul class="todo">
-      <li>このえ清新町の見学を完了する</li>
-      <li>認可外5園の見学予約・日程調整</li>
-      <li>区役所相談結果を管理表へ反映する</li>
-      <li>見学後に志望順位を更新する</li>
-    </ul>
+    <h2>🏫 園別管理</h2>
+    <div class="toolbar">
+      <div class="filters" aria-label="絞り込み">
+        <button type="button" class="active" data-filter="all">全件</button>
+        <button type="button" data-filter="認可">認可</button>
+        <button type="button" data-filter="認可外・企業主導型">認可外</button>
+        <button type="button" data-filter="見学済">見学済</button>
+        <button type="button" data-filter="見学予定">見学予定</button>
+        <button type="button" data-filter="未見学">未見学</button>
+      </div>
+      <div class="sorts" aria-label="並び替え">
+        <button type="button" class="active" data-sort="default">登録順</button>
+        <button type="button" data-sort="rank">志望順位</button>
+        <button type="button" data-sort="rating">評価</button>
+        <button type="button" data-sort="visit">見学状況</button>
+      </div>
+    </div>
+    <div id="summary" style="font-size:13px;color:var(--muted);margin-bottom:10px">0件を表示</div>
+    <div class="facility-grid" id="facilityGrid"></div>
   </section>
 </main>
 
-<footer>位置情報の正本はGoogleマイマップ／Googleマップです。独自座標は使用していません。</footer>
+<footer>位置情報はGoogleマイマップ／Googleマップを正本として利用します。</footer>
 
 <script>
-const buttons=document.querySelectorAll('[data-filter]');
-const cards=document.querySelectorAll('.facility');
-const summary=document.getElementById('summary');
-buttons.forEach(button=>{
-  button.addEventListener('click',()=>{
-    buttons.forEach(b=>b.classList.toggle('active',b===button));
-    const filter=button.dataset.filter;
-    let count=0;
-    cards.forEach(card=>{
-      const show=filter==='all'||card.dataset.category===filter||card.dataset.visit===filter;
-      card.classList.toggle('hidden',!show);
-      if(show)count++;
+const STORAGE_KEY='hokatsu-dashboard-v2-data';
+const DEFAULT_DATA=[{"id": "nishikasai-chitose", "name": "西葛西ちとせ保育園", "address": "東京都江戸川区西葛西2丁目17番15号", "category": "認可", "visit": "見学済", "rating": 5, "rank": 1, "memo": "本命候補"}, {"id": "kidslab-nishikasai", "name": "キッズラボ西葛西園", "address": "東京都江戸川区西葛西8丁目4番13号 1F", "category": "認可", "visit": "見学済", "rating": 4, "rank": 3, "memo": ""}, {"id": "konoe-seishincho", "name": "このえ清新町保育園", "address": "東京都江戸川区清新町2丁目7番8号", "category": "認可", "visit": "見学予定", "rating": 0, "rank": 2, "memo": ""}, {"id": "fukinoto", "name": "ふきのとう保育園", "address": "東京都江戸川区中葛西6丁目4番7号", "category": "認可", "visit": "見学済", "rating": 4, "rank": 4, "memo": ""}, {"id": "hoppel-nakakasai", "name": "ほっぺるランド中葛西", "address": "東京都江戸川区中葛西1丁目1番15号", "category": "認可", "visit": "見学済", "rating": 4, "rank": 5, "memo": ""}, {"id": "global-ukita", "name": "グローバルキッズ宇喜田町園", "address": "東京都江戸川区宇喜田町1279", "category": "認可", "visit": "見学済", "rating": 3, "rank": 6, "memo": ""}, {"id": "shirayuri", "name": "白百合保育園", "address": "東京都江戸川区北葛西4丁目3番9号", "category": "認可", "visit": "見学済", "rating": 3, "rank": 7, "memo": ""}, {"id": "hybridmom-seishincho", "name": "HybridMom Nursery Preschool 清新町", "address": "東京都江戸川区清新町2-2-20 バウス西葛西清新町内", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": "最優先候補"}, {"id": "camellia-nishikasai", "name": "カメリアキッズ西葛西園", "address": "東京都江戸川区西葛西6丁目8番4号", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "orange-ohana", "name": "おれんじオハナ西葛西保育園", "address": "東京都江戸川区西葛西5丁目8番3号", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "puzzcle", "name": "ぱずくる保育園", "address": "東京都江戸川区西葛西3-13-13 ツインコート1F-B", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "kirakira", "name": "西葛西きらきら保育園", "address": "東京都江戸川区西葛西6-17-1-206", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}];
+
+let state=loadState();
+let currentFilter='all';
+let currentSort='default';
+
+function loadState(){
+  try{
+    const saved=localStorage.getItem(STORAGE_KEY);
+    if(!saved) return structuredClone(DEFAULT_DATA);
+    const parsed=JSON.parse(saved);
+    return DEFAULT_DATA.map(base=>{
+      const found=parsed.find(x=>x.id===base.id);
+      return found ? {...base,...found} : base;
     });
-    summary.textContent=`${count}件を表示`;
+  }catch(e){
+    return structuredClone(DEFAULT_DATA);
+  }
+}
+function saveState(){
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
+}
+function mapUrl(address,provider){
+  const q=encodeURIComponent(address);
+  return provider==='google'
+    ? `https://www.google.com/maps/search/?api=1&query=${q}`
+    : `https://maps.apple.com/?q=${q}`;
+}
+function visitClass(v){
+  return v==='見学済'?'done':v==='見学予定'?'planned':'unvisited';
+}
+function categoryClass(c){
+  return c==='認可'?'licensed':'unlicensed';
+}
+function rankOptions(selected){
+  let html='<option value="0">未定</option>';
+  for(let i=1;i<=20;i++){
+    html+=`<option value="${i}" ${Number(selected)===i?'selected':''}>第${i}希望</option>`;
+  }
+  return html;
+}
+function render(){
+  renderDashboard();
+  renderFacilities();
+}
+function renderDashboard(){
+  const total=state.length;
+  const done=state.filter(x=>x.visit==='見学済').length;
+  const ratings=state.filter(x=>Number(x.rating)>0).map(x=>Number(x.rating));
+  const avg=ratings.length ? (ratings.reduce((a,b)=>a+b,0)/ratings.length).toFixed(1) : '-';
+  const ranked=state.filter(x=>Number(x.rank)>0).length;
+  document.getElementById('metricTotal').textContent=total;
+  document.getElementById('metricDone').textContent=done;
+  document.getElementById('metricRating').textContent=avg;
+  document.getElementById('metricRanked').textContent=ranked;
+
+  updateProgress('認可','licensed');
+  updateProgress('認可外・企業主導型','unlicensed');
+
+  const rankedItems=state.filter(x=>Number(x.rank)>0).sort((a,b)=>Number(a.rank)-Number(b.rank));
+  const rankList=document.getElementById('rankList');
+  rankList.innerHTML=rankedItems.length
+    ? rankedItems.map(x=>`<li><span class="rank-num">第${x.rank}希望</span><span>${escapeHtml(x.name)}</span></li>`).join('')
+    : '<li>志望順位はまだ設定されていません。</li>';
+}
+function updateProgress(category,prefix){
+  const target=state.filter(x=>x.category===category);
+  const done=target.filter(x=>x.visit==='見学済').length;
+  const pct=target.length?done/target.length*100:0;
+  document.getElementById(prefix+'ProgressText').textContent=`${done} / ${target.length}`;
+  document.getElementById(prefix+'ProgressBar').style.width=pct+'%';
+}
+function sortedFilteredData(){
+  let list=state.filter(x=>currentFilter==='all'||x.category===currentFilter||x.visit===currentFilter);
+  if(currentSort==='rank'){
+    list.sort((a,b)=>{
+      const ar=Number(a.rank)||999, br=Number(b.rank)||999;
+      return ar-br || a.name.localeCompare(b.name,'ja');
+    });
+  }else if(currentSort==='rating'){
+    list.sort((a,b)=>Number(b.rating)-Number(a.rating)||a.name.localeCompare(b.name,'ja'));
+  }else if(currentSort==='visit'){
+    const order={'見学済':0,'見学予定':1,'未見学':2};
+    list.sort((a,b)=>order[a.visit]-order[b.visit]||a.name.localeCompare(b.name,'ja'));
+  }else{
+    list.sort((a,b)=>DEFAULT_DATA.findIndex(x=>x.id===a.id)-DEFAULT_DATA.findIndex(x=>x.id===b.id));
+  }
+  return list;
+}
+function renderFacilities(){
+  const list=sortedFilteredData();
+  const grid=document.getElementById('facilityGrid');
+  grid.innerHTML=list.map((x,idx)=>facilityCard(x,idx+1)).join('');
+  document.getElementById('summary').textContent=`${list.length}件を表示`;
+  bindCardEvents();
+}
+function facilityCard(x,idx){
+  const stars=[1,2,3,4,5].map(n=>`<button type="button" class="star ${Number(x.rating)>=n?'on':''}" data-id="${x.id}" data-rating="${n}" aria-label="${n}点">★</button>`).join('');
+  return `
+  <article class="facility" data-id="${x.id}">
+    <div class="facility-head">
+      <span class="index">${idx}</span>
+      <div>
+        <h3>${escapeHtml(x.name)}</h3>
+        <div class="badges">
+          <span class="badge ${categoryClass(x.category)}">${escapeHtml(x.category)}</span>
+          <span class="badge ${visitClass(x.visit)}">${escapeHtml(x.visit)}</span>
+        </div>
+      </div>
+    </div>
+    <p class="address">${escapeHtml(x.address)}</p>
+
+    <div class="field">
+      <label>見学状況</label>
+      <div class="segmented">
+        ${['未見学','見学予定','見学済'].map(v=>`<button type="button" class="${x.visit===v?'active':''}" data-visit="${v}" data-id="${x.id}">${v}</button>`).join('')}
+      </div>
+    </div>
+
+    <div class="field">
+      <label>評価（5段階）</label>
+      <div class="stars">${stars}</div>
+    </div>
+
+    <div class="field">
+      <label for="rank-${x.id}">志望順位</label>
+      <select id="rank-${x.id}" data-rank-id="${x.id}">
+        ${rankOptions(x.rank)}
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="memo-${x.id}">メモ</label>
+      <textarea id="memo-${x.id}" data-memo-id="${x.id}" placeholder="見学所感・確認事項など">${escapeHtml(x.memo||'')}</textarea>
+    </div>
+
+    <div class="facility-actions">
+      <a href="${mapUrl(x.address,'google')}" target="_blank" rel="noopener">Googleマップ</a>
+      <a href="${mapUrl(x.address,'apple')}" target="_blank" rel="noopener">Appleマップ</a>
+    </div>
+    <div class="saved" id="saved-${x.id}"></div>
+  </article>`;
+}
+function bindCardEvents(){
+  document.querySelectorAll('[data-visit]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      updateItem(btn.dataset.id,{visit:btn.dataset.visit});
+    });
+  });
+  document.querySelectorAll('[data-rating]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      updateItem(btn.dataset.id,{rating:Number(btn.dataset.rating)});
+    });
+  });
+  document.querySelectorAll('[data-rank-id]').forEach(sel=>{
+    sel.addEventListener('change',()=>{
+      const newRank=Number(sel.value);
+      if(newRank>0){
+        state.forEach(x=>{
+          if(x.id!==sel.dataset.rankId && Number(x.rank)===newRank) x.rank=0;
+        });
+      }
+      updateItem(sel.dataset.rankId,{rank:newRank});
+    });
+  });
+  document.querySelectorAll('[data-memo-id]').forEach(area=>{
+    let timer;
+    area.addEventListener('input',()=>{
+      clearTimeout(timer);
+      timer=setTimeout(()=>{
+        updateItem(area.dataset.memoId,{memo:area.value},false);
+        const el=document.getElementById('saved-'+area.dataset.memoId);
+        if(el){
+          el.textContent='保存しました';
+          setTimeout(()=>el.textContent='',1200);
+        }
+      },350);
+    });
+  });
+}
+function updateItem(id,patch,rerender=true){
+  const item=state.find(x=>x.id===id);
+  if(!item)return;
+  Object.assign(item,patch);
+  saveState();
+  if(rerender)render();
+  else renderDashboard();
+}
+function escapeHtml(value){
+  return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+document.querySelectorAll('[data-filter]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b===btn));
+    currentFilter=btn.dataset.filter;
+    renderFacilities();
   });
 });
+document.querySelectorAll('[data-sort]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-sort]').forEach(b=>b.classList.toggle('active',b===btn));
+    currentSort=btn.dataset.sort;
+    renderFacilities();
+  });
+});
+document.getElementById('exportBtn').addEventListener('click',()=>{
+  const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download='hokatsu-data.json';
+  a.click();
+  URL.revokeObjectURL(url);
+});
+document.getElementById('importBtn').addEventListener('click',()=>document.getElementById('importFile').click());
+document.getElementById('importFile').addEventListener('change',async(e)=>{
+  const file=e.target.files[0];
+  if(!file)return;
+  try{
+    const parsed=JSON.parse(await file.text());
+    if(!Array.isArray(parsed))throw new Error('形式不正');
+    state=DEFAULT_DATA.map(base=>{
+      const found=parsed.find(x=>x.id===base.id);
+      return found?{...base,...found}:base;
+    });
+    saveState();render();
+    alert('データを読み込みました。');
+  }catch(err){
+    alert('JSONを読み込めませんでした。');
+  }finally{
+    e.target.value='';
+  }
+});
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  if(confirm('入力内容を初期値へ戻します。よろしいですか？')){
+    state=structuredClone(DEFAULT_DATA);
+    saveState();render();
+  }
+});
+document.getElementById('copyBtn').addEventListener('click',async()=>{
+  const rows=state.slice().sort((a,b)=>(Number(a.rank)||999)-(Number(b.rank)||999));
+  const text=rows.map(x=>`${x.rank?`第${x.rank}希望`:'未定'}｜${x.name}｜${x.visit}｜評価${x.rating||'-'}｜${x.memo||''}`).join('\n');
+  try{
+    await navigator.clipboard.writeText(text);
+    alert('一覧をコピーしました。');
+  }catch(e){
+    alert('コピーできませんでした。');
+  }
+});
+render();
 </script>
 </body>
 </html>
