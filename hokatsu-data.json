@@ -15,7 +15,7 @@
     "address": "東京都江戸川区西葛西8丁目4番13号 1F",
     "category": "認可",
     "visit": "見学済",
-    "rating": 4,
+    "rating": 5,
     "rank": 3,
     "memo": ""
   },
@@ -25,7 +25,7 @@
     "address": "東京都江戸川区清新町2丁目7番8号",
     "category": "認可",
     "visit": "見学予定",
-    "rating": 0,
+    "rating": 5,
     "rank": 2,
     "memo": ""
   },
@@ -65,7 +65,7 @@
     "address": "東京都江戸川区北葛西4丁目3番9号",
     "category": "認可",
     "visit": "見学済",
-    "rating": 3,
+    "rating": 2,
     "rank": 7,
     "memo": ""
   },
