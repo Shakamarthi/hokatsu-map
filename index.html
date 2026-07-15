@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f4f6f8">
-<title>保活管理システム v2</title>
+<title>保活管理システム v2.1</title>
 <style>
 :root{
   font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
@@ -56,6 +56,7 @@ h3{margin:1px 0 7px;font-size:16px;line-height:1.35}
 .badges{display:flex;gap:6px;flex-wrap:wrap}
 .badge{padding:3px 8px;border-radius:999px;font-size:11px}
 .licensed{background:#e6f0ff;color:#174f8d}
+.smallscale{background:#eaf7f0;color:#23613b}
 .unlicensed{background:#fff0dc;color:#8a4a00}
 .done{background:#e6f6ea;color:#216b36}
 .planned{background:#f1eefc;color:#5d3e93}
@@ -91,7 +92,7 @@ footer{padding:8px 18px;color:var(--muted);font-size:12px;text-align:center}
 </head>
 <body>
 <header>
-  <h1>保活管理システム v2</h1>
+  <h1>保活管理システム v2.1</h1>
   <p class="subtitle">見学状況・評価・志望順位を更新し、ダッシュボードへ即時反映</p>
 </header>
 
@@ -130,6 +131,10 @@ footer{padding:8px 18px;color:var(--muted);font-size:12px;text-align:center}
       <div class="progress"><span id="licensedProgressBar" style="width:0%"></span></div>
     </div>
     <div class="progress-row">
+      <div class="progress-label"><span>認可（小規模）</span><span id="smallscaleProgressText">0 / 0</span></div>
+      <div class="progress"><span id="smallscaleProgressBar" style="width:0%"></span></div>
+    </div>
+    <div class="progress-row">
       <div class="progress-label"><span>認可外・企業主導型</span><span id="unlicensedProgressText">0 / 0</span></div>
       <div class="progress"><span id="unlicensedProgressBar" style="width:0%"></span></div>
     </div>
@@ -143,6 +148,7 @@ footer{padding:8px 18px;color:var(--muted);font-size:12px;text-align:center}
       <div class="filters" aria-label="絞り込み">
         <button type="button" class="active" data-filter="all">全件</button>
         <button type="button" data-filter="認可">認可</button>
+        <button type="button" data-filter="認可（小規模）">認可（小規模）</button>
         <button type="button" data-filter="認可外・企業主導型">認可外</button>
         <button type="button" data-filter="見学済">見学済</button>
         <button type="button" data-filter="見学予定">見学予定</button>
@@ -163,8 +169,8 @@ footer{padding:8px 18px;color:var(--muted);font-size:12px;text-align:center}
 <footer>位置情報はGoogleマイマップ／Googleマップを正本として利用します。</footer>
 
 <script>
-const STORAGE_KEY='hokatsu-dashboard-v2-data';
-const DEFAULT_DATA=[{"id": "nishikasai-chitose", "name": "西葛西ちとせ保育園", "address": "東京都江戸川区西葛西2丁目17番15号", "category": "認可", "visit": "見学済", "rating": 5, "rank": 1, "memo": "本命候補"}, {"id": "kidslab-nishikasai", "name": "キッズラボ西葛西園", "address": "東京都江戸川区西葛西8丁目4番13号 1F", "category": "認可", "visit": "見学済", "rating": 4, "rank": 3, "memo": ""}, {"id": "konoe-seishincho", "name": "このえ清新町保育園", "address": "東京都江戸川区清新町2丁目7番8号", "category": "認可", "visit": "見学予定", "rating": 0, "rank": 2, "memo": ""}, {"id": "fukinoto", "name": "ふきのとう保育園", "address": "東京都江戸川区中葛西6丁目4番7号", "category": "認可", "visit": "見学済", "rating": 4, "rank": 4, "memo": ""}, {"id": "hoppel-nakakasai", "name": "ほっぺるランド中葛西", "address": "東京都江戸川区中葛西1丁目1番15号", "category": "認可", "visit": "見学済", "rating": 4, "rank": 5, "memo": ""}, {"id": "global-ukita", "name": "グローバルキッズ宇喜田町園", "address": "東京都江戸川区宇喜田町1279", "category": "認可", "visit": "見学済", "rating": 3, "rank": 6, "memo": ""}, {"id": "shirayuri", "name": "白百合保育園", "address": "東京都江戸川区北葛西4丁目3番9号", "category": "認可", "visit": "見学済", "rating": 3, "rank": 7, "memo": ""}, {"id": "hybridmom-seishincho", "name": "HybridMom Nursery Preschool 清新町", "address": "東京都江戸川区清新町2-2-20 バウス西葛西清新町内", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": "最優先候補"}, {"id": "camellia-nishikasai", "name": "カメリアキッズ西葛西園", "address": "東京都江戸川区西葛西6丁目8番4号", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "orange-ohana", "name": "おれんじオハナ西葛西保育園", "address": "東京都江戸川区西葛西5丁目8番3号", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "puzzcle", "name": "ぱずくる保育園", "address": "東京都江戸川区西葛西3-13-13 ツインコート1F-B", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "kirakira", "name": "西葛西きらきら保育園", "address": "東京都江戸川区西葛西6-17-1-206", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}];
+const STORAGE_KEY='hokatsu-dashboard-v2-1-data';
+const DEFAULT_DATA=[{"id": "nishikasai-chitose", "name": "西葛西ちとせ保育園", "address": "東京都江戸川区西葛西2丁目17番15号", "category": "認可", "visit": "見学済", "rating": 5, "rank": 1, "memo": "本命候補"}, {"id": "kidslab-nishikasai", "name": "キッズラボ西葛西園", "address": "東京都江戸川区西葛西8丁目4番13号 1F", "category": "認可", "visit": "見学済", "rating": 4, "rank": 3, "memo": ""}, {"id": "konoe-seishincho", "name": "このえ清新町保育園", "address": "東京都江戸川区清新町2丁目7番8号", "category": "認可", "visit": "見学予定", "rating": 0, "rank": 2, "memo": ""}, {"id": "fukinoto", "name": "ふきのとう保育園", "address": "東京都江戸川区中葛西6丁目4番7号", "category": "認可", "visit": "見学済", "rating": 4, "rank": 4, "memo": ""}, {"id": "hoppel-nakakasai", "name": "ほっぺるランド中葛西", "address": "東京都江戸川区中葛西1丁目1番15号", "category": "認可", "visit": "見学済", "rating": 4, "rank": 5, "memo": ""}, {"id": "global-ukita", "name": "グローバルキッズ宇喜田町園", "address": "東京都江戸川区宇喜田町1279", "category": "認可", "visit": "見学済", "rating": 3, "rank": 6, "memo": ""}, {"id": "shirayuri", "name": "白百合保育園", "address": "東京都江戸川区北葛西4丁目3番9号", "category": "認可", "visit": "見学済", "rating": 3, "rank": 7, "memo": ""}, {"id": "hybridmom-seishincho", "name": "HybridMom Nursery Preschool 清新町", "address": "東京都江戸川区清新町2-2-20 バウス西葛西清新町内", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": "最優先候補"}, {"id": "camellia-nishikasai", "name": "カメリアキッズ西葛西園", "address": "東京都江戸川区西葛西6丁目8番4号", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "orange-house-nishikasai", "name": "おれんじハウス西葛西", "address": "東京都江戸川区西葛西5丁目8番3号", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": "住所要確認"}, {"id": "puzzcle", "name": "ぱずくる保育園", "address": "東京都江戸川区西葛西3-13-13 ツインコート1F-B", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "kirakira", "name": "西葛西きらきら保育園", "address": "東京都江戸川区西葛西6-17-1-206", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "hoppel-nishikasai", "name": "ほっぺるランド西葛西", "address": "〒134-0088 東京都江戸川区西葛西2丁目22-45 レジデントプレイス1階", "category": "認可（小規模）", "visit": "未見学", "rating": 0, "rank": 0, "memo": ""}];
 
 let state=loadState();
 let currentFilter='all';
@@ -196,7 +202,7 @@ function visitClass(v){
   return v==='見学済'?'done':v==='見学予定'?'planned':'unvisited';
 }
 function categoryClass(c){
-  return c==='認可'?'licensed':'unlicensed';
+  return c==='認可'?'licensed':c==='認可（小規模）'?'smallscale':'unlicensed';
 }
 function rankOptions(selected){
   let html='<option value="0">未定</option>';
@@ -221,6 +227,7 @@ function renderDashboard(){
   document.getElementById('metricRanked').textContent=ranked;
 
   updateProgress('認可','licensed');
+  updateProgress('認可（小規模）','smallscale');
   updateProgress('認可外・企業主導型','unlicensed');
 
   const rankedItems=state.filter(x=>Number(x.rank)>0).sort((a,b)=>Number(a.rank)-Number(b.rank));
