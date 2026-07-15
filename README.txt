@@ -1,24 +1,22 @@
-西葛西・清新町 保育園候補（地図サービス分離版）
+保活ダッシュボード v1
 
-【構成】
-1. index.html
-   - GitHub Pagesで公開する軽量一覧サイト
-   - 独自地図・独自座標は使用しません
-   - 各園をGoogleマップ／Appleマップで直接開けます
+【GitHub Pagesへの反映】
+1. ZIPを展開します。
+2. GitHubリポジトリ hokatsu-map の既存 index.html を、本ファイルの index.html に置き換えます。
+3. Commit changes を実行します。
+4. 数分後、既存URLを再読み込みします。
+   https://shakamarthi.github.io/hokatsu-map/?v=dashboard1
 
-2. google_mymaps_import.csv
-   - Googleマイマップへの取り込み用
-   - 位置列は「住所」、タイトル列は「園名」を指定してください
+【機能】
+- Googleマイマップの閲覧／編集リンク
+- 認可・認可外の一覧と絞り込み
+- Googleマップ／Appleマップへの個別リンク
+- 見学進捗
+- 次のアクション
 
-【Googleマイマップへの取り込み】
-1. PCブラウザで Google マイマップを開く
-2. 「新しい地図を作成」
-3. レイヤーの「インポート」
-4. google_mymaps_import.csv を選択
-5. 位置情報の列に「住所」を指定
-6. マーカー名の列に「園名」を指定
-7. 「スタイル」→「データ列別」→「区分」を指定すると、認可／認可外を分けられます
+【Googleマイマップ】
+閲覧用:
+https://www.google.com/maps/d/viewer?hl=ja&mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o&ll=35.659354873453466%2C139.85510693372467&z=16
 
-【GitHub Pages更新】
-既存リポジトリ直下の index.html を本ファイルに置き換えてコミットしてください。
-公開URLは変更不要です。
+編集用:
+https://www.google.com/maps/d/edit?hl=ja&mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o&ll=35.659354873453466%2C139.85510693372467&z=16
