@@ -1,28 +1,35 @@
-保活管理システム v2.2（GitHub JSON正本版）
+保活管理システム v2.3（GitHub API直接保存版）
 
-【正本】
-GitHubリポジトリ直下の hokatsu-data.json
-
-【GitHub Pagesへの反映】
-以下の2ファイルをリポジトリ直下へアップロードしてください。
+【構成】
 - index.html
 - hokatsu-data.json
 
-【運用】
-1. Webアプリ起動時に hokatsu-data.json を読み込みます。
-2. 画面変更は端末下書きとして自動保存されます。
-3. 確定時は「正本更新用JSON」を押します。
-4. ダウンロードされた hokatsu-data.json でGitHub上の同名ファイルを置き換えます。
-5. Pages反映後「GitHub正本を再読込」を押します。
+【修正内容】
+- v2.2のJavaScript構文不具合を修正
+- GitHub Contents APIから正本を読み込み
+- Webアプリから hokatsu-data.json を直接更新
+- 更新競合（HTTP 409）を検出
+- トークンをsessionStorageのみに保持
+- 端末下書きはlocalStorageへ自動保存
 
-【重要な制約】
-GitHub Pagesは静的サイトのため、ブラウザからリポジトリへ安全に直接書き込めません。
-Personal Access TokenをHTMLへ保存する方式は漏えいリスクがあるため採用していません。
-そのため「入力→JSON書き出し→GitHubで置換」を安全な確定手順としています。
+【GitHubトークンの作成】
+GitHub Settings → Developer settings → Personal access tokens → Fine-grained tokens
 
-【端末間利用】
-- GitHub反映済み正本はiPhone・PC・Safari・Edgeで共通です。
-- GitHub未反映の下書きは端末・ブラウザごとに別です。
+推奨設定：
+- Expiration：必要最小限
+- Repository access：Only select repositories
+- 対象：shakamarthi/hokatsu-map
+- Repository permissions → Contents：Read and write
+- その他の権限：原則 No access
 
-【確認URL】
-https://shakamarthi.github.io/hokatsu-map/?v=2.2
+トークンはWebアプリの入力欄へ入力します。
+HTMLやhokatsu-data.jsonには書き込まれませんが、ブラウザで動く仕組みである以上、
+第三者端末や共有端末では入力しないでください。
+
+【GitHubへの反映】
+リポジトリ直下の以下2ファイルを置き換えてください。
+- index.html
+- hokatsu-data.json
+
+【公開確認URL】
+https://shakamarthi.github.io/hokatsu-map/?v=2.3
