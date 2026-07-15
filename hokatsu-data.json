@@ -1,0 +1,132 @@
+[
+  {
+    "id": "nishikasai-chitose",
+    "name": "西葛西ちとせ保育園",
+    "address": "東京都江戸川区西葛西2丁目17番15号",
+    "category": "認可",
+    "visit": "見学済",
+    "rating": 5,
+    "rank": 1,
+    "memo": "本命候補"
+  },
+  {
+    "id": "kidslab-nishikasai",
+    "name": "キッズラボ西葛西園",
+    "address": "東京都江戸川区西葛西8丁目4番13号 1F",
+    "category": "認可",
+    "visit": "見学済",
+    "rating": 4,
+    "rank": 3,
+    "memo": ""
+  },
+  {
+    "id": "konoe-seishincho",
+    "name": "このえ清新町保育園",
+    "address": "東京都江戸川区清新町2丁目7番8号",
+    "category": "認可",
+    "visit": "見学予定",
+    "rating": 0,
+    "rank": 2,
+    "memo": ""
+  },
+  {
+    "id": "fukinoto",
+    "name": "ふきのとう保育園",
+    "address": "東京都江戸川区中葛西6丁目4番7号",
+    "category": "認可",
+    "visit": "見学済",
+    "rating": 4,
+    "rank": 4,
+    "memo": ""
+  },
+  {
+    "id": "hoppel-nakakasai",
+    "name": "ほっぺるランド中葛西",
+    "address": "東京都江戸川区中葛西1丁目1番15号",
+    "category": "認可",
+    "visit": "見学済",
+    "rating": 4,
+    "rank": 5,
+    "memo": ""
+  },
+  {
+    "id": "global-ukita",
+    "name": "グローバルキッズ宇喜田町園",
+    "address": "東京都江戸川区宇喜田町1279",
+    "category": "認可",
+    "visit": "見学済",
+    "rating": 3,
+    "rank": 6,
+    "memo": ""
+  },
+  {
+    "id": "shirayuri",
+    "name": "白百合保育園",
+    "address": "東京都江戸川区北葛西4丁目3番9号",
+    "category": "認可",
+    "visit": "見学済",
+    "rating": 3,
+    "rank": 7,
+    "memo": ""
+  },
+  {
+    "id": "hybridmom-seishincho",
+    "name": "HybridMom Nursery Preschool 清新町",
+    "address": "東京都江戸川区清新町2-2-20 バウス西葛西清新町内",
+    "category": "認可外・企業主導型",
+    "visit": "見学予定",
+    "rating": 0,
+    "rank": 0,
+    "memo": "最優先候補"
+  },
+  {
+    "id": "camellia-nishikasai",
+    "name": "カメリアキッズ西葛西園",
+    "address": "東京都江戸川区西葛西6丁目8番4号",
+    "category": "認可外・企業主導型",
+    "visit": "見学予定",
+    "rating": 0,
+    "rank": 0,
+    "memo": ""
+  },
+  {
+    "id": "orange-house-nishikasai",
+    "name": "おれんじハウス西葛西",
+    "address": "東京都江戸川区西葛西5丁目8番3号",
+    "category": "認可外・企業主導型",
+    "visit": "見学予定",
+    "rating": 0,
+    "rank": 0,
+    "memo": "住所要確認"
+  },
+  {
+    "id": "puzzcle",
+    "name": "ぱずくる保育園",
+    "address": "東京都江戸川区西葛西3-13-13 ツインコート1F-B",
+    "category": "認可外・企業主導型",
+    "visit": "見学予定",
+    "rating": 0,
+    "rank": 0,
+    "memo": ""
+  },
+  {
+    "id": "kirakira",
+    "name": "西葛西きらきら保育園",
+    "address": "東京都江戸川区西葛西6-17-1-206",
+    "category": "認可外・企業主導型",
+    "visit": "見学予定",
+    "rating": 0,
+    "rank": 0,
+    "memo": ""
+  },
+  {
+    "id": "hoppel-nishikasai",
+    "name": "ほっぺるランド西葛西",
+    "address": "〒134-0088 東京都江戸川区西葛西2丁目22-45 レジデントプレイス1階",
+    "category": "認可（小規模）",
+    "visit": "未見学",
+    "rating": 0,
+    "rank": 0,
+    "memo": ""
+  }
+]

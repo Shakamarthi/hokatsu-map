@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f4f6f8">
-<title>保活管理システム v2.1</title>
+<title>保活管理システム v2.2</title>
 <style>
 :root{
   font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
@@ -78,7 +78,11 @@ textarea{min-height:78px;resize:vertical}
 .facility-actions a{min-height:44px;border-radius:11px;border:1px solid #bcc6d0;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:13px;font-weight:650;color:#1c4f82}
 .saved{font-size:11px;color:#2d6a3f;margin-top:8px;min-height:16px}
 .hidden{display:none!important}
+.sync-status{margin-top:10px;padding:9px 11px;border-radius:10px;font-size:12px;background:#e8f5eb;color:#23613b}
+.sync-status[data-type="warning"]{background:#fff6df;color:#755100}
+.sync-status[data-type="error"]{background:#fdeaea;color:#8a2b2b}
 .notice{font-size:12px;color:var(--muted);line-height:1.6;margin-top:10px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px}
 footer{padding:8px 18px;color:var(--muted);font-size:12px;text-align:center}
 @media(min-width:760px){
   .top-grid{grid-template-columns:1fr 1fr}
@@ -92,8 +96,8 @@ footer{padding:8px 18px;color:var(--muted);font-size:12px;text-align:center}
 </head>
 <body>
 <header>
-  <h1>保活管理システム v2.1</h1>
-  <p class="subtitle">見学状況・評価・志望順位を更新し、ダッシュボードへ即時反映</p>
+  <h1>保活管理システム v2.2</h1>
+  <p class="subtitle">GitHubの hokatsu-data.json を正本として読込・端末下書きを管理</p>
 </header>
 
 <main class="wrap grid">
@@ -108,13 +112,16 @@ footer{padding:8px 18px;color:var(--muted);font-size:12px;text-align:center}
     <div class="panel">
       <h2>💾 データ管理</h2>
       <div class="data-actions">
-        <button class="action-btn" id="exportBtn" type="button">JSON書き出し</button>
-        <button class="action-btn" id="importBtn" type="button">JSON読み込み</button>
+        <button class="action-btn primary" id="exportBtn" type="button">正本更新用JSON</button>
+        <a class="action-link" href="https://github.com/shakamarthi/hokatsu-map/edit/main/hokatsu-data.json" target="_blank" rel="noopener">GitHubで正本編集</a>
+        <button class="action-btn" id="reloadBtn" type="button">GitHub正本を再読込</button>
+        <button class="action-btn" id="importBtn" type="button">下書きJSON読込</button>
         <input id="importFile" type="file" accept="application/json,.json" hidden>
-        <button class="action-btn" id="resetBtn" type="button">初期値へ戻す</button>
+        <button class="action-btn" id="resetBtn" type="button">端末下書きを破棄</button>
         <button class="action-btn" id="copyBtn" type="button">一覧をコピー</button>
       </div>
-      <div class="notice">入力内容はこのブラウザに自動保存されます。機種変更やキャッシュ削除に備え、定期的なJSON書き出しを推奨します。</div>
+      <div class="sync-status" id="syncStatus" data-type="ok">GitHub正本を読込中…</div>
+      <div class="notice"><strong>正本：</strong>GitHubリポジトリの <code>hokatsu-data.json</code><br>画面入力は端末下書きとして自動保存されます。確定時は「正本更新用JSON」をダウンロードし、GitHub上の <code>hokatsu-data.json</code> を置き換えてください。</div>
     </div>
   </section>
 
@@ -169,28 +176,53 @@ footer{padding:8px 18px;color:var(--muted);font-size:12px;text-align:center}
 <footer>位置情報はGoogleマイマップ／Googleマップを正本として利用します。</footer>
 
 <script>
-const STORAGE_KEY='hokatsu-dashboard-v2-1-data';
-const DEFAULT_DATA=[{"id": "nishikasai-chitose", "name": "西葛西ちとせ保育園", "address": "東京都江戸川区西葛西2丁目17番15号", "category": "認可", "visit": "見学済", "rating": 5, "rank": 1, "memo": "本命候補"}, {"id": "kidslab-nishikasai", "name": "キッズラボ西葛西園", "address": "東京都江戸川区西葛西8丁目4番13号 1F", "category": "認可", "visit": "見学済", "rating": 4, "rank": 3, "memo": ""}, {"id": "konoe-seishincho", "name": "このえ清新町保育園", "address": "東京都江戸川区清新町2丁目7番8号", "category": "認可", "visit": "見学予定", "rating": 0, "rank": 2, "memo": ""}, {"id": "fukinoto", "name": "ふきのとう保育園", "address": "東京都江戸川区中葛西6丁目4番7号", "category": "認可", "visit": "見学済", "rating": 4, "rank": 4, "memo": ""}, {"id": "hoppel-nakakasai", "name": "ほっぺるランド中葛西", "address": "東京都江戸川区中葛西1丁目1番15号", "category": "認可", "visit": "見学済", "rating": 4, "rank": 5, "memo": ""}, {"id": "global-ukita", "name": "グローバルキッズ宇喜田町園", "address": "東京都江戸川区宇喜田町1279", "category": "認可", "visit": "見学済", "rating": 3, "rank": 6, "memo": ""}, {"id": "shirayuri", "name": "白百合保育園", "address": "東京都江戸川区北葛西4丁目3番9号", "category": "認可", "visit": "見学済", "rating": 3, "rank": 7, "memo": ""}, {"id": "hybridmom-seishincho", "name": "HybridMom Nursery Preschool 清新町", "address": "東京都江戸川区清新町2-2-20 バウス西葛西清新町内", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": "最優先候補"}, {"id": "camellia-nishikasai", "name": "カメリアキッズ西葛西園", "address": "東京都江戸川区西葛西6丁目8番4号", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "orange-house-nishikasai", "name": "おれんじハウス西葛西", "address": "東京都江戸川区西葛西5丁目8番3号", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": "住所要確認"}, {"id": "puzzcle", "name": "ぱずくる保育園", "address": "東京都江戸川区西葛西3-13-13 ツインコート1F-B", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "kirakira", "name": "西葛西きらきら保育園", "address": "東京都江戸川区西葛西6-17-1-206", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "hoppel-nishikasai", "name": "ほっぺるランド西葛西", "address": "〒134-0088 東京都江戸川区西葛西2丁目22-45 レジデントプレイス1階", "category": "認可（小規模）", "visit": "未見学", "rating": 0, "rank": 0, "memo": ""}];
-
-let state=loadState();
+const STORAGE_KEY='hokatsu-dashboard-v2-2-draft';const FALLBACK_DATA=[{"id": "nishikasai-chitose", "name": "西葛西ちとせ保育園", "address": "東京都江戸川区西葛西2丁目17番15号", "category": "認可", "visit": "見学済", "rating": 5, "rank": 1, "memo": "本命候補"}, {"id": "kidslab-nishikasai", "name": "キッズラボ西葛西園", "address": "東京都江戸川区西葛西8丁目4番13号 1F", "category": "認可", "visit": "見学済", "rating": 4, "rank": 3, "memo": ""}, {"id": "konoe-seishincho", "name": "このえ清新町保育園", "address": "東京都江戸川区清新町2丁目7番8号", "category": "認可", "visit": "見学予定", "rating": 0, "rank": 2, "memo": ""}, {"id": "fukinoto", "name": "ふきのとう保育園", "address": "東京都江戸川区中葛西6丁目4番7号", "category": "認可", "visit": "見学済", "rating": 4, "rank": 4, "memo": ""}, {"id": "hoppel-nakakasai", "name": "ほっぺるランド中葛西", "address": "東京都江戸川区中葛西1丁目1番15号", "category": "認可", "visit": "見学済", "rating": 4, "rank": 5, "memo": ""}, {"id": "global-ukita", "name": "グローバルキッズ宇喜田町園", "address": "東京都江戸川区宇喜田町1279", "category": "認可", "visit": "見学済", "rating": 3, "rank": 6, "memo": ""}, {"id": "shirayuri", "name": "白百合保育園", "address": "東京都江戸川区北葛西4丁目3番9号", "category": "認可", "visit": "見学済", "rating": 3, "rank": 7, "memo": ""}, {"id": "hybridmom-seishincho", "name": "HybridMom Nursery Preschool 清新町", "address": "東京都江戸川区清新町2-2-20 バウス西葛西清新町内", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": "最優先候補"}, {"id": "camellia-nishikasai", "name": "カメリアキッズ西葛西園", "address": "東京都江戸川区西葛西6丁目8番4号", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "orange-house-nishikasai", "name": "おれんじハウス西葛西", "address": "東京都江戸川区西葛西5丁目8番3号", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": "住所要確認"}, {"id": "puzzcle", "name": "ぱずくる保育園", "address": "東京都江戸川区西葛西3-13-13 ツインコート1F-B", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "kirakira", "name": "西葛西きらきら保育園", "address": "東京都江戸川区西葛西6-17-1-206", "category": "認可外・企業主導型", "visit": "見学予定", "rating": 0, "rank": 0, "memo": ""}, {"id": "hoppel-nishikasai", "name": "ほっぺるランド西葛西", "address": "〒134-0088 東京都江戸川区西葛西2丁目22-45 レジデントプレイス1階", "category": "認可（小規模）", "visit": "未見学", "rating": 0, "rank": 0, "memo": ""}];
+let state=[];=loadState();
 let currentFilter='all';
 let currentSort='default';
 
-function loadState(){
+async function loadCanonicalData(){
+  try{
+    const response=await fetch('./hokatsu-data.json?ts='+Date.now(),{cache:'no-store'});
+    if(!response.ok) throw new Error('HTTP '+response.status);
+    const parsed=await response.json();
+    if(!Array.isArray(parsed)) throw new Error('JSON形式不正');
+    const draft=loadDraft();
+    state=mergeData(parsed,draft);
+    setSyncStatus(draft?'GitHub正本＋端末下書きを読込':'GitHub正本を読込');
+  }catch(error){
+    const draft=loadDraft();
+    state=mergeData(FALLBACK_DATA,draft);
+    setSyncStatus('GitHub正本の読込に失敗。内蔵データで起動','error');
+  }
+  render();
+}
+function mergeData(canonical,draft){
+  return canonical.map(base=>{
+    const found=Array.isArray(draft)?draft.find(x=>x.id===base.id):null;
+    return found?{...base,...found}:base;
+  });
+}
+function loadDraft(){
   try{
     const saved=localStorage.getItem(STORAGE_KEY);
-    if(!saved) return structuredClone(DEFAULT_DATA);
-    const parsed=JSON.parse(saved);
-    return DEFAULT_DATA.map(base=>{
-      const found=parsed.find(x=>x.id===base.id);
-      return found ? {...base,...found} : base;
-    });
-  }catch(e){
-    return structuredClone(DEFAULT_DATA);
-  }
+    return saved?JSON.parse(saved):null;
+  }catch(e){return null;}
 }
-function saveState(){
+function saveDraft(){
   localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
+  hasUnsavedChanges=true;
+  setSyncStatus('端末下書き保存済（GitHub未反映）','warning');
+}
+function clearDraft(){
+  localStorage.removeItem(STORAGE_KEY);
+  hasUnsavedChanges=false;
+}
+function setSyncStatus(message,type='ok'){
+  const el=document.getElementById('syncStatus');
+  if(!el)return;
+  el.textContent=message;
+  el.dataset.type=type;
 }
 function mapUrl(address,provider){
   const q=encodeURIComponent(address);
@@ -256,7 +288,7 @@ function sortedFilteredData(){
     const order={'見学済':0,'見学予定':1,'未見学':2};
     list.sort((a,b)=>order[a.visit]-order[b.visit]||a.name.localeCompare(b.name,'ja'));
   }else{
-    list.sort((a,b)=>DEFAULT_DATA.findIndex(x=>x.id===a.id)-DEFAULT_DATA.findIndex(x=>x.id===b.id));
+    list.sort((a,b)=>FALLBACK_DATA.findIndex(x=>x.id===a.id)-FALLBACK_DATA.findIndex(x=>x.id===b.id));
   }
   return list;
 }
@@ -355,7 +387,7 @@ function updateItem(id,patch,rerender=true){
   const item=state.find(x=>x.id===id);
   if(!item)return;
   Object.assign(item,patch);
-  saveState();
+  saveDraft();
   if(rerender)render();
   else renderDashboard();
 }
@@ -376,6 +408,11 @@ document.querySelectorAll('[data-sort]').forEach(btn=>{
     renderFacilities();
   });
 });
+document.getElementById('reloadBtn').addEventListener('click',()=>{
+  if(hasUnsavedChanges && !confirm('端末下書きを破棄してGitHub正本を再読込します。よろしいですか？')) return;
+  clearDraft();
+  loadCanonicalData();
+});
 document.getElementById('exportBtn').addEventListener('click',()=>{
   const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
   const url=URL.createObjectURL(blob);
@@ -384,6 +421,7 @@ document.getElementById('exportBtn').addEventListener('click',()=>{
   a.download='hokatsu-data.json';
   a.click();
   URL.revokeObjectURL(url);
+  setSyncStatus('正本更新用JSONを書き出しました。GitHubへ反映してください。','warning');
 });
 document.getElementById('importBtn').addEventListener('click',()=>document.getElementById('importFile').click());
 document.getElementById('importFile').addEventListener('change',async(e)=>{
@@ -392,11 +430,11 @@ document.getElementById('importFile').addEventListener('change',async(e)=>{
   try{
     const parsed=JSON.parse(await file.text());
     if(!Array.isArray(parsed))throw new Error('形式不正');
-    state=DEFAULT_DATA.map(base=>{
+    state=state.map(base=>{
       const found=parsed.find(x=>x.id===base.id);
       return found?{...base,...found}:base;
     });
-    saveState();render();
+    saveDraft();render();
     alert('データを読み込みました。');
   }catch(err){
     alert('JSONを読み込めませんでした。');
@@ -406,8 +444,8 @@ document.getElementById('importFile').addEventListener('change',async(e)=>{
 });
 document.getElementById('resetBtn').addEventListener('click',()=>{
   if(confirm('入力内容を初期値へ戻します。よろしいですか？')){
-    state=structuredClone(DEFAULT_DATA);
-    saveState();render();
+    clearDraft();
+    loadCanonicalData();
   }
 });
 document.getElementById('copyBtn').addEventListener('click',async()=>{
@@ -420,7 +458,7 @@ document.getElementById('copyBtn').addEventListener('click',async()=>{
     alert('コピーできませんでした。');
   }
 });
-render();
+loadCanonicalData();
 </script>
 </body>
 </html>
