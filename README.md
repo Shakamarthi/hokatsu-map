@@ -1,27 +1,31 @@
-# 保活管理システム v2.6
+# 保活管理システム v2.6.1
 
-## 今回の変更
+## 今回の修正
 
-- ヘッダーに現在のバージョンを表示
-- 更新履歴を折りたたみ表示
-- 「最新版を確認」ボタンを追加
-- ボタン押下時にキャッシュ回避用パラメータを自動付与して再読込
-- HTMLにキャッシュ抑制メタ情報を追加
+v2.4の画面が残り続けた原因となる旧Service Workerキャッシュを更新します。
 
-## GitHub更新対象
+- キャッシュ名を `hokatsu-map-v261` に更新
+- 旧キャッシュをactivate時に自動削除
+- `index.html` と `hokatsu-data.json` をネットワーク優先に変更
+- 新Service Workerを即時有効化
+- manifestを現行アプリ名へ更新
+- iPhoneホーム画面追加に必要なPWA設定を追加
 
-今回、必須で上書きするファイルは次の1つです。
+## GitHubへ上書きするファイル
+
+今回は次の3ファイルを必ず上書きしてください。
 
 - `index.html`
+- `sw.js`
+- `manifest.webmanifest`
 
-`hokatsu-data.json` はv2.5から変更していません。
-ZIPにはバックアップとして同梱しています。
+`hokatsu-data.json` は変更していません。
 
-## 公開URL
+## 反映後
 
-通常は以下の固定URLを使用できます。
+1. GitHub Pagesのデプロイ完了を待つ
+2. 次のURLをブラウザで開く  
+   https://shakamarthi.github.io/hokatsu-map/?upgrade=261
+3. 1回開いた後、必要ならホーム画面の旧アイコンを削除して再追加する
 
-https://shakamarthi.github.io/hokatsu-map/
-
-更新後に古い画面が表示される場合は、画面右上の「最新版を確認」を押してください。
-URLを手入力で変更する必要はありません。
+通常は新Service Workerが旧キャッシュを削除するため、ブラウザを変える必要はありません。
