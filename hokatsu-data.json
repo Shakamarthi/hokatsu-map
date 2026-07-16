@@ -28,6 +28,53 @@
         "0歳児の午睡チェック間隔",
         "実際の園庭利用頻度"
       ]
+    },
+    "officialUrl": "",
+    "officialUrlCheckedAt": "",
+    "quickFacts": {
+      "commute": {
+        "label": "要確認",
+        "minutes": null,
+        "mode": "徒歩"
+      },
+      "extendedCare": {
+        "available": true,
+        "infantAvailable": null,
+        "minimumAge": "",
+        "standardEnd": "",
+        "extendedEnd": "20:15",
+        "usageType": [],
+        "snack": null,
+        "dinner": null,
+        "note": "延長終了20:15。0歳児の利用条件は要確認。"
+      },
+      "subscription": {
+        "available": true,
+        "label": "用品あり",
+        "note": "おむつサブスク、紙エプロン・おしぼりの園用意について見学記録あり。"
+      },
+      "diaper": {
+        "subscription": true,
+        "disposalByNursery": null,
+        "label": "定額あり",
+        "note": "処分方法は要確認。"
+      },
+      "garden": {
+        "type": "専用園庭",
+        "note": ""
+      },
+      "admissionDifficulty": {
+        "level": "",
+        "label": "要確認",
+        "note": ""
+      }
+    },
+    "details": {
+      "hours": {},
+      "familyLoad": {},
+      "environment": {},
+      "childcare": {},
+      "digital": {}
     }
   },
   {
@@ -60,6 +107,53 @@
         "騒音が午睡へ与える影響",
         "実際の職員配置"
       ]
+    },
+    "officialUrl": "",
+    "officialUrlCheckedAt": "",
+    "quickFacts": {
+      "commute": {
+        "label": "要確認",
+        "minutes": null,
+        "mode": "徒歩"
+      },
+      "extendedCare": {
+        "available": null,
+        "infantAvailable": null,
+        "minimumAge": "",
+        "standardEnd": "",
+        "extendedEnd": "",
+        "usageType": [],
+        "snack": null,
+        "dinner": null,
+        "note": ""
+      },
+      "subscription": {
+        "available": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "diaper": {
+        "subscription": null,
+        "disposalByNursery": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "garden": {
+        "type": "要確認",
+        "note": ""
+      },
+      "admissionDifficulty": {
+        "level": "",
+        "label": "要確認",
+        "note": ""
+      }
+    },
+    "details": {
+      "hours": {},
+      "familyLoad": {},
+      "environment": {},
+      "childcare": {},
+      "digital": {}
     }
   },
   {
@@ -70,7 +164,54 @@
     "visit": "見学予定",
     "rating": 5,
     "rank": 2,
-    "memo": ""
+    "memo": "",
+    "officialUrl": "",
+    "officialUrlCheckedAt": "",
+    "quickFacts": {
+      "commute": {
+        "label": "要確認",
+        "minutes": null,
+        "mode": "徒歩"
+      },
+      "extendedCare": {
+        "available": null,
+        "infantAvailable": null,
+        "minimumAge": "",
+        "standardEnd": "",
+        "extendedEnd": "",
+        "usageType": [],
+        "snack": null,
+        "dinner": null,
+        "note": ""
+      },
+      "subscription": {
+        "available": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "diaper": {
+        "subscription": null,
+        "disposalByNursery": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "garden": {
+        "type": "要確認",
+        "note": ""
+      },
+      "admissionDifficulty": {
+        "level": "",
+        "label": "要確認",
+        "note": ""
+      }
+    },
+    "details": {
+      "hours": {},
+      "familyLoad": {},
+      "environment": {},
+      "childcare": {},
+      "digital": {}
+    }
   },
   {
     "id": "fukinoto",
@@ -102,6 +243,53 @@
         "雨天時の通園負荷",
         "クラス規模による個別対応"
       ]
+    },
+    "officialUrl": "",
+    "officialUrlCheckedAt": "",
+    "quickFacts": {
+      "commute": {
+        "label": "要確認",
+        "minutes": null,
+        "mode": "徒歩"
+      },
+      "extendedCare": {
+        "available": null,
+        "infantAvailable": null,
+        "minimumAge": "",
+        "standardEnd": "",
+        "extendedEnd": "",
+        "usageType": [],
+        "snack": null,
+        "dinner": null,
+        "note": ""
+      },
+      "subscription": {
+        "available": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "diaper": {
+        "subscription": null,
+        "disposalByNursery": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "garden": {
+        "type": "要確認",
+        "note": ""
+      },
+      "admissionDifficulty": {
+        "level": "",
+        "label": "要確認",
+        "note": ""
+      }
+    },
+    "details": {
+      "hours": {},
+      "familyLoad": {},
+      "environment": {},
+      "childcare": {},
+      "digital": {}
     }
   },
   {
@@ -133,6 +321,53 @@
         "0歳児募集枠と兄弟児見込み",
         "担当者不在時の引継ぎ"
       ]
+    },
+    "officialUrl": "",
+    "officialUrlCheckedAt": "",
+    "quickFacts": {
+      "commute": {
+        "label": "要確認",
+        "minutes": null,
+        "mode": "徒歩"
+      },
+      "extendedCare": {
+        "available": null,
+        "infantAvailable": null,
+        "minimumAge": "",
+        "standardEnd": "",
+        "extendedEnd": "",
+        "usageType": [],
+        "snack": null,
+        "dinner": null,
+        "note": ""
+      },
+      "subscription": {
+        "available": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "diaper": {
+        "subscription": null,
+        "disposalByNursery": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "garden": {
+        "type": "要確認",
+        "note": ""
+      },
+      "admissionDifficulty": {
+        "level": "",
+        "label": "要確認",
+        "note": ""
+      }
+    },
+    "details": {
+      "hours": {},
+      "familyLoad": {},
+      "environment": {},
+      "childcare": {},
+      "digital": {}
     }
   },
   {
@@ -165,6 +400,53 @@
         "発熱時の迎え猶予",
         "乳児クラスの保育方針"
       ]
+    },
+    "officialUrl": "",
+    "officialUrlCheckedAt": "",
+    "quickFacts": {
+      "commute": {
+        "label": "要確認",
+        "minutes": null,
+        "mode": "徒歩"
+      },
+      "extendedCare": {
+        "available": null,
+        "infantAvailable": null,
+        "minimumAge": "",
+        "standardEnd": "",
+        "extendedEnd": "",
+        "usageType": [],
+        "snack": null,
+        "dinner": null,
+        "note": ""
+      },
+      "subscription": {
+        "available": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "diaper": {
+        "subscription": null,
+        "disposalByNursery": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "garden": {
+        "type": "要確認",
+        "note": ""
+      },
+      "admissionDifficulty": {
+        "level": "",
+        "label": "要確認",
+        "note": ""
+      }
+    },
+    "details": {
+      "hours": {},
+      "familyLoad": {},
+      "environment": {},
+      "childcare": {},
+      "digital": {}
     }
   },
   {
@@ -197,6 +479,53 @@
         "宗教行事への家庭の納得感",
         "指定用品の年間費用"
       ]
+    },
+    "officialUrl": "",
+    "officialUrlCheckedAt": "",
+    "quickFacts": {
+      "commute": {
+        "label": "要確認",
+        "minutes": null,
+        "mode": "徒歩"
+      },
+      "extendedCare": {
+        "available": null,
+        "infantAvailable": null,
+        "minimumAge": "",
+        "standardEnd": "",
+        "extendedEnd": "",
+        "usageType": [],
+        "snack": null,
+        "dinner": null,
+        "note": ""
+      },
+      "subscription": {
+        "available": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "diaper": {
+        "subscription": null,
+        "disposalByNursery": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "garden": {
+        "type": "要確認",
+        "note": ""
+      },
+      "admissionDifficulty": {
+        "level": "",
+        "label": "要確認",
+        "note": ""
+      }
+    },
+    "details": {
+      "hours": {},
+      "familyLoad": {},
+      "environment": {},
+      "childcare": {},
+      "digital": {}
     }
   },
   {
@@ -207,7 +536,54 @@
     "visit": "未見学",
     "rating": 0,
     "rank": 0,
-    "memo": ""
+    "memo": "",
+    "officialUrl": "",
+    "officialUrlCheckedAt": "",
+    "quickFacts": {
+      "commute": {
+        "label": "要確認",
+        "minutes": null,
+        "mode": "徒歩"
+      },
+      "extendedCare": {
+        "available": null,
+        "infantAvailable": null,
+        "minimumAge": "",
+        "standardEnd": "",
+        "extendedEnd": "",
+        "usageType": [],
+        "snack": null,
+        "dinner": null,
+        "note": ""
+      },
+      "subscription": {
+        "available": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "diaper": {
+        "subscription": null,
+        "disposalByNursery": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "garden": {
+        "type": "要確認",
+        "note": ""
+      },
+      "admissionDifficulty": {
+        "level": "",
+        "label": "要確認",
+        "note": ""
+      }
+    },
+    "details": {
+      "hours": {},
+      "familyLoad": {},
+      "environment": {},
+      "childcare": {},
+      "digital": {}
+    }
   },
   {
     "id": "camellia-nishikasai",
@@ -217,7 +593,54 @@
     "visit": "見学予定",
     "rating": 0,
     "rank": 0,
-    "memo": ""
+    "memo": "",
+    "officialUrl": "",
+    "officialUrlCheckedAt": "",
+    "quickFacts": {
+      "commute": {
+        "label": "要確認",
+        "minutes": null,
+        "mode": "徒歩"
+      },
+      "extendedCare": {
+        "available": null,
+        "infantAvailable": null,
+        "minimumAge": "",
+        "standardEnd": "",
+        "extendedEnd": "",
+        "usageType": [],
+        "snack": null,
+        "dinner": null,
+        "note": ""
+      },
+      "subscription": {
+        "available": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "diaper": {
+        "subscription": null,
+        "disposalByNursery": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "garden": {
+        "type": "要確認",
+        "note": ""
+      },
+      "admissionDifficulty": {
+        "level": "",
+        "label": "要確認",
+        "note": ""
+      }
+    },
+    "details": {
+      "hours": {},
+      "familyLoad": {},
+      "environment": {},
+      "childcare": {},
+      "digital": {}
+    }
   },
   {
     "id": "orange-house-nishikasai",
@@ -227,7 +650,54 @@
     "visit": "見学予定",
     "rating": 0,
     "rank": 0,
-    "memo": ""
+    "memo": "",
+    "officialUrl": "",
+    "officialUrlCheckedAt": "",
+    "quickFacts": {
+      "commute": {
+        "label": "要確認",
+        "minutes": null,
+        "mode": "徒歩"
+      },
+      "extendedCare": {
+        "available": null,
+        "infantAvailable": null,
+        "minimumAge": "",
+        "standardEnd": "",
+        "extendedEnd": "",
+        "usageType": [],
+        "snack": null,
+        "dinner": null,
+        "note": ""
+      },
+      "subscription": {
+        "available": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "diaper": {
+        "subscription": null,
+        "disposalByNursery": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "garden": {
+        "type": "要確認",
+        "note": ""
+      },
+      "admissionDifficulty": {
+        "level": "",
+        "label": "要確認",
+        "note": ""
+      }
+    },
+    "details": {
+      "hours": {},
+      "familyLoad": {},
+      "environment": {},
+      "childcare": {},
+      "digital": {}
+    }
   },
   {
     "id": "puzzcle",
@@ -237,7 +707,54 @@
     "visit": "見学予定",
     "rating": 0,
     "rank": 0,
-    "memo": ""
+    "memo": "",
+    "officialUrl": "https://ness-corpo.co.jp/nursery/p_nishikasai/",
+    "officialUrlCheckedAt": "2026-07-16",
+    "quickFacts": {
+      "commute": {
+        "label": "要確認",
+        "minutes": null,
+        "mode": "徒歩"
+      },
+      "extendedCare": {
+        "available": null,
+        "infantAvailable": null,
+        "minimumAge": "",
+        "standardEnd": "",
+        "extendedEnd": "",
+        "usageType": [],
+        "snack": null,
+        "dinner": null,
+        "note": ""
+      },
+      "subscription": {
+        "available": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "diaper": {
+        "subscription": null,
+        "disposalByNursery": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "garden": {
+        "type": "要確認",
+        "note": ""
+      },
+      "admissionDifficulty": {
+        "level": "",
+        "label": "要確認",
+        "note": ""
+      }
+    },
+    "details": {
+      "hours": {},
+      "familyLoad": {},
+      "environment": {},
+      "childcare": {},
+      "digital": {}
+    }
   },
   {
     "id": "kirakira",
@@ -247,7 +764,54 @@
     "visit": "見学予定",
     "rating": 0,
     "rank": 0,
-    "memo": ""
+    "memo": "",
+    "officialUrl": "",
+    "officialUrlCheckedAt": "",
+    "quickFacts": {
+      "commute": {
+        "label": "要確認",
+        "minutes": null,
+        "mode": "徒歩"
+      },
+      "extendedCare": {
+        "available": null,
+        "infantAvailable": null,
+        "minimumAge": "",
+        "standardEnd": "",
+        "extendedEnd": "",
+        "usageType": [],
+        "snack": null,
+        "dinner": null,
+        "note": ""
+      },
+      "subscription": {
+        "available": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "diaper": {
+        "subscription": null,
+        "disposalByNursery": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "garden": {
+        "type": "要確認",
+        "note": ""
+      },
+      "admissionDifficulty": {
+        "level": "",
+        "label": "要確認",
+        "note": ""
+      }
+    },
+    "details": {
+      "hours": {},
+      "familyLoad": {},
+      "environment": {},
+      "childcare": {},
+      "digital": {}
+    }
   },
   {
     "id": "hoppel-nishikasai",
@@ -257,6 +821,53 @@
     "visit": "見学予定",
     "rating": 0,
     "rank": 0,
-    "memo": ""
+    "memo": "",
+    "officialUrl": "",
+    "officialUrlCheckedAt": "",
+    "quickFacts": {
+      "commute": {
+        "label": "要確認",
+        "minutes": null,
+        "mode": "徒歩"
+      },
+      "extendedCare": {
+        "available": null,
+        "infantAvailable": null,
+        "minimumAge": "",
+        "standardEnd": "",
+        "extendedEnd": "",
+        "usageType": [],
+        "snack": null,
+        "dinner": null,
+        "note": ""
+      },
+      "subscription": {
+        "available": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "diaper": {
+        "subscription": null,
+        "disposalByNursery": null,
+        "label": "要確認",
+        "note": ""
+      },
+      "garden": {
+        "type": "要確認",
+        "note": ""
+      },
+      "admissionDifficulty": {
+        "level": "",
+        "label": "要確認",
+        "note": ""
+      }
+    },
+    "details": {
+      "hours": {},
+      "familyLoad": {},
+      "environment": {},
+      "childcare": {},
+      "digital": {}
+    }
   }
 ]
