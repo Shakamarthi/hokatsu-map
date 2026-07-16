@@ -29,52 +29,74 @@
         "実際の園庭利用頻度"
       ]
     },
-    "officialUrl": "",
-    "officialUrlCheckedAt": "",
+    "officialUrl": "https://www.chitosek.or.jp/preschools/nishikasai",
+    "officialUrlCheckedAt": "2026-07-16",
     "quickFacts": {
       "commute": {
-        "label": "要確認",
-        "minutes": null,
-        "mode": "徒歩"
+        "label": "徒歩18分／自転車6分",
+        "minutes": 18,
+        "mode": "徒歩・自転車"
       },
       "extendedCare": {
         "available": true,
         "infantAvailable": null,
-        "minimumAge": "",
+        "minimumAge": "生後57日目",
         "standardEnd": "",
         "extendedEnd": "20:15",
         "usageType": [],
         "snack": null,
         "dinner": null,
-        "note": "延長終了20:15。0歳児の利用条件は要確認。"
+        "note": "延長終了20:15。0歳児の延長利用条件は園へ最終確認。"
       },
       "subscription": {
         "available": true,
-        "label": "用品あり",
-        "note": "おむつサブスク、紙エプロン・おしぼりの園用意について見学記録あり。"
+        "label": "用品定額あり",
+        "note": "おむつ・おしりふき・使い捨て食事エプロン・おしぼりの定期利用サービスを確認。"
       },
       "diaper": {
         "subscription": true,
         "disposalByNursery": null,
         "label": "定額あり",
-        "note": "処分方法は要確認。"
+        "note": "園での処分方法は最終確認。"
       },
       "garden": {
         "type": "専用園庭",
-        "note": ""
+        "note": "公式ページに屋外遊戯場115.52㎡の記載あり。"
       },
       "admissionDifficulty": {
-        "level": "",
-        "label": "要確認",
-        "note": ""
+        "level": "high",
+        "label": "高",
+        "note": "0歳定員6名、駅寄りの人気園。"
       }
     },
     "details": {
       "hours": {},
-      "familyLoad": {},
-      "environment": {},
-      "childcare": {},
-      "digital": {}
+      "familyLoad": {
+        "bedding": "0歳は寝具運用を園に確認",
+        "dailyItems": "用品定額サービスで負担を抑えやすい",
+        "stroller": "要確認"
+      },
+      "environment": {
+        "building": "2階建て園舎。乳児室・保育室・調理室等あり",
+        "security": "安全対策・情報共有は第三者評価で高評価",
+        "evacuation": "要確認"
+      },
+      "childcare": {
+        "mixedAge": "年齢別を基本に交流あり",
+        "outdoor": "専用園庭・荒川土手等",
+        "programs": "英語・リトミック・体操、食育、子ども主体の活動"
+      },
+      "digital": {
+        "contact": "ICT連絡あり（既存見学評価）。アプリ名は要確認",
+        "absence": "デジタル連絡可否は要確認",
+        "photos": "写真サービスあり（既存見学評価）",
+        "attendance": "登降園管理方式は要確認"
+      },
+      "sources": [
+        "公式HP",
+        "見学記録",
+        "保活戦略資料"
+      ]
     }
   },
   {
@@ -108,52 +130,77 @@
         "実際の職員配置"
       ]
     },
-    "officialUrl": "",
-    "officialUrlCheckedAt": "",
+    "officialUrl": "https://kids-lab.co.jp/nishikasaien/",
+    "officialUrlCheckedAt": "2026-07-16",
     "quickFacts": {
       "commute": {
-        "label": "要確認",
-        "minutes": null,
-        "mode": "徒歩"
+        "label": "徒歩12分／自転車4分",
+        "minutes": 12,
+        "mode": "徒歩・自転車"
       },
       "extendedCare": {
-        "available": null,
+        "available": true,
         "infantAvailable": null,
-        "minimumAge": "",
-        "standardEnd": "",
-        "extendedEnd": "",
-        "usageType": [],
-        "snack": null,
-        "dinner": null,
-        "note": ""
+        "minimumAge": "生後57日目",
+        "standardEnd": "18:30",
+        "extendedEnd": "19:30",
+        "usageType": [
+          "月極",
+          "スポット"
+        ],
+        "snack": true,
+        "dinner": false,
+        "note": "開園19:30。18:30以降は補食、夕食提供なし。0歳児の延長条件は最終確認。"
       },
       "subscription": {
         "available": null,
         "label": "要確認",
-        "note": ""
+        "note": "用品サブスクは資料上未確定。"
       },
       "diaper": {
         "subscription": null,
         "disposalByNursery": null,
         "label": "要確認",
-        "note": ""
+        "note": "おむつ運用は見学資料・重要事項説明書で再確認。"
       },
       "garden": {
-        "type": "要確認",
-        "note": ""
+        "type": "園庭あり",
+        "note": "公式FAQに日除け・ミストシャワー設置の記載あり。近隣公園も利用。"
       },
       "admissionDifficulty": {
-        "level": "",
-        "label": "要確認",
-        "note": ""
+        "level": "high",
+        "label": "高",
+        "note": "0歳6名、総定員36名の少人数園。"
       }
     },
     "details": {
       "hours": {},
-      "familyLoad": {},
-      "environment": {},
-      "childcare": {},
-      "digital": {}
+      "familyLoad": {
+        "bedding": "0歳は布団、1歳以上はコット",
+        "dailyItems": "要確認",
+        "stroller": "バギー預かり不可。抱っこ紐は預かり可"
+      },
+      "environment": {
+        "building": "ワンフロア、0～5歳各6名",
+        "security": "安心・安全の取組みあり",
+        "evacuation": "要確認"
+      },
+      "childcare": {
+        "mixedAge": "3～5歳は縦割り保育",
+        "outdoor": "園庭・近隣公園",
+        "programs": "少人数・家庭的保育、食育、すくわくプログラム"
+      },
+      "digital": {
+        "contact": "ICT連絡あり（既存見学評価）。具体機能は要確認",
+        "absence": "要確認",
+        "photos": "写真サービスあり（既存見学評価）",
+        "attendance": "要確認"
+      },
+      "sources": [
+        "公式HP・FAQ",
+        "見学記録",
+        "保活戦略資料"
+      ]
     }
   },
   {
@@ -165,52 +212,74 @@
     "rating": 5,
     "rank": 2,
     "memo": "",
-    "officialUrl": "",
-    "officialUrlCheckedAt": "",
+    "officialUrl": "https://kodomo.solasto-hoiku.com/nursery/konoe-seishincho/",
+    "officialUrlCheckedAt": "2026-07-16",
     "quickFacts": {
       "commute": {
-        "label": "要確認",
-        "minutes": null,
-        "mode": "徒歩"
+        "label": "徒歩9分／自転車3分",
+        "minutes": 9,
+        "mode": "徒歩・自転車"
       },
       "extendedCare": {
-        "available": null,
+        "available": true,
         "infantAvailable": null,
-        "minimumAge": "",
+        "minimumAge": "生後57日目",
         "standardEnd": "",
-        "extendedEnd": "",
+        "extendedEnd": "20:15",
         "usageType": [],
         "snack": null,
         "dinner": null,
-        "note": ""
+        "note": "延長終了20:15。0歳児の利用条件・補食等は見学時確認。"
       },
       "subscription": {
         "available": null,
         "label": "要確認",
-        "note": ""
+        "note": "用品サブスクは未確認。"
       },
       "diaper": {
         "subscription": null,
         "disposalByNursery": null,
         "label": "要確認",
-        "note": ""
+        "note": "おむつ運用は見学時確認。"
       },
       "garden": {
         "type": "要確認",
-        "note": ""
+        "note": "既存未確認項目に園庭・雨天導線が残っている。"
       },
       "admissionDifficulty": {
-        "level": "",
-        "label": "要確認",
-        "note": ""
+        "level": "high",
+        "label": "高",
+        "note": "0歳9名だが第一志望集中リスクあり。"
       }
     },
     "details": {
       "hours": {},
-      "familyLoad": {},
-      "environment": {},
-      "childcare": {},
-      "digital": {}
+      "familyLoad": {
+        "bedding": "要確認",
+        "dailyItems": "要確認",
+        "stroller": "要確認"
+      },
+      "environment": {
+        "building": "清新町内。導線負荷が最小",
+        "security": "人権擁護・安全改善の組織的取組みあり",
+        "evacuation": "要確認"
+      },
+      "childcare": {
+        "mixedAge": "要確認",
+        "outdoor": "園庭・雨天時運用は見学時確認",
+        "programs": "『3つの時間』を軸にした子ども主体の保育"
+      },
+      "digital": {
+        "contact": "ICT連絡あり（既存評価）。具体機能は要確認",
+        "absence": "要確認",
+        "photos": "写真サービスあり（既存評価）",
+        "attendance": "要確認"
+      },
+      "sources": [
+        "公式HP",
+        "第三者評価",
+        "保活戦略資料"
+      ]
     }
   },
   {
@@ -244,52 +313,74 @@
         "クラス規模による個別対応"
       ]
     },
-    "officialUrl": "",
-    "officialUrlCheckedAt": "",
+    "officialUrl": "https://www.fukinoto.ed.jp/",
+    "officialUrlCheckedAt": "2026-07-16",
     "quickFacts": {
       "commute": {
-        "label": "要確認",
-        "minutes": null,
-        "mode": "徒歩"
+        "label": "徒歩24分／自転車8分",
+        "minutes": 24,
+        "mode": "徒歩・自転車"
       },
       "extendedCare": {
-        "available": null,
+        "available": true,
         "infantAvailable": null,
-        "minimumAge": "",
+        "minimumAge": "生後57日目",
         "standardEnd": "",
-        "extendedEnd": "",
+        "extendedEnd": "19:15",
         "usageType": [],
         "snack": null,
         "dinner": null,
-        "note": ""
+        "note": "延長終了19:15。0歳児の延長条件は要最終確認。"
       },
       "subscription": {
         "available": null,
         "label": "要確認",
-        "note": ""
+        "note": "サブスクの有無は未確認。"
       },
       "diaper": {
         "subscription": null,
-        "disposalByNursery": null,
-        "label": "要確認",
-        "note": ""
+        "disposalByNursery": true,
+        "label": "園処分あり",
+        "note": "見学評価でおむつ処理を確認。定額制の有無は要確認。"
       },
       "garden": {
-        "type": "要確認",
-        "note": ""
+        "type": "園庭あり",
+        "note": "見学評価で園庭・のびのびした外遊び環境を確認。"
       },
       "admissionDifficulty": {
-        "level": "",
-        "label": "要確認",
-        "note": ""
+        "level": "medium-high",
+        "label": "中～高",
+        "note": "0歳9名だが中葛西需要あり。"
       }
     },
     "details": {
       "hours": {},
-      "familyLoad": {},
-      "environment": {},
-      "childcare": {},
-      "digital": {}
+      "familyLoad": {
+        "bedding": "要確認",
+        "dailyItems": "要確認",
+        "stroller": "利用可否は要確認"
+      },
+      "environment": {
+        "building": "比較的規模のある園",
+        "security": "安全対策の具体運用は追加確認",
+        "evacuation": "要確認"
+      },
+      "childcare": {
+        "mixedAge": "交流あり",
+        "outdoor": "園庭・外遊び重視",
+        "programs": "生活リズム、食育、のびのびした保育"
+      },
+      "digital": {
+        "contact": "ICT連絡あり（既存見学評価）。具体機能は要確認",
+        "absence": "要確認",
+        "photos": "写真販売あり（既存見学評価）",
+        "attendance": "要確認"
+      },
+      "sources": [
+        "公式HP",
+        "見学記録",
+        "第三者評価"
+      ]
     }
   },
   {
@@ -322,52 +413,74 @@
         "担当者不在時の引継ぎ"
       ]
     },
-    "officialUrl": "",
-    "officialUrlCheckedAt": "",
+    "officialUrl": "https://hoppel-land.com/introduces/177-2/",
+    "officialUrlCheckedAt": "2026-07-16",
     "quickFacts": {
       "commute": {
-        "label": "要確認",
-        "minutes": null,
-        "mode": "徒歩"
+        "label": "徒歩30分／自転車10分",
+        "minutes": 30,
+        "mode": "徒歩・自転車"
       },
       "extendedCare": {
-        "available": null,
+        "available": true,
         "infantAvailable": null,
-        "minimumAge": "",
+        "minimumAge": "生後57日目",
         "standardEnd": "",
-        "extendedEnd": "",
+        "extendedEnd": "20:15",
         "usageType": [],
         "snack": null,
         "dinner": null,
-        "note": ""
+        "note": "延長終了20:15。0歳児の延長条件は要最終確認。"
       },
       "subscription": {
-        "available": null,
-        "label": "要確認",
-        "note": ""
+        "available": true,
+        "label": "用品サービスあり",
+        "note": "見学評価で保護者負担軽減の用品運用を確認。内容は要最終確認。"
       },
       "diaper": {
-        "subscription": null,
-        "disposalByNursery": null,
-        "label": "要確認",
-        "note": ""
+        "subscription": true,
+        "disposalByNursery": true,
+        "label": "定額・園処分",
+        "note": "見学評価に基づく。料金等は要確認。"
       },
       "garden": {
-        "type": "要確認",
-        "note": ""
+        "type": "近隣公園中心",
+        "note": "専用園庭の形態は限定的。外遊びは近隣公園利用を含む。"
       },
       "admissionDifficulty": {
-        "level": "",
-        "label": "要確認",
-        "note": ""
+        "level": "medium-high",
+        "label": "中～高",
+        "note": "0歳9名だが中葛西広域需要あり。"
       }
     },
     "details": {
       "hours": {},
-      "familyLoad": {},
-      "environment": {},
-      "childcare": {},
-      "digital": {}
+      "familyLoad": {
+        "bedding": "コット等の運用あり。詳細要確認",
+        "dailyItems": "比較的少なめ",
+        "stroller": "要確認"
+      },
+      "environment": {
+        "building": "乳児担当制を重視",
+        "security": "要確認",
+        "evacuation": "要確認"
+      },
+      "childcare": {
+        "mixedAge": "年齢別を基本",
+        "outdoor": "近隣公園を活用",
+        "programs": "乳児担当制、食育、子どもの自主性を重視"
+      },
+      "digital": {
+        "contact": "ICT連絡あり（既存見学評価）。具体機能は要確認",
+        "absence": "要確認",
+        "photos": "写真販売あり（既存見学評価）",
+        "attendance": "要確認"
+      },
+      "sources": [
+        "公式HP",
+        "見学記録",
+        "第三者評価"
+      ]
     }
   },
   {
@@ -401,52 +514,74 @@
         "乳児クラスの保育方針"
       ]
     },
-    "officialUrl": "",
-    "officialUrlCheckedAt": "",
+    "officialUrl": "https://www.gkids.co.jp/facilities/nursery_166.html",
+    "officialUrlCheckedAt": "2026-07-16",
     "quickFacts": {
       "commute": {
-        "label": "要確認",
-        "minutes": null,
-        "mode": "徒歩"
+        "label": "徒歩24分／自転車8分",
+        "minutes": 24,
+        "mode": "徒歩・自転車"
       },
       "extendedCare": {
-        "available": null,
+        "available": true,
         "infantAvailable": null,
-        "minimumAge": "",
+        "minimumAge": "生後57日目",
         "standardEnd": "",
-        "extendedEnd": "",
+        "extendedEnd": "20:30",
         "usageType": [],
         "snack": null,
         "dinner": null,
-        "note": ""
+        "note": "延長終了20:30。0歳児の延長条件は要最終確認。"
       },
       "subscription": {
         "available": null,
         "label": "要確認",
-        "note": ""
+        "note": "用品サブスクは未確認。"
       },
       "diaper": {
         "subscription": null,
-        "disposalByNursery": null,
-        "label": "要確認",
-        "note": ""
+        "disposalByNursery": true,
+        "label": "園処分あり",
+        "note": "見学評価で園処分を確認。定額制は要確認。"
       },
       "garden": {
-        "type": "要確認",
-        "note": ""
+        "type": "園庭・外遊びあり",
+        "note": "専用園庭の規模・利用頻度は要確認。"
       },
       "admissionDifficulty": {
-        "level": "",
-        "label": "要確認",
-        "note": ""
+        "level": "medium",
+        "label": "中",
+        "note": "0歳6名、北葛西・宇喜田需要あり。"
       }
     },
     "details": {
       "hours": {},
-      "familyLoad": {},
-      "environment": {},
-      "childcare": {},
-      "digital": {}
+      "familyLoad": {
+        "bedding": "要確認",
+        "dailyItems": "要確認",
+        "stroller": "要確認"
+      },
+      "environment": {
+        "building": "クラス別保育室",
+        "security": "法人標準の安全運用",
+        "evacuation": "要確認"
+      },
+      "childcare": {
+        "mixedAge": "交流あり",
+        "outdoor": "外遊びあり",
+        "programs": "食育、子どもの主体性を重視"
+      },
+      "digital": {
+        "contact": "ICT連絡あり（見学評価）。具体機能は要確認",
+        "absence": "要確認",
+        "photos": "写真販売あり（既存見学評価）",
+        "attendance": "要確認"
+      },
+      "sources": [
+        "公式HP",
+        "見学記録",
+        "第三者評価"
+      ]
     }
   },
   {
@@ -480,52 +615,74 @@
         "指定用品の年間費用"
       ]
     },
-    "officialUrl": "",
-    "officialUrlCheckedAt": "",
+    "officialUrl": "https://www.shirayuri-creche.ed.jp/",
+    "officialUrlCheckedAt": "2026-07-16",
     "quickFacts": {
       "commute": {
-        "label": "要確認",
-        "minutes": null,
-        "mode": "徒歩"
+        "label": "徒歩25分／自転車8分",
+        "minutes": 25,
+        "mode": "徒歩・自転車"
       },
       "extendedCare": {
-        "available": null,
-        "infantAvailable": null,
-        "minimumAge": "",
+        "available": false,
+        "infantAvailable": false,
+        "minimumAge": "6か月目",
         "standardEnd": "",
-        "extendedEnd": "",
+        "extendedEnd": "18:30",
         "usageType": [],
         "snack": null,
         "dinner": null,
-        "note": ""
+        "note": "資料上は延長保育なし。18:30まで。最新運用は園へ確認。"
       },
       "subscription": {
-        "available": null,
-        "label": "要確認",
-        "note": ""
+        "available": false,
+        "label": "なし／限定的",
+        "note": "既存見学評価では用品サブスクなし。"
       },
       "diaper": {
         "subscription": null,
         "disposalByNursery": null,
-        "label": "要確認",
-        "note": ""
+        "label": "持参中心",
+        "note": "処分・持ち帰り条件は要確認。"
       },
       "garden": {
-        "type": "要確認",
-        "note": ""
+        "type": "園庭あり",
+        "note": "見学評価で園庭を確認。"
       },
       "admissionDifficulty": {
-        "level": "",
-        "label": "要確認",
-        "note": ""
+        "level": "medium",
+        "label": "中",
+        "note": "0歳6名、開始月齢6か月目。"
       }
     },
     "details": {
       "hours": {},
-      "familyLoad": {},
-      "environment": {},
-      "childcare": {},
-      "digital": {}
+      "familyLoad": {
+        "bedding": "要確認",
+        "dailyItems": "持ち物負担はやや多め",
+        "stroller": "要確認"
+      },
+      "environment": {
+        "building": "地域に根ざした園",
+        "security": "清潔さ・病気けが対応が高評価",
+        "evacuation": "要確認"
+      },
+      "childcare": {
+        "mixedAge": "異年齢交流あり",
+        "outdoor": "園庭利用あり",
+        "programs": "地域型、生活を重視した保育"
+      },
+      "digital": {
+        "contact": "ICTは一部対応／運用詳細要確認",
+        "absence": "要確認",
+        "photos": "写真販売あり（既存評価）",
+        "attendance": "要確認"
+      },
+      "sources": [
+        "公式HP",
+        "見学記録",
+        "第三者評価"
+      ]
     }
   },
   {
@@ -537,24 +694,24 @@
     "rating": 0,
     "rank": 0,
     "memo": "",
-    "officialUrl": "",
-    "officialUrlCheckedAt": "",
+    "officialUrl": "https://www.hybridmom.co.jp/hybridmom/HybridMom_Seishincho/",
+    "officialUrlCheckedAt": "2026-07-16",
     "quickFacts": {
       "commute": {
-        "label": "要確認",
-        "minutes": null,
-        "mode": "徒歩"
+        "label": "徒歩6分／自転車2分",
+        "minutes": 6,
+        "mode": "徒歩・自転車"
       },
       "extendedCare": {
-        "available": null,
-        "infantAvailable": null,
-        "minimumAge": "",
+        "available": true,
+        "infantAvailable": true,
+        "minimumAge": "0歳",
         "standardEnd": "",
-        "extendedEnd": "",
+        "extendedEnd": "20:30",
         "usageType": [],
         "snack": null,
         "dinner": null,
-        "note": ""
+        "note": "0歳受入、20:30まで。利用条件は契約時確認。"
       },
       "subscription": {
         "available": null,
@@ -572,9 +729,9 @@
         "note": ""
       },
       "admissionDifficulty": {
-        "level": "",
-        "label": "要確認",
-        "note": ""
+        "level": "bcp",
+        "label": "BCP-S",
+        "note": "清新町内の認可外BCP最重要候補。"
       }
     },
     "details": {
@@ -582,7 +739,8 @@
       "familyLoad": {},
       "environment": {},
       "childcare": {},
-      "digital": {}
+      "digital": {},
+      "sources": []
     }
   },
   {
@@ -594,24 +752,24 @@
     "rating": 0,
     "rank": 0,
     "memo": "",
-    "officialUrl": "",
-    "officialUrlCheckedAt": "",
+    "officialUrl": "https://camellia-kids.jp/facility/249/",
+    "officialUrlCheckedAt": "2026-07-16",
     "quickFacts": {
       "commute": {
-        "label": "要確認",
-        "minutes": null,
-        "mode": "徒歩"
+        "label": "徒歩17分／自転車6分",
+        "minutes": 17,
+        "mode": "徒歩・自転車"
       },
       "extendedCare": {
         "available": null,
         "infantAvailable": null,
-        "minimumAge": "",
+        "minimumAge": "0～2歳",
         "standardEnd": "",
         "extendedEnd": "",
         "usageType": [],
         "snack": null,
         "dinner": null,
-        "note": ""
+        "note": "開所・延長時間は公式ページで最終確認。"
       },
       "subscription": {
         "available": null,
@@ -629,9 +787,9 @@
         "note": ""
       },
       "admissionDifficulty": {
-        "level": "",
-        "label": "要確認",
-        "note": ""
+        "level": "bcp",
+        "label": "BCP-S",
+        "note": "西葛西駅近。"
       }
     },
     "details": {
@@ -639,7 +797,8 @@
       "familyLoad": {},
       "environment": {},
       "childcare": {},
-      "digital": {}
+      "digital": {},
+      "sources": []
     }
   },
   {
@@ -651,24 +810,24 @@
     "rating": 0,
     "rank": 0,
     "memo": "",
-    "officialUrl": "",
-    "officialUrlCheckedAt": "",
+    "officialUrl": "https://orangebaby.org/what-we-can-do/feature/h-nishikasai/",
+    "officialUrlCheckedAt": "2026-07-16",
     "quickFacts": {
       "commute": {
-        "label": "要確認",
-        "minutes": null,
-        "mode": "徒歩"
+        "label": "徒歩18分／自転車6分",
+        "minutes": 18,
+        "mode": "徒歩・自転車"
       },
       "extendedCare": {
-        "available": null,
-        "infantAvailable": null,
-        "minimumAge": "",
+        "available": true,
+        "infantAvailable": true,
+        "minimumAge": "生後57日から",
         "standardEnd": "",
-        "extendedEnd": "",
+        "extendedEnd": "19:30",
         "usageType": [],
         "snack": null,
         "dinner": null,
-        "note": ""
+        "note": "生後57日から、19:30まで。"
       },
       "subscription": {
         "available": null,
@@ -686,9 +845,9 @@
         "note": ""
       },
       "admissionDifficulty": {
-        "level": "",
-        "label": "要確認",
-        "note": ""
+        "level": "bcp",
+        "label": "BCP-A",
+        "note": "小規模・制度区分は最終確認。"
       }
     },
     "details": {
@@ -696,7 +855,8 @@
       "familyLoad": {},
       "environment": {},
       "childcare": {},
-      "digital": {}
+      "digital": {},
+      "sources": []
     }
   },
   {
@@ -743,9 +903,9 @@
         "note": ""
       },
       "admissionDifficulty": {
-        "level": "",
-        "label": "要確認",
-        "note": ""
+        "level": "bcp",
+        "label": "BCP候補",
+        "note": "公式ページ直リンクを登録。"
       }
     },
     "details": {
@@ -753,7 +913,8 @@
       "familyLoad": {},
       "environment": {},
       "childcare": {},
-      "digital": {}
+      "digital": {},
+      "sources": []
     }
   },
   {
@@ -800,9 +961,9 @@
         "note": ""
       },
       "admissionDifficulty": {
-        "level": "",
-        "label": "要確認",
-        "note": ""
+        "level": "bcp",
+        "label": "BCP候補",
+        "note": "公式ページURLは未登録。検索リンクは表示しない。"
       }
     },
     "details": {
@@ -810,7 +971,8 @@
       "familyLoad": {},
       "environment": {},
       "childcare": {},
-      "digital": {}
+      "digital": {},
+      "sources": []
     }
   },
   {
@@ -857,9 +1019,9 @@
         "note": ""
       },
       "admissionDifficulty": {
-        "level": "",
-        "label": "要確認",
-        "note": ""
+        "level": "small",
+        "label": "小規模候補",
+        "note": "住所は確認済み。公式施設ページは未登録。"
       }
     },
     "details": {
@@ -867,7 +1029,8 @@
       "familyLoad": {},
       "environment": {},
       "childcare": {},
-      "digital": {}
+      "digital": {},
+      "sources": []
     }
   }
 ]
