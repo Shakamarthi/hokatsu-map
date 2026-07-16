@@ -34,11 +34,14 @@
     "quickFacts": {
       "commute": {
         "label": "徒歩9分｜自転車3分",
+        "distanceMeters": 404,
+        "distanceLabel": "404m",
         "walkMinutes": 9,
         "bikeMinutes": 3,
         "mode": "徒歩・自転車",
-        "basis": "Googleマップ実測",
-        "originStored": true
+        "basis": "ユーザー確認済み経路時間",
+        "confirmed": true,
+        "originStored": false
       },
       "extendedCare": {
         "available": true,
@@ -138,11 +141,14 @@
     "quickFacts": {
       "commute": {
         "label": "徒歩11分｜自転車3分",
+        "distanceMeters": 598,
+        "distanceLabel": "598m",
         "walkMinutes": 11,
         "bikeMinutes": 3,
         "mode": "徒歩・自転車",
-        "basis": "Googleマップ実測",
-        "originStored": true
+        "basis": "ユーザー確認済み経路時間",
+        "confirmed": true,
+        "originStored": false
       },
       "extendedCare": {
         "available": true,
@@ -223,11 +229,14 @@
     "quickFacts": {
       "commute": {
         "label": "徒歩11分｜自転車3分",
+        "distanceMeters": 636,
+        "distanceLabel": "636m",
         "walkMinutes": 11,
         "bikeMinutes": 3,
         "mode": "徒歩・自転車",
-        "basis": "Googleマップ実測",
-        "originStored": true
+        "basis": "ユーザー確認済み経路時間",
+        "confirmed": true,
+        "originStored": false
       },
       "extendedCare": {
         "available": true,
@@ -327,11 +336,14 @@
     "quickFacts": {
       "commute": {
         "label": "徒歩16分｜自転車6分",
+        "distanceMeters": 933,
+        "distanceLabel": "933m",
         "walkMinutes": 16,
         "bikeMinutes": 6,
         "mode": "徒歩・自転車",
-        "basis": "Googleマップ実測",
-        "originStored": true
+        "basis": "ユーザー確認済み経路時間",
+        "confirmed": true,
+        "originStored": false
       },
       "extendedCare": {
         "available": true,
@@ -430,11 +442,14 @@
     "quickFacts": {
       "commute": {
         "label": "徒歩26分｜自転車9分",
+        "distanceMeters": 1351,
+        "distanceLabel": "1.35km",
         "walkMinutes": 26,
         "bikeMinutes": 9,
         "mode": "徒歩・自転車",
-        "basis": "Googleマップ実測",
-        "originStored": true
+        "basis": "ユーザー確認済み経路時間",
+        "confirmed": true,
+        "originStored": false
       },
       "extendedCare": {
         "available": true,
@@ -534,11 +549,14 @@
     "quickFacts": {
       "commute": {
         "label": "徒歩27分｜自転車9分",
+        "distanceMeters": 1611,
+        "distanceLabel": "1.61km",
         "walkMinutes": 27,
         "bikeMinutes": 9,
         "mode": "徒歩・自転車",
-        "basis": "Googleマップ実測",
-        "originStored": true
+        "basis": "ユーザー確認済み経路時間",
+        "confirmed": true,
+        "originStored": false
       },
       "extendedCare": {
         "available": true,
@@ -638,11 +656,14 @@
     "quickFacts": {
       "commute": {
         "label": "徒歩23分｜自転車8分",
+        "distanceMeters": 1335,
+        "distanceLabel": "1.33km",
         "walkMinutes": 23,
         "bikeMinutes": 8,
         "mode": "徒歩・自転車",
-        "basis": "Googleマップ実測",
-        "originStored": true
+        "basis": "ユーザー確認済み経路時間",
+        "confirmed": true,
+        "originStored": false
       },
       "extendedCare": {
         "available": false,
@@ -720,11 +741,14 @@
     "quickFacts": {
       "commute": {
         "label": "徒歩9分｜自転車2分",
+        "distanceMeters": 580,
+        "distanceLabel": "580m",
         "walkMinutes": 9,
         "bikeMinutes": 2,
         "mode": "徒歩・自転車",
-        "basis": "Googleマップ実測",
-        "originStored": true
+        "basis": "ユーザー確認済み経路時間",
+        "confirmed": true,
+        "originStored": false
       },
       "extendedCare": {
         "available": true,
@@ -781,11 +805,14 @@
     "quickFacts": {
       "commute": {
         "label": "徒歩8分｜自転車3分",
+        "distanceMeters": 381,
+        "distanceLabel": "381m",
         "walkMinutes": 8,
         "bikeMinutes": 3,
         "mode": "徒歩・自転車",
-        "basis": "Googleマップ実測",
-        "originStored": true
+        "basis": "ユーザー確認済み経路時間",
+        "confirmed": true,
+        "originStored": false
       },
       "extendedCare": {
         "available": null,
@@ -842,11 +869,14 @@
     "quickFacts": {
       "commute": {
         "label": "徒歩16分｜自転車5分",
+        "distanceMeters": 750,
+        "distanceLabel": "750m",
         "walkMinutes": 16,
         "bikeMinutes": 5,
         "mode": "徒歩・自転車",
-        "basis": "Googleマップ実測",
-        "originStored": true
+        "basis": "ユーザー確認済み経路時間",
+        "confirmed": true,
+        "originStored": false
       },
       "extendedCare": {
         "available": true,
@@ -903,11 +933,14 @@
     "quickFacts": {
       "commute": {
         "label": "徒歩10分｜自転車3分",
+        "distanceMeters": 485,
+        "distanceLabel": "485m",
         "walkMinutes": 10,
         "bikeMinutes": 3,
         "mode": "徒歩・自転車",
-        "basis": "Googleマップ実測",
-        "originStored": true
+        "basis": "ユーザー確認済み経路時間",
+        "confirmed": true,
+        "originStored": false
       },
       "extendedCare": {
         "available": null,
@@ -964,11 +997,14 @@
     "quickFacts": {
       "commute": {
         "label": "徒歩8分｜自転車3分",
+        "distanceMeters": 425,
+        "distanceLabel": "425m",
         "walkMinutes": 8,
         "bikeMinutes": 3,
         "mode": "徒歩・自転車",
-        "basis": "Googleマップ実測",
-        "originStored": true
+        "basis": "ユーザー確認済み経路時間",
+        "confirmed": true,
+        "originStored": false
       },
       "extendedCare": {
         "available": null,
@@ -1025,11 +1061,14 @@
     "quickFacts": {
       "commute": {
         "label": "徒歩10分｜自転車3分",
+        "distanceMeters": 749,
+        "distanceLabel": "749m",
         "walkMinutes": 10,
         "bikeMinutes": 3,
         "mode": "徒歩・自転車",
-        "basis": "Googleマップ実測",
-        "originStored": true
+        "basis": "ユーザー確認済み経路時間",
+        "confirmed": true,
+        "originStored": false
       },
       "extendedCare": {
         "available": null,
