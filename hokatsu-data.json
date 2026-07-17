@@ -1,37 +1,19 @@
-[
-  {
-    "id": "nishikasai-chitose",
-    "name": "西葛西ちとせ保育園",
-    "address": "東京都江戸川区西葛西2丁目17番15号",
-    "category": "認可",
-    "visit": "見学済",
-    "rating": 5,
-    "rank": 1,
-    "memo": "本命候補",
-    "evaluationDetails": {
-      "summary": "通園利便性、延長保育、保護者負担の軽さが高水準でまとまった総合型。家庭運用との適合性が高い本命候補。",
-      "strengths": [
-        "自宅から比較的近く、毎日の送迎負荷を抑えやすい",
-        "20:15までの延長保育があり、復職後の運用余力が大きい",
-        "おむつサブスク、紙エプロン・おしぼりの園用意など持ち物負担が軽い",
-        "乳児の月齢・睡眠・離乳食の個別リズムを尊重",
-        "園庭と比較的広い乳児室があり、理念と運用の整合性が高い"
-      ],
-      "concerns": [
-        "0歳児定員6名で、西葛西駅圏の人気園として競争が厳しい",
-        "職員の勤続年数・離職率の詳細は未確認",
-        "午睡チェックの具体的な時間間隔は追加確認が必要"
-      ],
-      "operations": "朝は荷物と子どもを預けるだけの運用に近く、共働き家庭の継続性を高く評価。延長保育と持ち物負担の軽さが大きい。",
-      "checkPoints": [
-        "職員定着率",
-        "0歳児の午睡チェック間隔",
-        "実際の園庭利用頻度"
-      ]
-    },
-    "officialUrl": "https://www.chitosek.or.jp/preschools/nishikasai",
-    "officialUrlCheckedAt": "2026-07-16",
-    "quickFacts": {
+{
+  "schemaVersion": "2.7",
+  "lastUpdatedAt": "2026-07-17",
+  "nurseries": [
+    {
+      "id": "nishikasai-chitose",
+      "basic": {
+        "name": "西葛西ちとせ保育園",
+        "address": "東京都江戸川区西葛西2丁目17番15号",
+        "category": "認可"
+      },
+      "official": {
+        "url": "https://www.chitosek.or.jp/preschools/nishikasai",
+        "siteType": "園公式",
+        "checkedAt": "2026-07-16"
+      },
       "commute": {
         "label": "徒歩9分｜自転車3分",
         "distanceMeters": 404,
@@ -43,103 +25,118 @@
         "confirmed": true,
         "originStored": false
       },
-      "extendedCare": {
-        "available": true,
-        "infantAvailable": null,
-        "minimumAge": "生後57日目",
-        "standardEnd": "",
-        "extendedEnd": "20:15",
-        "usageType": [],
-        "snack": null,
-        "dinner": null,
-        "note": "延長終了20:15。0歳児の延長利用条件は園へ最終確認。"
+      "services": {
+        "extendedCare": {
+          "available": true,
+          "infantAvailable": null,
+          "minimumAge": "生後57日目",
+          "standardEnd": null,
+          "extendedEnd": "20:15",
+          "usageType": [],
+          "snack": null,
+          "dinner": null,
+          "note": "延長終了20:15。0歳児の延長利用条件は園へ最終確認。"
+        },
+        "subscription": {
+          "available": true,
+          "label": "用品定額あり",
+          "note": "おむつ・おしりふき・使い捨て食事エプロン・おしぼりの定期利用サービスを確認。"
+        },
+        "diaper": {
+          "subscription": true,
+          "disposalByNursery": null,
+          "label": "定額あり",
+          "note": "園での処分方法は最終確認。"
+        },
+        "garden": {
+          "type": "専用園庭",
+          "note": "公式ページに屋外遊戯場115.52㎡の記載あり。"
+        },
+        "digital": {
+          "contact": "ICT連絡あり（既存見学評価）。アプリ名は要確認",
+          "absence": "デジタル連絡可否は要確認",
+          "photos": "写真サービスあり（既存見学評価）",
+          "attendance": "登降園管理方式は要確認"
+        }
       },
-      "subscription": {
-        "available": true,
-        "label": "用品定額あり",
-        "note": "おむつ・おしりふき・使い捨て食事エプロン・おしぼりの定期利用サービスを確認。"
-      },
-      "diaper": {
-        "subscription": true,
-        "disposalByNursery": null,
-        "label": "定額あり",
-        "note": "園での処分方法は最終確認。"
-      },
-      "garden": {
-        "type": "専用園庭",
-        "note": "公式ページに屋外遊戯場115.52㎡の記載あり。"
+      "operations": {
+        "familyLoad": {
+          "bedding": "0歳は寝具運用を園に確認",
+          "dailyItems": "用品定額サービスで負担を抑えやすい",
+          "stroller": null
+        },
+        "environment": {
+          "building": "2階建て園舎。乳児室・保育室・調理室等あり",
+          "security": "安全対策・情報共有は第三者評価で高評価",
+          "evacuation": null
+        },
+        "childcare": {
+          "mixedAge": "年齢別を基本に交流あり",
+          "outdoor": "専用園庭・荒川土手等",
+          "programs": "英語・リトミック・体操、食育、子ども主体の活動"
+        }
       },
       "admissionDifficulty": {
         "level": "high",
         "label": "高",
         "note": "0歳定員6名、駅寄りの人気園。"
+      },
+      "evaluation": {
+        "visit": "見学済",
+        "rating": 5,
+        "rank": 1,
+        "memo": "本命候補",
+        "details": {
+          "summary": "通園利便性、延長保育、保護者負担の軽さが高水準でまとまった総合型。家庭運用との適合性が高い本命候補。",
+          "strengths": [
+            "自宅から比較的近く、毎日の送迎負荷を抑えやすい",
+            "20:15までの延長保育があり、復職後の運用余力が大きい",
+            "おむつサブスク、紙エプロン・おしぼりの園用意など持ち物負担が軽い",
+            "乳児の月齢・睡眠・離乳食の個別リズムを尊重",
+            "園庭と比較的広い乳児室があり、理念と運用の整合性が高い"
+          ],
+          "concerns": [
+            "0歳児定員6名で、西葛西駅圏の人気園として競争が厳しい",
+            "職員の勤続年数・離職率の詳細は未確認",
+            "午睡チェックの具体的な時間間隔は追加確認が必要"
+          ],
+          "operations": "朝は荷物と子どもを預けるだけの運用に近く、共働き家庭の継続性を高く評価。延長保育と持ち物負担の軽さが大きい。",
+          "checkPoints": [
+            "職員定着率",
+            "0歳児の午睡チェック間隔",
+            "実際の園庭利用頻度"
+          ]
+        }
+      },
+      "dataQuality": {
+        "lastReviewedAt": "2026-07-17",
+        "sources": [
+          "公式HP",
+          "見学記録",
+          "保活戦略資料"
+        ],
+        "unresolved": [
+          "延長保育・0歳利用可否",
+          "延長保育・通常保育終了",
+          "おむつ園処分",
+          "ベビーカー置場",
+          "避難先"
+        ],
+        "completenessPercent": 62
       }
     },
-    "details": {
-      "hours": {},
-      "familyLoad": {
-        "bedding": "0歳は寝具運用を園に確認",
-        "dailyItems": "用品定額サービスで負担を抑えやすい",
-        "stroller": "要確認"
+    {
+      "id": "kidslab-nishikasai",
+      "basic": {
+        "name": "キッズラボ西葛西園",
+        "address": "東京都江戸川区西葛西8丁目4番13号 1F",
+        "category": "認可"
       },
-      "environment": {
-        "building": "2階建て園舎。乳児室・保育室・調理室等あり",
-        "security": "安全対策・情報共有は第三者評価で高評価",
-        "evacuation": "要確認"
+      "official": {
+        "url": "https://kids-lab.co.jp/nishikasaien/",
+        "siteType": "園公式",
+        "checkedAt": "2026-07-16"
       },
-      "childcare": {
-        "mixedAge": "年齢別を基本に交流あり",
-        "outdoor": "専用園庭・荒川土手等",
-        "programs": "英語・リトミック・体操、食育、子ども主体の活動"
-      },
-      "digital": {
-        "contact": "ICT連絡あり（既存見学評価）。アプリ名は要確認",
-        "absence": "デジタル連絡可否は要確認",
-        "photos": "写真サービスあり（既存見学評価）",
-        "attendance": "登降園管理方式は要確認"
-      },
-      "sources": [
-        "公式HP",
-        "見学記録",
-        "保活戦略資料"
-      ]
-    },
-    "officialSiteType": "園公式"
-  },
-  {
-    "id": "kidslab-nishikasai",
-    "name": "キッズラボ西葛西園",
-    "address": "東京都江戸川区西葛西8丁目4番13号 1F",
-    "category": "認可",
-    "visit": "見学済",
-    "rating": 5,
-    "rank": 3,
-    "memo": "",
-    "evaluationDetails": {
-      "summary": "少人数・個別性・安全説明の明確さが強み。施設の狭さと通園用品の保管制約、入園競争が主な弱点。",
-      "strengths": [
-        "各年齢6名の少人数で、子どもの個性と自己決定を重視",
-        "0歳児5分、1・2歳児10分の午睡確認が明確",
-        "看護師・栄養士・フリー職員を含む厚めの体制",
-        "原体験、食育、絵本と給食の連動など保育内容が具体的",
-        "全職員が全園児を把握しやすい構造"
-      ],
-      "concerns": [
-        "ワンフロアで音が通りやすく、施設・園庭が狭い",
-        "ベビーカーと自転車の常置ができない",
-        "各年齢6名固定で、途中入園枠が出にくい",
-        "0歳児募集6名で競争が激しい"
-      ],
-      "operations": "玄関受け渡しやおむつサブスクは便利だが、ベビーカー保管不可が清新町からの通園運用に影響する可能性がある。",
-      "checkPoints": [
-        "雨天時の送迎方法",
-        "騒音が午睡へ与える影響",
-        "実際の職員配置"
-      ]
-    },
-    "officialUrl": "https://kids-lab.co.jp/nishikasaien/",
-    "officialUrlCheckedAt": "2026-07-16",
-    "quickFacts": {
       "commute": {
         "label": "徒歩11分｜自転車3分",
         "distanceMeters": 598,
@@ -151,84 +148,125 @@
         "confirmed": true,
         "originStored": false
       },
-      "extendedCare": {
-        "available": true,
-        "infantAvailable": null,
-        "minimumAge": "生後57日目",
-        "standardEnd": "18:30",
-        "extendedEnd": "19:30",
-        "usageType": [
-          "月極",
-          "スポット"
-        ],
-        "snack": true,
-        "dinner": false,
-        "note": "開園19:30。18:30以降は補食、夕食提供なし。0歳児の延長条件は最終確認。"
+      "services": {
+        "extendedCare": {
+          "available": true,
+          "infantAvailable": null,
+          "minimumAge": "生後57日目",
+          "standardEnd": "18:30",
+          "extendedEnd": "19:30",
+          "usageType": [
+            "月極",
+            "スポット"
+          ],
+          "snack": true,
+          "dinner": false,
+          "note": "開園19:30。18:30以降は補食、夕食提供なし。0歳児の延長条件は最終確認。"
+        },
+        "subscription": {
+          "available": null,
+          "label": null,
+          "note": "用品サブスクは資料上未確定。"
+        },
+        "diaper": {
+          "subscription": null,
+          "disposalByNursery": null,
+          "label": null,
+          "note": "おむつ運用は見学資料・重要事項説明書で再確認。"
+        },
+        "garden": {
+          "type": "園庭あり",
+          "note": "公式FAQに日除け・ミストシャワー設置の記載あり。近隣公園も利用。"
+        },
+        "digital": {
+          "contact": "ICT連絡あり（既存見学評価）。具体機能は要確認",
+          "absence": null,
+          "photos": "写真サービスあり（既存見学評価）",
+          "attendance": null
+        }
       },
-      "subscription": {
-        "available": null,
-        "label": "要確認",
-        "note": "用品サブスクは資料上未確定。"
-      },
-      "diaper": {
-        "subscription": null,
-        "disposalByNursery": null,
-        "label": "要確認",
-        "note": "おむつ運用は見学資料・重要事項説明書で再確認。"
-      },
-      "garden": {
-        "type": "園庭あり",
-        "note": "公式FAQに日除け・ミストシャワー設置の記載あり。近隣公園も利用。"
+      "operations": {
+        "familyLoad": {
+          "bedding": "0歳は布団、1歳以上はコット",
+          "dailyItems": null,
+          "stroller": "バギー預かり不可。抱っこ紐は預かり可"
+        },
+        "environment": {
+          "building": "ワンフロア、0～5歳各6名",
+          "security": "安心・安全の取組みあり",
+          "evacuation": null
+        },
+        "childcare": {
+          "mixedAge": "3～5歳は縦割り保育",
+          "outdoor": "園庭・近隣公園",
+          "programs": "少人数・家庭的保育、食育、すくわくプログラム"
+        }
       },
       "admissionDifficulty": {
         "level": "high",
         "label": "高",
         "note": "0歳6名、総定員36名の少人数園。"
+      },
+      "evaluation": {
+        "visit": "見学済",
+        "rating": 5,
+        "rank": 3,
+        "memo": "",
+        "details": {
+          "summary": "少人数・個別性・安全説明の明確さが強み。施設の狭さと通園用品の保管制約、入園競争が主な弱点。",
+          "strengths": [
+            "各年齢6名の少人数で、子どもの個性と自己決定を重視",
+            "0歳児5分、1・2歳児10分の午睡確認が明確",
+            "看護師・栄養士・フリー職員を含む厚めの体制",
+            "原体験、食育、絵本と給食の連動など保育内容が具体的",
+            "全職員が全園児を把握しやすい構造"
+          ],
+          "concerns": [
+            "ワンフロアで音が通りやすく、施設・園庭が狭い",
+            "ベビーカーと自転車の常置ができない",
+            "各年齢6名固定で、途中入園枠が出にくい",
+            "0歳児募集6名で競争が激しい"
+          ],
+          "operations": "玄関受け渡しやおむつサブスクは便利だが、ベビーカー保管不可が清新町からの通園運用に影響する可能性がある。",
+          "checkPoints": [
+            "雨天時の送迎方法",
+            "騒音が午睡へ与える影響",
+            "実際の職員配置"
+          ]
+        }
+      },
+      "dataQuality": {
+        "lastReviewedAt": "2026-07-17",
+        "sources": [
+          "公式HP・FAQ",
+          "見学記録",
+          "保活戦略資料"
+        ],
+        "unresolved": [
+          "延長保育・0歳利用可否",
+          "用品サブスク",
+          "おむつ定額",
+          "おむつ園処分",
+          "欠席連絡",
+          "登降園打刻",
+          "毎日の持ち物",
+          "避難先"
+        ],
+        "completenessPercent": 38
       }
     },
-    "details": {
-      "hours": {},
-      "familyLoad": {
-        "bedding": "0歳は布団、1歳以上はコット",
-        "dailyItems": "要確認",
-        "stroller": "バギー預かり不可。抱っこ紐は預かり可"
+    {
+      "id": "konoe-seishincho",
+      "basic": {
+        "name": "このえ清新町保育園",
+        "address": "東京都江戸川区清新町2丁目7番8号",
+        "category": "認可"
       },
-      "environment": {
-        "building": "ワンフロア、0～5歳各6名",
-        "security": "安心・安全の取組みあり",
-        "evacuation": "要確認"
+      "official": {
+        "url": "https://kodomo.solasto-hoiku.com/nursery/konoe-seishincho/",
+        "siteType": "園公式",
+        "checkedAt": "2026-07-16"
       },
-      "childcare": {
-        "mixedAge": "3～5歳は縦割り保育",
-        "outdoor": "園庭・近隣公園",
-        "programs": "少人数・家庭的保育、食育、すくわくプログラム"
-      },
-      "digital": {
-        "contact": "ICT連絡あり（既存見学評価）。具体機能は要確認",
-        "absence": "要確認",
-        "photos": "写真サービスあり（既存見学評価）",
-        "attendance": "要確認"
-      },
-      "sources": [
-        "公式HP・FAQ",
-        "見学記録",
-        "保活戦略資料"
-      ]
-    },
-    "officialSiteType": "園公式"
-  },
-  {
-    "id": "konoe-seishincho",
-    "name": "このえ清新町保育園",
-    "address": "東京都江戸川区清新町2丁目7番8号",
-    "category": "認可",
-    "visit": "見学予定",
-    "rating": 5,
-    "rank": 2,
-    "memo": "",
-    "officialUrl": "https://kodomo.solasto-hoiku.com/nursery/konoe-seishincho/",
-    "officialUrlCheckedAt": "2026-07-16",
-    "quickFacts": {
       "commute": {
         "label": "徒歩11分｜自転車3分",
         "distanceMeters": 636,
@@ -240,103 +278,105 @@
         "confirmed": true,
         "originStored": false
       },
-      "extendedCare": {
-        "available": true,
-        "infantAvailable": null,
-        "minimumAge": "生後57日目",
-        "standardEnd": "",
-        "extendedEnd": "20:15",
-        "usageType": [],
-        "snack": null,
-        "dinner": null,
-        "note": "延長終了20:15。0歳児の利用条件・補食等は見学時確認。"
+      "services": {
+        "extendedCare": {
+          "available": true,
+          "infantAvailable": null,
+          "minimumAge": "生後57日目",
+          "standardEnd": null,
+          "extendedEnd": "20:15",
+          "usageType": [],
+          "snack": null,
+          "dinner": null,
+          "note": "延長終了20:15。0歳児の利用条件・補食等は見学時確認。"
+        },
+        "subscription": {
+          "available": null,
+          "label": null,
+          "note": "用品サブスクは未確認。"
+        },
+        "diaper": {
+          "subscription": null,
+          "disposalByNursery": null,
+          "label": null,
+          "note": "おむつ運用は見学時確認。"
+        },
+        "garden": {
+          "type": null,
+          "note": "既存未確認項目に園庭・雨天導線が残っている。"
+        },
+        "digital": {
+          "contact": "ICT連絡あり（既存評価）。具体機能は要確認",
+          "absence": null,
+          "photos": "写真サービスあり（既存評価）",
+          "attendance": null
+        }
       },
-      "subscription": {
-        "available": null,
-        "label": "要確認",
-        "note": "用品サブスクは未確認。"
-      },
-      "diaper": {
-        "subscription": null,
-        "disposalByNursery": null,
-        "label": "要確認",
-        "note": "おむつ運用は見学時確認。"
-      },
-      "garden": {
-        "type": "要確認",
-        "note": "既存未確認項目に園庭・雨天導線が残っている。"
+      "operations": {
+        "familyLoad": {
+          "bedding": null,
+          "dailyItems": null,
+          "stroller": null
+        },
+        "environment": {
+          "building": "清新町内。導線負荷が最小",
+          "security": "人権擁護・安全改善の組織的取組みあり",
+          "evacuation": null
+        },
+        "childcare": {
+          "mixedAge": null,
+          "outdoor": "園庭・雨天時運用は見学時確認",
+          "programs": "『3つの時間』を軸にした子ども主体の保育"
+        }
       },
       "admissionDifficulty": {
         "level": "high",
         "label": "高",
         "note": "0歳9名だが第一志望集中リスクあり。"
+      },
+      "evaluation": {
+        "visit": "見学予定",
+        "rating": 5,
+        "rank": 2,
+        "memo": "",
+        "details": null
+      },
+      "dataQuality": {
+        "lastReviewedAt": "2026-07-17",
+        "sources": [
+          "公式HP",
+          "第三者評価",
+          "保活戦略資料"
+        ],
+        "unresolved": [
+          "延長保育・0歳利用可否",
+          "延長保育・通常保育終了",
+          "用品サブスク",
+          "おむつ定額",
+          "おむつ園処分",
+          "園庭",
+          "欠席連絡",
+          "登降園打刻",
+          "布団・コット",
+          "毎日の持ち物",
+          "ベビーカー置場",
+          "避難先"
+        ],
+        "completenessPercent": 8
       }
     },
-    "details": {
-      "hours": {},
-      "familyLoad": {
-        "bedding": "要確認",
-        "dailyItems": "要確認",
-        "stroller": "要確認"
+    {
+      "id": "fukinoto",
+      "basic": {
+        "name": "ふきのとう保育園",
+        "address": "東京都江戸川区中葛西6丁目4番7号",
+        "category": "認可"
       },
-      "environment": {
-        "building": "清新町内。導線負荷が最小",
-        "security": "人権擁護・安全改善の組織的取組みあり",
-        "evacuation": "要確認"
+      "official": {
+        "url": "https://www.fukinoto.ed.jp/",
+        "siteType": "園公式",
+        "checkedAt": "2026-07-16"
       },
-      "childcare": {
-        "mixedAge": "要確認",
-        "outdoor": "園庭・雨天時運用は見学時確認",
-        "programs": "『3つの時間』を軸にした子ども主体の保育"
-      },
-      "digital": {
-        "contact": "ICT連絡あり（既存評価）。具体機能は要確認",
-        "absence": "要確認",
-        "photos": "写真サービスあり（既存評価）",
-        "attendance": "要確認"
-      },
-      "sources": [
-        "公式HP",
-        "第三者評価",
-        "保活戦略資料"
-      ]
-    },
-    "officialSiteType": "園公式"
-  },
-  {
-    "id": "fukinoto",
-    "name": "ふきのとう保育園",
-    "address": "東京都江戸川区中葛西6丁目4番7号",
-    "category": "認可",
-    "visit": "見学済",
-    "rating": 4,
-    "rank": 4,
-    "memo": "",
-    "evaluationDetails": {
-      "summary": "安全、食事、職員配置、活動空間のバランスが良い安定型。大規模園と通園導線の負荷が判断点。",
-      "strengths": [
-        "乳児クラスの職員配置が比較的厚く、看護師も配置",
-        "午睡チェック、仰向け寝、防犯、防災の説明が具体的",
-        "園内調理、離乳食、アレルギー誤配膳防止が充実",
-        "園庭、遊戯室、屋上を使える",
-        "遊び中心の保育方針が一貫し、共働き家庭の利用実態にも合う"
-      ],
-      "concerns": [
-        "おむつサブスクがなく、記名して持参が必要",
-        "延長保育は1歳児以上",
-        "西葛西駅周辺園より通園導線が不利",
-        "大規模園のため少人数環境を求める家庭には合わない可能性"
-      ],
-      "operations": "持ち物負担と0歳時の延長不可は弱点だが、安全・食事・人的体制の安定感は高い。",
-      "checkPoints": [
-        "0歳入園時の迎え時刻運用",
-        "雨天時の通園負荷",
-        "クラス規模による個別対応"
-      ]
-    },
-    "officialUrl": "https://www.fukinoto.ed.jp/",
-    "officialUrlCheckedAt": "2026-07-16",
-    "quickFacts": {
       "commute": {
         "label": "徒歩16分｜自転車6分",
         "distanceMeters": 933,
@@ -348,102 +388,123 @@
         "confirmed": true,
         "originStored": false
       },
-      "extendedCare": {
-        "available": true,
-        "infantAvailable": null,
-        "minimumAge": "生後57日目",
-        "standardEnd": "",
-        "extendedEnd": "19:15",
-        "usageType": [],
-        "snack": null,
-        "dinner": null,
-        "note": "延長終了19:15。0歳児の延長条件は要最終確認。"
+      "services": {
+        "extendedCare": {
+          "available": true,
+          "infantAvailable": null,
+          "minimumAge": "生後57日目",
+          "standardEnd": null,
+          "extendedEnd": "19:15",
+          "usageType": [],
+          "snack": null,
+          "dinner": null,
+          "note": "延長終了19:15。0歳児の延長条件は要最終確認。"
+        },
+        "subscription": {
+          "available": null,
+          "label": null,
+          "note": "サブスクの有無は未確認。"
+        },
+        "diaper": {
+          "subscription": null,
+          "disposalByNursery": true,
+          "label": "園処分あり",
+          "note": "見学評価でおむつ処理を確認。定額制の有無は要確認。"
+        },
+        "garden": {
+          "type": "園庭あり",
+          "note": "見学評価で園庭・のびのびした外遊び環境を確認。"
+        },
+        "digital": {
+          "contact": "ICT連絡あり（既存見学評価）。具体機能は要確認",
+          "absence": null,
+          "photos": "写真販売あり（既存見学評価）",
+          "attendance": null
+        }
       },
-      "subscription": {
-        "available": null,
-        "label": "要確認",
-        "note": "サブスクの有無は未確認。"
-      },
-      "diaper": {
-        "subscription": null,
-        "disposalByNursery": true,
-        "label": "園処分あり",
-        "note": "見学評価でおむつ処理を確認。定額制の有無は要確認。"
-      },
-      "garden": {
-        "type": "園庭あり",
-        "note": "見学評価で園庭・のびのびした外遊び環境を確認。"
+      "operations": {
+        "familyLoad": {
+          "bedding": null,
+          "dailyItems": null,
+          "stroller": "利用可否は要確認"
+        },
+        "environment": {
+          "building": "比較的規模のある園",
+          "security": "安全対策の具体運用は追加確認",
+          "evacuation": null
+        },
+        "childcare": {
+          "mixedAge": "交流あり",
+          "outdoor": "園庭・外遊び重視",
+          "programs": "生活リズム、食育、のびのびした保育"
+        }
       },
       "admissionDifficulty": {
         "level": "medium-high",
         "label": "中～高",
         "note": "0歳9名だが中葛西需要あり。"
+      },
+      "evaluation": {
+        "visit": "見学済",
+        "rating": 4,
+        "rank": 4,
+        "memo": "",
+        "details": {
+          "summary": "安全、食事、職員配置、活動空間のバランスが良い安定型。大規模園と通園導線の負荷が判断点。",
+          "strengths": [
+            "乳児クラスの職員配置が比較的厚く、看護師も配置",
+            "午睡チェック、仰向け寝、防犯、防災の説明が具体的",
+            "園内調理、離乳食、アレルギー誤配膳防止が充実",
+            "園庭、遊戯室、屋上を使える",
+            "遊び中心の保育方針が一貫し、共働き家庭の利用実態にも合う"
+          ],
+          "concerns": [
+            "おむつサブスクがなく、記名して持参が必要",
+            "延長保育は1歳児以上",
+            "西葛西駅周辺園より通園導線が不利",
+            "大規模園のため少人数環境を求める家庭には合わない可能性"
+          ],
+          "operations": "持ち物負担と0歳時の延長不可は弱点だが、安全・食事・人的体制の安定感は高い。",
+          "checkPoints": [
+            "0歳入園時の迎え時刻運用",
+            "雨天時の通園負荷",
+            "クラス規模による個別対応"
+          ]
+        }
+      },
+      "dataQuality": {
+        "lastReviewedAt": "2026-07-17",
+        "sources": [
+          "公式HP",
+          "見学記録",
+          "第三者評価"
+        ],
+        "unresolved": [
+          "延長保育・0歳利用可否",
+          "延長保育・通常保育終了",
+          "用品サブスク",
+          "おむつ定額",
+          "欠席連絡",
+          "登降園打刻",
+          "布団・コット",
+          "毎日の持ち物",
+          "避難先"
+        ],
+        "completenessPercent": 31
       }
     },
-    "details": {
-      "hours": {},
-      "familyLoad": {
-        "bedding": "要確認",
-        "dailyItems": "要確認",
-        "stroller": "利用可否は要確認"
+    {
+      "id": "hoppel-nakakasai",
+      "basic": {
+        "name": "ほっぺるランド中葛西",
+        "address": "東京都江戸川区中葛西1丁目1番15号",
+        "category": "認可"
       },
-      "environment": {
-        "building": "比較的規模のある園",
-        "security": "安全対策の具体運用は追加確認",
-        "evacuation": "要確認"
+      "official": {
+        "url": "https://hoppel-land.com/introduces/177-2/",
+        "siteType": "園公式",
+        "checkedAt": "2026-07-16"
       },
-      "childcare": {
-        "mixedAge": "交流あり",
-        "outdoor": "園庭・外遊び重視",
-        "programs": "生活リズム、食育、のびのびした保育"
-      },
-      "digital": {
-        "contact": "ICT連絡あり（既存見学評価）。具体機能は要確認",
-        "absence": "要確認",
-        "photos": "写真販売あり（既存見学評価）",
-        "attendance": "要確認"
-      },
-      "sources": [
-        "公式HP",
-        "見学記録",
-        "第三者評価"
-      ]
-    },
-    "officialSiteType": "園公式"
-  },
-  {
-    "id": "hoppel-nakakasai",
-    "name": "ほっぺるランド中葛西",
-    "address": "東京都江戸川区中葛西1丁目1番15号",
-    "category": "認可",
-    "visit": "見学済",
-    "rating": 4,
-    "rank": 5,
-    "memo": "",
-    "evaluationDetails": {
-      "summary": "担当制と子どもの意思尊重、職員定着の高さが際立つ。個別性を重視する家庭との適合性が高い。",
-      "strengths": [
-        "0～2歳児の育児担当制で生活面の変化を継続的に把握",
-        "指示・命令を減らし、子どもの自己選択を尊重する思想が明確",
-        "開園時からの職員が多く、職員定着率が高い",
-        "食事用品の園洗濯、おむつサブスク、ベビーカー保管で保護者負担が軽い",
-        "0歳児5分ごとの午睡確認と仰向け寝が徹底"
-      ],
-      "concerns": [
-        "防犯カメラがないとの説明",
-        "人気園で、兄弟児の多い年度は新規枠が圧迫されやすい",
-        "主体性重視の方針が、規律や一斉活動を強く求める家庭とは合わない可能性"
-      ],
-      "operations": "持ち物と送迎用品の負担が軽く、日々の家庭運用は良好。ただし自宅からの距離と競争状況を合わせて判断する必要がある。",
-      "checkPoints": [
-        "防犯上の代替策",
-        "0歳児募集枠と兄弟児見込み",
-        "担当者不在時の引継ぎ"
-      ]
-    },
-    "officialUrl": "https://hoppel-land.com/introduces/177-2/",
-    "officialUrlCheckedAt": "2026-07-16",
-    "quickFacts": {
       "commute": {
         "label": "徒歩26分｜自転車9分",
         "distanceMeters": 1351,
@@ -455,103 +516,119 @@
         "confirmed": true,
         "originStored": false
       },
-      "extendedCare": {
-        "available": true,
-        "infantAvailable": null,
-        "minimumAge": "生後57日目",
-        "standardEnd": "",
-        "extendedEnd": "20:15",
-        "usageType": [],
-        "snack": null,
-        "dinner": null,
-        "note": "延長終了20:15。0歳児の延長条件は要最終確認。"
+      "services": {
+        "extendedCare": {
+          "available": true,
+          "infantAvailable": null,
+          "minimumAge": "生後57日目",
+          "standardEnd": null,
+          "extendedEnd": "20:15",
+          "usageType": [],
+          "snack": null,
+          "dinner": null,
+          "note": "延長終了20:15。0歳児の延長条件は要最終確認。"
+        },
+        "subscription": {
+          "available": true,
+          "label": "用品サービスあり",
+          "note": "見学評価で保護者負担軽減の用品運用を確認。内容は要最終確認。"
+        },
+        "diaper": {
+          "subscription": true,
+          "disposalByNursery": true,
+          "label": "定額・園処分",
+          "note": "見学評価に基づく。料金等は要確認。"
+        },
+        "garden": {
+          "type": "近隣公園中心",
+          "note": "専用園庭の形態は限定的。外遊びは近隣公園利用を含む。"
+        },
+        "digital": {
+          "contact": "ICT連絡あり（既存見学評価）。具体機能は要確認",
+          "absence": null,
+          "photos": "写真販売あり（既存見学評価）",
+          "attendance": null
+        }
       },
-      "subscription": {
-        "available": true,
-        "label": "用品サービスあり",
-        "note": "見学評価で保護者負担軽減の用品運用を確認。内容は要最終確認。"
-      },
-      "diaper": {
-        "subscription": true,
-        "disposalByNursery": true,
-        "label": "定額・園処分",
-        "note": "見学評価に基づく。料金等は要確認。"
-      },
-      "garden": {
-        "type": "近隣公園中心",
-        "note": "専用園庭の形態は限定的。外遊びは近隣公園利用を含む。"
+      "operations": {
+        "familyLoad": {
+          "bedding": "コット等の運用あり。詳細要確認",
+          "dailyItems": "比較的少なめ",
+          "stroller": null
+        },
+        "environment": {
+          "building": "乳児担当制を重視",
+          "security": null,
+          "evacuation": null
+        },
+        "childcare": {
+          "mixedAge": "年齢別を基本",
+          "outdoor": "近隣公園を活用",
+          "programs": "乳児担当制、食育、子どもの自主性を重視"
+        }
       },
       "admissionDifficulty": {
         "level": "medium-high",
         "label": "中～高",
         "note": "0歳9名だが中葛西広域需要あり。"
+      },
+      "evaluation": {
+        "visit": "見学済",
+        "rating": 4,
+        "rank": 5,
+        "memo": "",
+        "details": {
+          "summary": "担当制と子どもの意思尊重、職員定着の高さが際立つ。個別性を重視する家庭との適合性が高い。",
+          "strengths": [
+            "0～2歳児の育児担当制で生活面の変化を継続的に把握",
+            "指示・命令を減らし、子どもの自己選択を尊重する思想が明確",
+            "開園時からの職員が多く、職員定着率が高い",
+            "食事用品の園洗濯、おむつサブスク、ベビーカー保管で保護者負担が軽い",
+            "0歳児5分ごとの午睡確認と仰向け寝が徹底"
+          ],
+          "concerns": [
+            "防犯カメラがないとの説明",
+            "人気園で、兄弟児の多い年度は新規枠が圧迫されやすい",
+            "主体性重視の方針が、規律や一斉活動を強く求める家庭とは合わない可能性"
+          ],
+          "operations": "持ち物と送迎用品の負担が軽く、日々の家庭運用は良好。ただし自宅からの距離と競争状況を合わせて判断する必要がある。",
+          "checkPoints": [
+            "防犯上の代替策",
+            "0歳児募集枠と兄弟児見込み",
+            "担当者不在時の引継ぎ"
+          ]
+        }
+      },
+      "dataQuality": {
+        "lastReviewedAt": "2026-07-17",
+        "sources": [
+          "公式HP",
+          "見学記録",
+          "第三者評価"
+        ],
+        "unresolved": [
+          "延長保育・0歳利用可否",
+          "延長保育・通常保育終了",
+          "欠席連絡",
+          "登降園打刻",
+          "ベビーカー置場",
+          "避難先"
+        ],
+        "completenessPercent": 54
       }
     },
-    "details": {
-      "hours": {},
-      "familyLoad": {
-        "bedding": "コット等の運用あり。詳細要確認",
-        "dailyItems": "比較的少なめ",
-        "stroller": "要確認"
+    {
+      "id": "global-ukita",
+      "basic": {
+        "name": "グローバルキッズ宇喜田町園",
+        "address": "東京都江戸川区宇喜田町1279",
+        "category": "認可"
       },
-      "environment": {
-        "building": "乳児担当制を重視",
-        "security": "要確認",
-        "evacuation": "要確認"
+      "official": {
+        "url": "https://www.gkids.co.jp/facilities/nursery_166.html",
+        "siteType": "園公式",
+        "checkedAt": "2026-07-16"
       },
-      "childcare": {
-        "mixedAge": "年齢別を基本",
-        "outdoor": "近隣公園を活用",
-        "programs": "乳児担当制、食育、子どもの自主性を重視"
-      },
-      "digital": {
-        "contact": "ICT連絡あり（既存見学評価）。具体機能は要確認",
-        "absence": "要確認",
-        "photos": "写真販売あり（既存見学評価）",
-        "attendance": "要確認"
-      },
-      "sources": [
-        "公式HP",
-        "見学記録",
-        "第三者評価"
-      ]
-    },
-    "officialSiteType": "園公式"
-  },
-  {
-    "id": "global-ukita",
-    "name": "グローバルキッズ宇喜田町園",
-    "address": "東京都江戸川区宇喜田町1279",
-    "category": "認可",
-    "visit": "見学済",
-    "rating": 3,
-    "rank": 6,
-    "memo": "",
-    "evaluationDetails": {
-      "summary": "設備・安全・延長保育が標準以上で、大きな欠点の少ない安定型。園固有の強みと職員定着が見えにくい。",
-      "strengths": [
-        "平日日中の看護師常勤",
-        "0歳児5分ごとの午睡確認が具体的",
-        "園内調理とアレルギー代替対応",
-        "20:30までの開園で時間的余裕がある",
-        "ベビーカー保管が可能"
-      ],
-      "concerns": [
-        "保育思想や園独自の文化が他園より見えにくい",
-        "0～2歳児は満員で途中入園が難しい",
-        "兄弟加点家庭が有利になりやすい",
-        "職員の勤続年数・定着率が未確認"
-      ],
-      "operations": "延長時間とベビーカー保管は実務上有利。体調不良時に1時間以内の迎えを求められる可能性があるため、復職後の呼出対応を要確認。",
-      "checkPoints": [
-        "職員定着率",
-        "発熱時の迎え猶予",
-        "乳児クラスの保育方針"
-      ]
-    },
-    "officialUrl": "https://www.gkids.co.jp/facilities/nursery_166.html",
-    "officialUrlCheckedAt": "2026-07-16",
-    "quickFacts": {
       "commute": {
         "label": "徒歩27分｜自転車9分",
         "distanceMeters": 1611,
@@ -563,103 +640,124 @@
         "confirmed": true,
         "originStored": false
       },
-      "extendedCare": {
-        "available": true,
-        "infantAvailable": null,
-        "minimumAge": "生後57日目",
-        "standardEnd": "",
-        "extendedEnd": "20:30",
-        "usageType": [],
-        "snack": null,
-        "dinner": null,
-        "note": "延長終了20:30。0歳児の延長条件は要最終確認。"
+      "services": {
+        "extendedCare": {
+          "available": true,
+          "infantAvailable": null,
+          "minimumAge": "生後57日目",
+          "standardEnd": null,
+          "extendedEnd": "20:30",
+          "usageType": [],
+          "snack": null,
+          "dinner": null,
+          "note": "延長終了20:30。0歳児の延長条件は要最終確認。"
+        },
+        "subscription": {
+          "available": null,
+          "label": null,
+          "note": "用品サブスクは未確認。"
+        },
+        "diaper": {
+          "subscription": null,
+          "disposalByNursery": true,
+          "label": "園処分あり",
+          "note": "見学評価で園処分を確認。定額制は要確認。"
+        },
+        "garden": {
+          "type": "園庭・外遊びあり",
+          "note": "専用園庭の規模・利用頻度は要確認。"
+        },
+        "digital": {
+          "contact": "ICT連絡あり（見学評価）。具体機能は要確認",
+          "absence": null,
+          "photos": "写真販売あり（既存見学評価）",
+          "attendance": null
+        }
       },
-      "subscription": {
-        "available": null,
-        "label": "要確認",
-        "note": "用品サブスクは未確認。"
-      },
-      "diaper": {
-        "subscription": null,
-        "disposalByNursery": true,
-        "label": "園処分あり",
-        "note": "見学評価で園処分を確認。定額制は要確認。"
-      },
-      "garden": {
-        "type": "園庭・外遊びあり",
-        "note": "専用園庭の規模・利用頻度は要確認。"
+      "operations": {
+        "familyLoad": {
+          "bedding": null,
+          "dailyItems": null,
+          "stroller": null
+        },
+        "environment": {
+          "building": "クラス別保育室",
+          "security": "法人標準の安全運用",
+          "evacuation": null
+        },
+        "childcare": {
+          "mixedAge": "交流あり",
+          "outdoor": "外遊びあり",
+          "programs": "食育、子どもの主体性を重視"
+        }
       },
       "admissionDifficulty": {
         "level": "medium",
         "label": "中",
         "note": "0歳6名、北葛西・宇喜田需要あり。"
+      },
+      "evaluation": {
+        "visit": "見学済",
+        "rating": 3,
+        "rank": 6,
+        "memo": "",
+        "details": {
+          "summary": "設備・安全・延長保育が標準以上で、大きな欠点の少ない安定型。園固有の強みと職員定着が見えにくい。",
+          "strengths": [
+            "平日日中の看護師常勤",
+            "0歳児5分ごとの午睡確認が具体的",
+            "園内調理とアレルギー代替対応",
+            "20:30までの開園で時間的余裕がある",
+            "ベビーカー保管が可能"
+          ],
+          "concerns": [
+            "保育思想や園独自の文化が他園より見えにくい",
+            "0～2歳児は満員で途中入園が難しい",
+            "兄弟加点家庭が有利になりやすい",
+            "職員の勤続年数・定着率が未確認"
+          ],
+          "operations": "延長時間とベビーカー保管は実務上有利。体調不良時に1時間以内の迎えを求められる可能性があるため、復職後の呼出対応を要確認。",
+          "checkPoints": [
+            "職員定着率",
+            "発熱時の迎え猶予",
+            "乳児クラスの保育方針"
+          ]
+        }
+      },
+      "dataQuality": {
+        "lastReviewedAt": "2026-07-17",
+        "sources": [
+          "公式HP",
+          "見学記録",
+          "第三者評価"
+        ],
+        "unresolved": [
+          "延長保育・0歳利用可否",
+          "延長保育・通常保育終了",
+          "用品サブスク",
+          "おむつ定額",
+          "欠席連絡",
+          "登降園打刻",
+          "布団・コット",
+          "毎日の持ち物",
+          "ベビーカー置場",
+          "避難先"
+        ],
+        "completenessPercent": 23
       }
     },
-    "details": {
-      "hours": {},
-      "familyLoad": {
-        "bedding": "要確認",
-        "dailyItems": "要確認",
-        "stroller": "要確認"
+    {
+      "id": "shirayuri",
+      "basic": {
+        "name": "白百合保育園",
+        "address": "東京都江戸川区北葛西4丁目3番9号",
+        "category": "認可"
       },
-      "environment": {
-        "building": "クラス別保育室",
-        "security": "法人標準の安全運用",
-        "evacuation": "要確認"
+      "official": {
+        "url": "https://www.shirayuri-creche.ed.jp/",
+        "siteType": "園公式",
+        "checkedAt": "2026-07-16"
       },
-      "childcare": {
-        "mixedAge": "交流あり",
-        "outdoor": "外遊びあり",
-        "programs": "食育、子どもの主体性を重視"
-      },
-      "digital": {
-        "contact": "ICT連絡あり（見学評価）。具体機能は要確認",
-        "absence": "要確認",
-        "photos": "写真販売あり（既存見学評価）",
-        "attendance": "要確認"
-      },
-      "sources": [
-        "公式HP",
-        "見学記録",
-        "第三者評価"
-      ]
-    },
-    "officialSiteType": "園公式"
-  },
-  {
-    "id": "shirayuri",
-    "name": "白百合保育園",
-    "address": "東京都江戸川区北葛西4丁目3番9号",
-    "category": "認可",
-    "visit": "見学済",
-    "rating": 2,
-    "rank": 7,
-    "memo": "",
-    "evaluationDetails": {
-      "summary": "歴史、宗教的理念、安全意識、職員配置に特色がある一方、延長なし・指定用品・宗教行事が家庭運用上の大きな制約。",
-      "strengths": [
-        "長い運営歴史と明確なキリスト教保育理念",
-        "命・感謝・共同体を重視する一貫した文化",
-        "法定基準を上回る職員配置を目安とする説明",
-        "園庭があり、乳児設備も整う",
-        "安全意識と園としての独自性が高い"
-      ],
-      "concerns": [
-        "延長保育がなく、18:30までに迎える必要がある",
-        "日常的な礼拝・祈り・賛美歌への理解が必要",
-        "園服・体操着など指定用品の初期費用と運用負担",
-        "男女別色分けなど家庭の価値観と合うか確認が必要"
-      ],
-      "operations": "大手町勤務を含む共働き運用では延長なしが重大な制約。園の質とは別に、迎え時刻を再現可能に担保できるかが最優先判断点。",
-      "checkPoints": [
-        "18:30迎えの実現可能性",
-        "宗教行事への家庭の納得感",
-        "指定用品の年間費用"
-      ]
-    },
-    "officialUrl": "https://www.shirayuri-creche.ed.jp/",
-    "officialUrlCheckedAt": "2026-07-16",
-    "quickFacts": {
       "commute": {
         "label": "徒歩23分｜自転車8分",
         "distanceMeters": 1335,
@@ -671,81 +769,122 @@
         "confirmed": true,
         "originStored": false
       },
-      "extendedCare": {
-        "available": false,
-        "infantAvailable": false,
-        "minimumAge": "6か月目",
-        "standardEnd": "",
-        "extendedEnd": "18:30",
-        "usageType": [],
-        "snack": null,
-        "dinner": null,
-        "note": "資料上は延長保育なし。18:30まで。最新運用は園へ確認。"
+      "services": {
+        "extendedCare": {
+          "available": false,
+          "infantAvailable": false,
+          "minimumAge": "6か月目",
+          "standardEnd": null,
+          "extendedEnd": "18:30",
+          "usageType": [],
+          "snack": null,
+          "dinner": null,
+          "note": "資料上は延長保育なし。18:30まで。最新運用は園へ確認。"
+        },
+        "subscription": {
+          "available": false,
+          "label": "なし／限定的",
+          "note": "既存見学評価では用品サブスクなし。"
+        },
+        "diaper": {
+          "subscription": null,
+          "disposalByNursery": null,
+          "label": "持参中心",
+          "note": "処分・持ち帰り条件は要確認。"
+        },
+        "garden": {
+          "type": "園庭あり",
+          "note": "見学評価で園庭を確認。"
+        },
+        "digital": {
+          "contact": "ICTは一部対応／運用詳細要確認",
+          "absence": null,
+          "photos": "写真販売あり（既存評価）",
+          "attendance": null
+        }
       },
-      "subscription": {
-        "available": false,
-        "label": "なし／限定的",
-        "note": "既存見学評価では用品サブスクなし。"
-      },
-      "diaper": {
-        "subscription": null,
-        "disposalByNursery": null,
-        "label": "持参中心",
-        "note": "処分・持ち帰り条件は要確認。"
-      },
-      "garden": {
-        "type": "園庭あり",
-        "note": "見学評価で園庭を確認。"
+      "operations": {
+        "familyLoad": {
+          "bedding": null,
+          "dailyItems": "持ち物負担はやや多め",
+          "stroller": null
+        },
+        "environment": {
+          "building": "地域に根ざした園",
+          "security": "清潔さ・病気けが対応が高評価",
+          "evacuation": null
+        },
+        "childcare": {
+          "mixedAge": "異年齢交流あり",
+          "outdoor": "園庭利用あり",
+          "programs": "地域型、生活を重視した保育"
+        }
       },
       "admissionDifficulty": {
         "level": "medium",
         "label": "中",
         "note": "0歳6名、開始月齢6か月目。"
+      },
+      "evaluation": {
+        "visit": "見学済",
+        "rating": 2,
+        "rank": 7,
+        "memo": "",
+        "details": {
+          "summary": "歴史、宗教的理念、安全意識、職員配置に特色がある一方、延長なし・指定用品・宗教行事が家庭運用上の大きな制約。",
+          "strengths": [
+            "長い運営歴史と明確なキリスト教保育理念",
+            "命・感謝・共同体を重視する一貫した文化",
+            "法定基準を上回る職員配置を目安とする説明",
+            "園庭があり、乳児設備も整う",
+            "安全意識と園としての独自性が高い"
+          ],
+          "concerns": [
+            "延長保育がなく、18:30までに迎える必要がある",
+            "日常的な礼拝・祈り・賛美歌への理解が必要",
+            "園服・体操着など指定用品の初期費用と運用負担",
+            "男女別色分けなど家庭の価値観と合うか確認が必要"
+          ],
+          "operations": "大手町勤務を含む共働き運用では延長なしが重大な制約。園の質とは別に、迎え時刻を再現可能に担保できるかが最優先判断点。",
+          "checkPoints": [
+            "18:30迎えの実現可能性",
+            "宗教行事への家庭の納得感",
+            "指定用品の年間費用"
+          ]
+        }
+      },
+      "dataQuality": {
+        "lastReviewedAt": "2026-07-17",
+        "sources": [
+          "公式HP",
+          "見学記録",
+          "第三者評価"
+        ],
+        "unresolved": [
+          "延長保育・通常保育終了",
+          "おむつ定額",
+          "おむつ園処分",
+          "欠席連絡",
+          "登降園打刻",
+          "布団・コット",
+          "ベビーカー置場",
+          "避難先"
+        ],
+        "completenessPercent": 38
       }
     },
-    "details": {
-      "hours": {},
-      "familyLoad": {
-        "bedding": "要確認",
-        "dailyItems": "持ち物負担はやや多め",
-        "stroller": "要確認"
+    {
+      "id": "hybridmom-seishincho",
+      "basic": {
+        "name": "HybridMom Nursery Preschool 清新町",
+        "address": "東京都江戸川区清新町2-2-20 バウス西葛西清新町内",
+        "category": "認可外・企業主導型"
       },
-      "environment": {
-        "building": "地域に根ざした園",
-        "security": "清潔さ・病気けが対応が高評価",
-        "evacuation": "要確認"
+      "official": {
+        "url": "https://www.hybridmom.co.jp/hybridmom/HybridMom_Seishincho/",
+        "siteType": "園公式",
+        "checkedAt": "2026-07-16"
       },
-      "childcare": {
-        "mixedAge": "異年齢交流あり",
-        "outdoor": "園庭利用あり",
-        "programs": "地域型、生活を重視した保育"
-      },
-      "digital": {
-        "contact": "ICTは一部対応／運用詳細要確認",
-        "absence": "要確認",
-        "photos": "写真販売あり（既存評価）",
-        "attendance": "要確認"
-      },
-      "sources": [
-        "公式HP",
-        "見学記録",
-        "第三者評価"
-      ]
-    },
-    "officialSiteType": "園公式"
-  },
-  {
-    "id": "hybridmom-seishincho",
-    "name": "HybridMom Nursery Preschool 清新町",
-    "address": "東京都江戸川区清新町2-2-20 バウス西葛西清新町内",
-    "category": "認可外・企業主導型",
-    "visit": "未見学",
-    "rating": 0,
-    "rank": 0,
-    "memo": "",
-    "officialUrl": "https://www.hybridmom.co.jp/hybridmom/HybridMom_Seishincho/",
-    "officialUrlCheckedAt": "2026-07-16",
-    "quickFacts": {
       "commute": {
         "label": "徒歩9分｜自転車2分",
         "distanceMeters": 580,
@@ -757,60 +896,84 @@
         "confirmed": true,
         "originStored": false
       },
-      "extendedCare": {
-        "available": true,
-        "infantAvailable": true,
-        "minimumAge": "0歳",
-        "standardEnd": "",
-        "extendedEnd": "20:30",
-        "usageType": [],
-        "snack": null,
-        "dinner": null,
-        "note": "0歳受入、20:30まで。利用条件は契約時確認。"
+      "services": {
+        "extendedCare": {
+          "available": true,
+          "infantAvailable": true,
+          "minimumAge": "0歳",
+          "standardEnd": null,
+          "extendedEnd": "20:30",
+          "usageType": [],
+          "snack": null,
+          "dinner": null,
+          "note": "0歳受入、20:30まで。利用条件は契約時確認。"
+        },
+        "subscription": {
+          "available": null,
+          "label": null,
+          "note": null
+        },
+        "diaper": {
+          "subscription": null,
+          "disposalByNursery": null,
+          "label": null,
+          "note": null
+        },
+        "garden": {
+          "type": null,
+          "note": null
+        },
+        "digital": {}
       },
-      "subscription": {
-        "available": null,
-        "label": "要確認",
-        "note": ""
-      },
-      "diaper": {
-        "subscription": null,
-        "disposalByNursery": null,
-        "label": "要確認",
-        "note": ""
-      },
-      "garden": {
-        "type": "要確認",
-        "note": ""
+      "operations": {
+        "familyLoad": {},
+        "environment": {},
+        "childcare": {}
       },
       "admissionDifficulty": {
         "level": "bcp",
         "label": "BCP-S",
         "note": "清新町内の認可外BCP最重要候補。"
+      },
+      "evaluation": {
+        "visit": "未見学",
+        "rating": 0,
+        "rank": 0,
+        "memo": "",
+        "details": null
+      },
+      "dataQuality": {
+        "lastReviewedAt": "2026-07-17",
+        "sources": [],
+        "unresolved": [
+          "延長保育・通常保育終了",
+          "用品サブスク",
+          "おむつ定額",
+          "おむつ園処分",
+          "園庭",
+          "ICT連絡帳",
+          "欠席連絡",
+          "登降園打刻",
+          "布団・コット",
+          "毎日の持ち物",
+          "ベビーカー置場",
+          "避難先"
+        ],
+        "completenessPercent": 8
       }
     },
-    "details": {
-      "hours": {},
-      "familyLoad": {},
-      "environment": {},
-      "childcare": {},
-      "digital": {},
-      "sources": []
-    },
-    "officialSiteType": "園公式"
-  },
-  {
-    "id": "camellia-nishikasai",
-    "name": "カメリアキッズ西葛西園",
-    "address": "東京都江戸川区西葛西6丁目8番4号",
-    "category": "認可外・企業主導型",
-    "visit": "見学予定",
-    "rating": 0,
-    "rank": 0,
-    "memo": "",
-    "officialUrl": "https://camellia-kids.jp/facility/249/",
-    "officialUrlCheckedAt": "2026-07-16",
-    "quickFacts": {
+    {
+      "id": "camellia-nishikasai",
+      "basic": {
+        "name": "カメリアキッズ西葛西園",
+        "address": "東京都江戸川区西葛西6丁目8番4号",
+        "category": "認可外・企業主導型"
+      },
+      "official": {
+        "url": "https://camellia-kids.jp/facility/249/",
+        "siteType": "園公式",
+        "checkedAt": "2026-07-16"
+      },
       "commute": {
         "label": "徒歩8分｜自転車3分",
         "distanceMeters": 381,
@@ -822,60 +985,85 @@
         "confirmed": true,
         "originStored": false
       },
-      "extendedCare": {
-        "available": null,
-        "infantAvailable": null,
-        "minimumAge": "0～2歳",
-        "standardEnd": "",
-        "extendedEnd": "",
-        "usageType": [],
-        "snack": null,
-        "dinner": null,
-        "note": "開所・延長時間は公式ページで最終確認。"
+      "services": {
+        "extendedCare": {
+          "available": null,
+          "infantAvailable": null,
+          "minimumAge": "0～2歳",
+          "standardEnd": null,
+          "extendedEnd": null,
+          "usageType": [],
+          "snack": null,
+          "dinner": null,
+          "note": "開所・延長時間は公式ページで最終確認。"
+        },
+        "subscription": {
+          "available": null,
+          "label": null,
+          "note": null
+        },
+        "diaper": {
+          "subscription": null,
+          "disposalByNursery": null,
+          "label": null,
+          "note": null
+        },
+        "garden": {
+          "type": null,
+          "note": null
+        },
+        "digital": {}
       },
-      "subscription": {
-        "available": null,
-        "label": "要確認",
-        "note": ""
-      },
-      "diaper": {
-        "subscription": null,
-        "disposalByNursery": null,
-        "label": "要確認",
-        "note": ""
-      },
-      "garden": {
-        "type": "要確認",
-        "note": ""
+      "operations": {
+        "familyLoad": {},
+        "environment": {},
+        "childcare": {}
       },
       "admissionDifficulty": {
         "level": "bcp",
         "label": "BCP-S",
         "note": "西葛西駅近。"
+      },
+      "evaluation": {
+        "visit": "見学予定",
+        "rating": 0,
+        "rank": 0,
+        "memo": "",
+        "details": null
+      },
+      "dataQuality": {
+        "lastReviewedAt": "2026-07-17",
+        "sources": [],
+        "unresolved": [
+          "延長保育・0歳利用可否",
+          "延長保育・通常保育終了",
+          "用品サブスク",
+          "おむつ定額",
+          "おむつ園処分",
+          "園庭",
+          "ICT連絡帳",
+          "欠席連絡",
+          "登降園打刻",
+          "布団・コット",
+          "毎日の持ち物",
+          "ベビーカー置場",
+          "避難先"
+        ],
+        "completenessPercent": 0
       }
     },
-    "details": {
-      "hours": {},
-      "familyLoad": {},
-      "environment": {},
-      "childcare": {},
-      "digital": {},
-      "sources": []
-    },
-    "officialSiteType": "園公式"
-  },
-  {
-    "id": "orange-house-nishikasai",
-    "name": "おれんじハウス西葛西",
-    "address": "東京都江戸川区西葛西5丁目8番3号",
-    "category": "認可（小規模）",
-    "visit": "見学予定",
-    "rating": 0,
-    "rank": 0,
-    "memo": "",
-    "officialUrl": "https://orangebaby.org/what-we-can-do/feature/h-nishikasai/",
-    "officialUrlCheckedAt": "2026-07-16",
-    "quickFacts": {
+    {
+      "id": "orange-house-nishikasai",
+      "basic": {
+        "name": "おれんじハウス西葛西",
+        "address": "東京都江戸川区西葛西5丁目8番3号",
+        "category": "認可（小規模）"
+      },
+      "official": {
+        "url": "https://orangebaby.org/what-we-can-do/feature/h-nishikasai/",
+        "siteType": "園公式",
+        "checkedAt": "2026-07-16"
+      },
       "commute": {
         "label": "徒歩16分｜自転車5分",
         "distanceMeters": 750,
@@ -887,60 +1075,84 @@
         "confirmed": true,
         "originStored": false
       },
-      "extendedCare": {
-        "available": true,
-        "infantAvailable": true,
-        "minimumAge": "生後57日から",
-        "standardEnd": "",
-        "extendedEnd": "19:30",
-        "usageType": [],
-        "snack": null,
-        "dinner": null,
-        "note": "生後57日から、19:30まで。"
+      "services": {
+        "extendedCare": {
+          "available": true,
+          "infantAvailable": true,
+          "minimumAge": "生後57日から",
+          "standardEnd": null,
+          "extendedEnd": "19:30",
+          "usageType": [],
+          "snack": null,
+          "dinner": null,
+          "note": "生後57日から、19:30まで。"
+        },
+        "subscription": {
+          "available": null,
+          "label": null,
+          "note": null
+        },
+        "diaper": {
+          "subscription": null,
+          "disposalByNursery": null,
+          "label": null,
+          "note": null
+        },
+        "garden": {
+          "type": null,
+          "note": null
+        },
+        "digital": {}
       },
-      "subscription": {
-        "available": null,
-        "label": "要確認",
-        "note": ""
-      },
-      "diaper": {
-        "subscription": null,
-        "disposalByNursery": null,
-        "label": "要確認",
-        "note": ""
-      },
-      "garden": {
-        "type": "要確認",
-        "note": ""
+      "operations": {
+        "familyLoad": {},
+        "environment": {},
+        "childcare": {}
       },
       "admissionDifficulty": {
         "level": "bcp",
         "label": "BCP-A",
         "note": "小規模・制度区分は最終確認。"
+      },
+      "evaluation": {
+        "visit": "見学予定",
+        "rating": 0,
+        "rank": 0,
+        "memo": "",
+        "details": null
+      },
+      "dataQuality": {
+        "lastReviewedAt": "2026-07-17",
+        "sources": [],
+        "unresolved": [
+          "延長保育・通常保育終了",
+          "用品サブスク",
+          "おむつ定額",
+          "おむつ園処分",
+          "園庭",
+          "ICT連絡帳",
+          "欠席連絡",
+          "登降園打刻",
+          "布団・コット",
+          "毎日の持ち物",
+          "ベビーカー置場",
+          "避難先"
+        ],
+        "completenessPercent": 8
       }
     },
-    "details": {
-      "hours": {},
-      "familyLoad": {},
-      "environment": {},
-      "childcare": {},
-      "digital": {},
-      "sources": []
-    },
-    "officialSiteType": "園公式"
-  },
-  {
-    "id": "puzzcle",
-    "name": "ぱずくる保育園",
-    "address": "東京都江戸川区西葛西3-13-13 ツインコート1F-B",
-    "category": "認可外・企業主導型",
-    "visit": "見学予定",
-    "rating": 0,
-    "rank": 0,
-    "memo": "",
-    "officialUrl": "https://www.puzzcle.com/",
-    "officialUrlCheckedAt": "2026-07-17",
-    "quickFacts": {
+    {
+      "id": "puzzcle",
+      "basic": {
+        "name": "ぱずくる保育園",
+        "address": "東京都江戸川区西葛西3-13-13 ツインコート1F-B",
+        "category": "認可外・企業主導型"
+      },
+      "official": {
+        "url": "https://www.puzzcle.com/",
+        "siteType": "園公式",
+        "checkedAt": "2026-07-17"
+      },
       "commute": {
         "label": "徒歩10分｜自転車3分",
         "distanceMeters": 485,
@@ -952,60 +1164,85 @@
         "confirmed": true,
         "originStored": false
       },
-      "extendedCare": {
-        "available": null,
-        "infantAvailable": null,
-        "minimumAge": "",
-        "standardEnd": "",
-        "extendedEnd": "",
-        "usageType": [],
-        "snack": null,
-        "dinner": null,
-        "note": ""
+      "services": {
+        "extendedCare": {
+          "available": null,
+          "infantAvailable": null,
+          "minimumAge": null,
+          "standardEnd": null,
+          "extendedEnd": null,
+          "usageType": [],
+          "snack": null,
+          "dinner": null,
+          "note": null
+        },
+        "subscription": {
+          "available": null,
+          "label": null,
+          "note": null
+        },
+        "diaper": {
+          "subscription": null,
+          "disposalByNursery": null,
+          "label": null,
+          "note": null
+        },
+        "garden": {
+          "type": null,
+          "note": null
+        },
+        "digital": {}
       },
-      "subscription": {
-        "available": null,
-        "label": "要確認",
-        "note": ""
-      },
-      "diaper": {
-        "subscription": null,
-        "disposalByNursery": null,
-        "label": "要確認",
-        "note": ""
-      },
-      "garden": {
-        "type": "要確認",
-        "note": ""
+      "operations": {
+        "familyLoad": {},
+        "environment": {},
+        "childcare": {}
       },
       "admissionDifficulty": {
         "level": "bcp",
         "label": "BCP候補",
         "note": "公式ページ直リンクを登録。"
+      },
+      "evaluation": {
+        "visit": "見学予定",
+        "rating": 0,
+        "rank": 0,
+        "memo": "",
+        "details": null
+      },
+      "dataQuality": {
+        "lastReviewedAt": "2026-07-17",
+        "sources": [],
+        "unresolved": [
+          "延長保育・0歳利用可否",
+          "延長保育・通常保育終了",
+          "用品サブスク",
+          "おむつ定額",
+          "おむつ園処分",
+          "園庭",
+          "ICT連絡帳",
+          "欠席連絡",
+          "登降園打刻",
+          "布団・コット",
+          "毎日の持ち物",
+          "ベビーカー置場",
+          "避難先"
+        ],
+        "completenessPercent": 0
       }
     },
-    "details": {
-      "hours": {},
-      "familyLoad": {},
-      "environment": {},
-      "childcare": {},
-      "digital": {},
-      "sources": []
-    },
-    "officialSiteType": "園公式"
-  },
-  {
-    "id": "kirakira",
-    "name": "西葛西きらきら保育園",
-    "address": "東京都江戸川区西葛西6-17-1-206",
-    "category": "認可外・企業主導型",
-    "visit": "見学予定",
-    "rating": 0,
-    "rank": 0,
-    "memo": "",
-    "officialUrl": "https://www.starts-care.jp/service/childcare/kirakira_nishikasai/",
-    "officialUrlCheckedAt": "2026-07-17",
-    "quickFacts": {
+    {
+      "id": "kirakira",
+      "basic": {
+        "name": "西葛西きらきら保育園",
+        "address": "東京都江戸川区西葛西6-17-1-206",
+        "category": "認可外・企業主導型"
+      },
+      "official": {
+        "url": "https://www.starts-care.jp/service/childcare/kirakira_nishikasai/",
+        "siteType": "園公式",
+        "checkedAt": "2026-07-17"
+      },
       "commute": {
         "label": "徒歩8分｜自転車3分",
         "distanceMeters": 425,
@@ -1017,60 +1254,85 @@
         "confirmed": true,
         "originStored": false
       },
-      "extendedCare": {
-        "available": null,
-        "infantAvailable": null,
-        "minimumAge": "",
-        "standardEnd": "",
-        "extendedEnd": "",
-        "usageType": [],
-        "snack": null,
-        "dinner": null,
-        "note": ""
+      "services": {
+        "extendedCare": {
+          "available": null,
+          "infantAvailable": null,
+          "minimumAge": null,
+          "standardEnd": null,
+          "extendedEnd": null,
+          "usageType": [],
+          "snack": null,
+          "dinner": null,
+          "note": null
+        },
+        "subscription": {
+          "available": null,
+          "label": null,
+          "note": null
+        },
+        "diaper": {
+          "subscription": null,
+          "disposalByNursery": null,
+          "label": null,
+          "note": null
+        },
+        "garden": {
+          "type": null,
+          "note": null
+        },
+        "digital": {}
       },
-      "subscription": {
-        "available": null,
-        "label": "要確認",
-        "note": ""
-      },
-      "diaper": {
-        "subscription": null,
-        "disposalByNursery": null,
-        "label": "要確認",
-        "note": ""
-      },
-      "garden": {
-        "type": "要確認",
-        "note": ""
+      "operations": {
+        "familyLoad": {},
+        "environment": {},
+        "childcare": {}
       },
       "admissionDifficulty": {
         "level": "bcp",
         "label": "BCP候補",
         "note": "公式ページURLは未登録。検索リンクは表示しない。"
+      },
+      "evaluation": {
+        "visit": "見学予定",
+        "rating": 0,
+        "rank": 0,
+        "memo": "",
+        "details": null
+      },
+      "dataQuality": {
+        "lastReviewedAt": "2026-07-17",
+        "sources": [],
+        "unresolved": [
+          "延長保育・0歳利用可否",
+          "延長保育・通常保育終了",
+          "用品サブスク",
+          "おむつ定額",
+          "おむつ園処分",
+          "園庭",
+          "ICT連絡帳",
+          "欠席連絡",
+          "登降園打刻",
+          "布団・コット",
+          "毎日の持ち物",
+          "ベビーカー置場",
+          "避難先"
+        ],
+        "completenessPercent": 0
       }
     },
-    "details": {
-      "hours": {},
-      "familyLoad": {},
-      "environment": {},
-      "childcare": {},
-      "digital": {},
-      "sources": []
-    },
-    "officialSiteType": "園公式"
-  },
-  {
-    "id": "hoppel-nishikasai",
-    "name": "ほっぺるランド西葛西",
-    "address": "〒134-0088 東京都江戸川区西葛西2丁目22-45 レジデントプレイス1階",
-    "category": "認可（小規模）",
-    "visit": "見学予定",
-    "rating": 0,
-    "rank": 0,
-    "memo": "",
-    "officialUrl": "https://hoppel-land.com/introduces/177-2/",
-    "officialUrlCheckedAt": "2026-07-17",
-    "quickFacts": {
+    {
+      "id": "hoppel-nishikasai",
+      "basic": {
+        "name": "ほっぺるランド西葛西",
+        "address": "〒134-0088 東京都江戸川区西葛西2丁目22-45 レジデントプレイス1階",
+        "category": "認可（小規模）"
+      },
+      "official": {
+        "url": "https://hoppel-land.com/introduces/177-2/",
+        "siteType": "園公式",
+        "checkedAt": "2026-07-17"
+      },
       "commute": {
         "label": "徒歩10分｜自転車3分",
         "distanceMeters": 749,
@@ -1082,46 +1344,72 @@
         "confirmed": true,
         "originStored": false
       },
-      "extendedCare": {
-        "available": null,
-        "infantAvailable": null,
-        "minimumAge": "",
-        "standardEnd": "",
-        "extendedEnd": "",
-        "usageType": [],
-        "snack": null,
-        "dinner": null,
-        "note": ""
+      "services": {
+        "extendedCare": {
+          "available": null,
+          "infantAvailable": null,
+          "minimumAge": null,
+          "standardEnd": null,
+          "extendedEnd": null,
+          "usageType": [],
+          "snack": null,
+          "dinner": null,
+          "note": null
+        },
+        "subscription": {
+          "available": null,
+          "label": null,
+          "note": null
+        },
+        "diaper": {
+          "subscription": null,
+          "disposalByNursery": null,
+          "label": null,
+          "note": null
+        },
+        "garden": {
+          "type": null,
+          "note": null
+        },
+        "digital": {}
       },
-      "subscription": {
-        "available": null,
-        "label": "要確認",
-        "note": ""
-      },
-      "diaper": {
-        "subscription": null,
-        "disposalByNursery": null,
-        "label": "要確認",
-        "note": ""
-      },
-      "garden": {
-        "type": "要確認",
-        "note": ""
+      "operations": {
+        "familyLoad": {},
+        "environment": {},
+        "childcare": {}
       },
       "admissionDifficulty": {
         "level": "small",
         "label": "小規模候補",
         "note": "住所は確認済み。公式施設ページは未登録。"
+      },
+      "evaluation": {
+        "visit": "見学予定",
+        "rating": 0,
+        "rank": 0,
+        "memo": "",
+        "details": null
+      },
+      "dataQuality": {
+        "lastReviewedAt": "2026-07-17",
+        "sources": [],
+        "unresolved": [
+          "延長保育・0歳利用可否",
+          "延長保育・通常保育終了",
+          "用品サブスク",
+          "おむつ定額",
+          "おむつ園処分",
+          "園庭",
+          "ICT連絡帳",
+          "欠席連絡",
+          "登降園打刻",
+          "布団・コット",
+          "毎日の持ち物",
+          "ベビーカー置場",
+          "避難先"
+        ],
+        "completenessPercent": 0
       }
-    },
-    "details": {
-      "hours": {},
-      "familyLoad": {},
-      "environment": {},
-      "childcare": {},
-      "digital": {},
-      "sources": []
-    },
-    "officialSiteType": "園公式"
-  }
-]
+    }
+  ]
+}
