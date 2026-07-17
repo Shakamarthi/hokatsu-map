@@ -1,24 +1,18 @@
-# 保活管理システム v2.7.4
+# 保活管理システム v2.8
 
-## 修正内容
-
-v2.7.2〜v2.7.3で発生したGoogleマイマップ閲覧動作の回帰を修正しました。
-
-- 閲覧URLをv2.7.1で使用していた形式へ戻しました
-  - `https://www.google.com/maps/d/viewer?hl=ja&mid=...`
-- 閲覧リンクの属性もv2.7.1と同じ構成へ戻しました
-- 編集URLは以下を維持します
-  - `https://www.google.com/maps/d/edit?mid=...&ll=35.66216420142517%2C139.85870817502527&z=15`
-- PWAキャッシュを `hokatsu-map-v274` に更新
+## 追加機能
+- 園詳細内の「編集する」
+- 公式HP、延長保育、サブスク、おむつ、園庭、ICT、保育内容の編集
+- 端末下書き保存
+- GitHub正本への保存
+- 保存後のアイコン・詳細表示への即時反映
 
 ## GitHubへ上書きするファイル
-
 - `index.html`
 - `sw.js`
 - `manifest.webmanifest`
 
-`hokatsu-data.json` は変更していません。
+`hokatsu-data.json` は既存データをそのまま利用できます。
 
 ## 初回確認URL
-
-https://shakamarthi.github.io/hokatsu-map/?upgrade=274
+https://shakamarthi.github.io/hokatsu-map/?upgrade=28
