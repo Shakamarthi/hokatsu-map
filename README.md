@@ -1,12 +1,15 @@
-# 保活管理システム v2.7.3
+# 保活管理システム v2.7.4
 
-## 今回の変更
+## 修正内容
 
-- マイマップ閲覧URLを以下へ修正
-  - https://www.google.com/mymaps/viewer?mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o&hl=ja
-- マイマップのレイヤーが表示されるviewer形式へ統一
-- 編集URLは従来のedit形式を維持
-- PWAキャッシュを `hokatsu-map-v273` に更新
+v2.7.2〜v2.7.3で発生したGoogleマイマップ閲覧動作の回帰を修正しました。
+
+- 閲覧URLをv2.7.1で使用していた形式へ戻しました
+  - `https://www.google.com/maps/d/viewer?hl=ja&mid=...`
+- 閲覧リンクの属性もv2.7.1と同じ構成へ戻しました
+- 編集URLは以下を維持します
+  - `https://www.google.com/maps/d/edit?mid=...&ll=35.66216420142517%2C139.85870817502527&z=15`
+- PWAキャッシュを `hokatsu-map-v274` に更新
 
 ## GitHubへ上書きするファイル
 
@@ -18,4 +21,4 @@
 
 ## 初回確認URL
 
-https://shakamarthi.github.io/hokatsu-map/?upgrade=273
+https://shakamarthi.github.io/hokatsu-map/?upgrade=274
