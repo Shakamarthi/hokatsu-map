@@ -103,7 +103,8 @@
         "見学記録",
         "保活戦略資料"
       ]
-    }
+    },
+    "officialSiteType": "園公式"
   },
   {
     "id": "kidslab-nishikasai",
@@ -213,7 +214,8 @@
         "見学記録",
         "保活戦略資料"
       ]
-    }
+    },
+    "officialSiteType": "園公式"
   },
   {
     "id": "konoe-seishincho",
@@ -298,7 +300,8 @@
         "第三者評価",
         "保活戦略資料"
       ]
-    }
+    },
+    "officialSiteType": "園公式"
   },
   {
     "id": "fukinoto",
@@ -405,7 +408,8 @@
         "見学記録",
         "第三者評価"
       ]
-    }
+    },
+    "officialSiteType": "園公式"
   },
   {
     "id": "hoppel-nakakasai",
@@ -511,7 +515,8 @@
         "見学記録",
         "第三者評価"
       ]
-    }
+    },
+    "officialSiteType": "園公式"
   },
   {
     "id": "global-ukita",
@@ -618,7 +623,8 @@
         "見学記録",
         "第三者評価"
       ]
-    }
+    },
+    "officialSiteType": "園公式"
   },
   {
     "id": "shirayuri",
@@ -725,7 +731,8 @@
         "見学記録",
         "第三者評価"
       ]
-    }
+    },
+    "officialSiteType": "園公式"
   },
   {
     "id": "hybridmom-seishincho",
@@ -789,7 +796,8 @@
       "childcare": {},
       "digital": {},
       "sources": []
-    }
+    },
+    "officialSiteType": "園公式"
   },
   {
     "id": "camellia-nishikasai",
@@ -853,13 +861,14 @@
       "childcare": {},
       "digital": {},
       "sources": []
-    }
+    },
+    "officialSiteType": "園公式"
   },
   {
     "id": "orange-house-nishikasai",
     "name": "おれんじハウス西葛西",
     "address": "東京都江戸川区西葛西5丁目8番3号",
-    "category": "認可外・企業主導型",
+    "category": "認可（小規模）",
     "visit": "見学予定",
     "rating": 0,
     "rank": 0,
@@ -917,7 +926,8 @@
       "childcare": {},
       "digital": {},
       "sources": []
-    }
+    },
+    "officialSiteType": "園公式"
   },
   {
     "id": "puzzcle",
@@ -928,8 +938,8 @@
     "rating": 0,
     "rank": 0,
     "memo": "",
-    "officialUrl": "https://ness-corpo.co.jp/nursery/p_nishikasai/",
-    "officialUrlCheckedAt": "2026-07-16",
+    "officialUrl": "https://www.puzzcle.com/",
+    "officialUrlCheckedAt": "2026-07-17",
     "quickFacts": {
       "commute": {
         "label": "徒歩10分｜自転車3分",
@@ -981,7 +991,8 @@
       "childcare": {},
       "digital": {},
       "sources": []
-    }
+    },
+    "officialSiteType": "園公式"
   },
   {
     "id": "kirakira",
@@ -992,8 +1003,8 @@
     "rating": 0,
     "rank": 0,
     "memo": "",
-    "officialUrl": "",
-    "officialUrlCheckedAt": "",
+    "officialUrl": "https://www.starts-care.jp/service/childcare/kirakira_nishikasai/",
+    "officialUrlCheckedAt": "2026-07-17",
     "quickFacts": {
       "commute": {
         "label": "徒歩8分｜自転車3分",
@@ -1045,7 +1056,8 @@
       "childcare": {},
       "digital": {},
       "sources": []
-    }
+    },
+    "officialSiteType": "園公式"
   },
   {
     "id": "hoppel-nishikasai",
@@ -1056,8 +1068,8 @@
     "rating": 0,
     "rank": 0,
     "memo": "",
-    "officialUrl": "",
-    "officialUrlCheckedAt": "",
+    "officialUrl": "https://hoppel-land.com/introduces/177-2/",
+    "officialUrlCheckedAt": "2026-07-17",
     "quickFacts": {
       "commute": {
         "label": "徒歩10分｜自転車3分",
@@ -1109,6 +1121,7 @@
       "childcare": {},
       "digital": {},
       "sources": []
-    }
+    },
+    "officialSiteType": "園公式"
   }
 ]
