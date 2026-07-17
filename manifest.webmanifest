@@ -1,11 +1,11 @@
 {
   "name": "保活管理システム",
   "short_name": "保活管理",
-  "start_url": "./?source=pwa-v27",
+  "start_url": "./?source=pwa-v271",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f4f6f8",
   "theme_color": "#f4f6f8",
   "lang": "ja",
-  "description": "正規化データ基盤で候補園の条件・見学評価・志望順位・データ品質を管理する保活支援アプリ v2.7"
+  "description": "候補園の条件・通園時間・見学評価・志望順位をシンプルに管理する保活支援アプリ v2.7.1"
 }

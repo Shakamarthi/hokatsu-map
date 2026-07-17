@@ -1,44 +1,29 @@
-# 保活管理システム v2.7
+# 保活管理システム v2.7.1
 
-## 目的
+## 今回の変更
 
-v2.1以降に追加してきたデータ項目を整理し、`hokatsu-data.json`を長期運用可能な正本へ再設計しました。
+- トップ画面の「データ品質」パネルを削除
+- 園カード上の「データ充足率」表示を削除
+- 詳細画面から未確認件数・充足率を削除
+- 情報源と最終精査日は詳細画面に維持
+- `hokatsu-data.json` 内の `dataQuality` は保守・データ精査用として維持
+- PWAキャッシュを `hokatsu-map-v271` に更新
 
-## 主な変更
+## 設計方針
 
-- JSONを以下の責務単位に正規化
-  - `basic`
-  - `official`
-  - `commute`
-  - `services`
-  - `operations`
-  - `admissionDifficulty`
-  - `evaluation`
-  - `dataQuality`
-- `要確認`という文字列を正本データから削除
-  - 未確認値は原則 `null`
-  - 画面表示時にだけ「要確認」と表示
-- 園ごとに以下を自動管理
-  - データ充足率
-  - 未確認項目一覧
-  - 最終精査日
-  - 情報源
-- 旧形式JSONの読み込み互換性を維持
-- JSON書き出し・GitHub保存はv2.7形式に統一
-- PWAキャッシュを `hokatsu-map-v27` に更新
+データ品質管理は必要ですが、日常の保活活動で常時見る情報ではありません。
+そのため、利用者向けUIからは外し、JSON内部の管理情報として保持します。
 
 ## GitHubへ上書きするファイル
 
+今回はUI変更のため、次の3ファイルを上書きしてください。
+
 - `index.html`
-- `hokatsu-data.json`
 - `sw.js`
 - `manifest.webmanifest`
 
+`hokatsu-data.json` はv2.7から変更していません。
+
 ## 初回確認URL
 
-https://shakamarthi.github.io/hokatsu-map/?upgrade=27
-
-## 補足
-
-本版はデータ構造の整理を主目的としています。
-「未確認項目がゼロ」という意味ではなく、確認済み情報と未確認情報を明確に分離し、残件を可視化する版です。
+https://shakamarthi.github.io/hokatsu-map/?upgrade=271

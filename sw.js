@@ -1,4 +1,4 @@
-const CACHE_NAME='hokatsu-map-v27';
+const CACHE_NAME='hokatsu-map-v271';
 const APP_SHELL=['./manifest.webmanifest'];
 
 self.addEventListener('install',event=>{
