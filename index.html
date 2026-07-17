@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f4f6f8"><link rel="manifest" href="./manifest.webmanifest?v=28"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="保活管理"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><title>保活管理システム v2.8</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f4f6f8"><link rel="manifest" href="./manifest.webmanifest?v=281"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="保活管理"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><title>保活管理システム v2.8.1</title><style>
 :root{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;color:#172033;background:#f4f6f8;--b:#dce2ea;--m:#687383}*{box-sizing:border-box}body{margin:0;background:#f4f6f8;padding-bottom:28px}button,select,textarea,input{font:inherit}header{padding:18px;background:#fff;border-bottom:1px solid var(--b);position:sticky;top:0;z-index:5}h1{margin:0;font-size:22px}.sub{margin:4px 0 0;color:var(--m);font-size:13px}.wrap{max-width:980px;margin:auto;padding:14px;display:grid;gap:12px}.panel,.card{background:#fff;border:1px solid var(--b);border-radius:16px;padding:14px}.top{display:grid;gap:12px}.actions,.maps,.fa{display:grid;grid-template-columns:1fr 1fr;gap:8px}.btn,.actions a,.fa a{min-height:44px;border:1px solid #bcc6d0;border-radius:11px;background:#fff;color:#174f8d;text-decoration:none;display:flex;align-items:center;justify-content:center;font-weight:700}.primary{background:#172033!important;color:#fff!important}.status{margin-top:10px;padding:9px;border-radius:10px;background:#e8f5eb;color:#23613b;font-size:12px}.status[data-type=warning]{background:#fff6df;color:#755100}.status[data-type=error]{background:#fdeaea;color:#8a2b2b}.auth{margin-top:10px;padding:10px;background:#f8fafc;border:1px solid var(--b);border-radius:11px}.auth input{width:100%;padding:9px;border:1px solid #c7d0d9;border-radius:9px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.metric{background:#f6f8fa;border-radius:12px;padding:10px;text-align:center}.metric b{display:block;font-size:20px}.metric span{font-size:11px;color:var(--m)}.prog{margin-top:11px}.progline{display:flex;justify-content:space-between;font-size:13px}.bar{height:9px;background:#e7ebef;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:#335f8c}.rank{padding-left:20px;line-height:1.8}.tools{display:flex;gap:7px;overflow:auto;margin-bottom:10px}.tools button{flex:none;min-height:38px;padding:0 12px;border:1px solid #bac4cf;border-radius:99px;background:#fff}.tools button.active{background:#172033;color:#fff}.grid{display:grid;gap:10px}.head{display:flex;gap:10px}.num{width:28px;height:28px;border-radius:50%;background:#eef2f6;display:flex;align-items:center;justify-content:center;font-weight:700}h3{margin:1px 0 6px;font-size:16px}.badges{display:flex;gap:5px;flex-wrap:wrap}.badge{font-size:11px;padding:3px 8px;border-radius:99px;background:#eef2f6}.address{font-size:13px;color:#3e4957}.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.seg button{min-height:38px;border:1px solid #c7d0d9;border-radius:9px;background:#fff}.seg button.active{background:#172033;color:#fff}.field{margin-top:11px}.field label{display:block;font-size:12px;color:var(--m);margin-bottom:5px}.stars button{border:0;background:transparent;font-size:29px;color:#c4cbd3;padding:0 2px}.stars button.on{color:#f1a400}select,textarea{width:100%;padding:9px;border:1px solid #c7d0d9;border-radius:9px;background:#fff}textarea{min-height:72px}.evalbtn{width:100%;min-height:42px;margin-top:10px;border:1px solid #9fb3c8;border-radius:10px;background:#f3f7fb;color:#174f8d;font-weight:700}.eval{margin-top:8px;padding:11px;border:1px solid var(--b);border-radius:11px;background:#f8fafc}.eval h4{margin:10px 0 5px;font-size:14px}.eval h4:first-child{margin-top:0}.eval p,.eval li{font-size:13px;line-height:1.55}.hidden{display:none!important}.note{font-size:11px;color:var(--m);margin-top:8px}@media(min-width:760px){.top{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr 1fr}}
 
 .quickfacts{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
@@ -41,13 +41,29 @@
 .editactions .draft{background:#eef5fb;color:#174f8d}.editactions .github{background:#172033;color:#fff}
 .edithelp{font-size:11px;color:var(--m);line-height:1.5;margin-top:8px}
 @media(min-width:760px){.editgrid{grid-template-columns:1fr 1fr}.editfield.wide{grid-column:1/-1}}
-</style></head><body><header><div class="headerrow"><div><h1>保活管理システム <span class="versionbadge">v2.8</span></h1><p class="sub">重要条件をアイコンで比較し、詳細情報を展開して確認</p></div><button class="refreshbtn" id="checkLatest" type="button">最新版を確認</button></div><div id="versionStatus" class="versionstatus">現在のバージョン：v2.8</div></header><main class="wrap"><section class="top"><div class="panel"><h2>Googleマイマップ</h2><div class="maps"><a class="btn primary" href="https://www.google.com/maps/d/viewer?hl=ja&mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o" target="_blank">📍 マイマップを開く</a><a class="btn" href="https://www.google.com/maps/d/edit?mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o&ll=35.66216420142517%2C139.85870817502527&z=15" target="_blank" rel="noopener">✏️ マイマップを編集</a></div><div class="note">日常利用は「開く」、ピンや園情報の修正時だけ「編集」を使用します。</div></div><div class="panel"><h2>データ管理</h2><div class="actions"><button class="btn primary" id="save">GitHubへ保存</button><button class="btn" id="reload">再読込</button><button class="btn" id="export">JSON書出し</button><button class="btn" id="import">JSON読込</button><input id="file" type="file" accept=".json" hidden></div><div class="auth"><input id="token" type="password" placeholder="GitHub Fine-grained PAT"></div><div id="sync" class="status">GitHub正本を読込中…</div><div class="note">トークンはこのタブ内だけに保持します。</div></div></section>
+
+.headeractions{display:flex;gap:7px;align-items:center}
+.settingsOverlay{position:fixed;inset:0;z-index:1000;background:rgba(15,23,42,.55);display:flex;align-items:flex-end;justify-content:center}
+.settingsModal{width:100%;max-width:720px;max-height:92vh;overflow:auto;background:#fff;border-radius:18px 18px 0 0;padding:16px;box-shadow:0 -8px 30px rgba(0,0,0,.2)}
+.settingsHeader{display:flex;align-items:center;justify-content:space-between;position:sticky;top:-16px;background:#fff;padding:12px 0 8px;z-index:2;border-bottom:1px solid var(--b)}
+.settingsHeader h2{margin:0}.settingsHeader button{width:40px;height:40px;border:0;border-radius:50%;background:#eef2f6;font-size:24px}
+.settingsSection{padding:14px 0;border-bottom:1px solid var(--b)}.settingsSection h3{margin:0 0 10px;font-size:16px}
+.settingsGrid{display:grid;grid-template-columns:1fr;gap:10px}.settingsGrid label{font-size:12px;color:var(--m)}
+.settingsGrid input{display:block;width:100%;margin-top:4px;padding:10px;border:1px solid #c7d0d9;border-radius:9px;background:#fff;color:#172033}
+.tokenRow{display:grid;grid-template-columns:1fr auto;gap:7px}.tokenRow button{margin-top:4px;border:1px solid #b7c3ce;border-radius:9px;background:#fff;padding:0 12px}
+.settingNote{font-size:11px;color:var(--m);line-height:1.5;margin-top:8px}
+.settingsButtons{display:grid;grid-template-columns:1fr;gap:8px}.settingsButtons button{min-height:42px;border:1px solid #b7c3ce;border-radius:9px;background:#fff}
+.settingsActions{position:sticky;bottom:-16px;display:grid;grid-template-columns:1fr 1.4fr;gap:8px;background:#fff;padding:12px 0 4px}
+.settingsActions button{min-height:46px;border:1px solid #b7c3ce;border-radius:10px;background:#fff;font-weight:700}
+.settingsActions .primaryAction{background:#172033;color:#fff}.settingVersion{font-weight:700}
+@media(min-width:760px){.settingsOverlay{align-items:center}.settingsModal{border-radius:18px}.settingsGrid{grid-template-columns:1fr 1fr}.settingsGrid .wide{grid-column:1/-1}}
+</style></head><body><header><div class="headerrow"><div><h1>保活管理システム <span class="versionbadge">v2.8.1</span></h1><p class="sub">重要条件をアイコンで比較し、詳細情報を展開して確認</p></div><div class="headeractions"><button class="refreshbtn" id="openSettings" type="button">⚙️ 設定</button><button class="refreshbtn" id="checkLatest" type="button">最新版を確認</button></div></div><div id="versionStatus" class="versionstatus">現在のバージョン：v2.8.1</div></header><main class="wrap"><section class="top"><div class="panel"><h2>Googleマイマップ</h2><div class="maps"><a class="btn primary" id="mapViewerLink" href="https://www.google.com/maps/d/viewer?hl=ja&mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o" target="_blank">📍 マイマップを開く</a><a class="btn" id="mapEditorLink" href="https://www.google.com/maps/d/edit?mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o&ll=35.66216420142517%2C139.85870817502527&z=15" target="_blank" rel="noopener">✏️ マイマップを編集</a></div><div class="note">日常利用は「開く」、ピンや園情報の修正時だけ「編集」を使用します。</div></div><div class="panel"><h2>データ管理</h2><div class="actions"><button class="btn primary" id="save">GitHubへ保存</button><button class="btn" id="reload">再読込</button><button class="btn" id="export">JSON書出し</button><button class="btn" id="import">JSON読込</button><input id="file" type="file" accept=".json" hidden></div><div id="githubConfigStatus" class="status">GitHub設定を確認中…</div><div id="sync" class="status">GitHub正本を読込中…</div><div class="note">GitHub設定は「⚙️ 設定」から変更できます。</div></div></section>
 <section class="panel">
   <button class="releaseToggle" id="releaseToggle" type="button" aria-expanded="false">
     <span>更新履歴</span><span id="releaseArrow">▼</span>
   </button>
   <div id="releaseNotes" class="releaseNotes hidden">
-    <h3>v2.8</h3><ul><li>園詳細画面に編集モードを追加</li><li>延長保育・サブスク・おむつ・園庭・ICT・保育内容をWeb画面から編集可能</li><li>端末下書き保存とGitHub正本保存に対応</li><li>保存後にトップ画面のアイコンと詳細表示へ即時反映</li></ul><h3>v2.7.4</h3><ul><li>v2.7.1で正常動作していたGoogleマイマップ閲覧URLへ回帰</li><li>閲覧リンクの遷移方式もv2.7.1と同じ構成へ復元</li><li>編集URLは現行の中心座標・ズーム付きURLを維持</li></ul><h3>v2.7.3</h3><ul><li>マイマップ閲覧URLをGoogle My Mapsのviewer URLへ修正</li><li>閲覧時にマイマップのレイヤーが正しく表示される構成へ変更</li><li>編集URLは従来のedit URLを維持</li></ul><h3>v2.7.2</h3><ul><li>Googleマイマップを閲覧用・編集用の2ボタンへ分離</li><li>閲覧ボタンを「📍 マイマップを開く」に変更</li><li>編集ボタンを「✏️ マイマップを編集」に変更</li><li>編集URLを中心座標・ズーム付きURLへ更新</li></ul><h3>v2.7.1</h3><ul><li>トップ画面のデータ品質パネルを削除</li><li>園カードの充足率バッジを削除</li><li>データ品質情報は内部JSONに保持し、保守用メタデータとして継続利用</li><li>利用者向けUIを候補園比較と活動管理に集中</li></ul><h3>v2.7</h3><ul><li>hokatsu-data.jsonをv2.7正規化スキーマへ再設計</li><li>基本情報・公式情報・通園・サービス・運用・評価を責務別に分離</li><li>プレースホルダー文字列を削除し、未確認値をnullで統一</li><li>園別のデータ充足率・未確認項目・最終精査日を追加</li><li>旧形式JSONの読み込み互換性を維持</li></ul><h3>v2.6.6</h3><ul><li>ぱずくる保育園の公式HPを https://www.puzzcle.com/ へ修正</li><li>おれんじハウス西葛西を認可（小規模）へ区分修正</li><li>ダッシュボード・絞り込みの小規模集計へ反映</li><li>PWAキャッシュをv2.6.6へ更新</li></ul><h3>v2.6.5</h3><ul><li>ほっぺるランド西葛西の公式HPを直接リンクで登録</li><li>西葛西きらきら保育園の公式HPを直接リンクで登録</li><li>公式サイト種別と確認日をデータ項目として保持</li><li>PWAキャッシュをv2.6.5へ更新</li></ul><h3>v2.6.4</h3><ul><li>ユーザー確認済みの直線距離・徒歩時間・自転車時間へ更新</li><li>トップ画面に距離・徒歩・自転車をまとめて表示</li><li>概算値を廃止し、確認済み値を正本化</li><li>起点情報は成果物に保存しない運用を維持</li></ul><h3>v2.6.3</h3><ul><li>指定地点からの徒歩時間・自転車時間を園別に表示</li><li>トップ画面を「徒歩○分｜自転車○分」に統一</li><li>起点情報は成果物に保存しない設計</li></ul><h3>v2.6.2</h3><ul><li>公式HPを各園の直接リンクへ統一</li><li>Google検索への代替リンクを廃止</li><li>既存Excel・見学評価・戦略資料から詳細情報を再移行</li><li>ICT、園庭、延長、通園、家庭負荷、保育内容を精査</li><li>情報の確認元を詳細画面に表示</li></ul><h3>v2.6.1</h3><ul><li>Service Workerの更新方式を修正</li><li>旧キャッシュを自動削除</li><li>画面遷移はネットワーク優先に変更</li><li>更新後すぐ新バージョンへ切替</li></ul><h3>v2.6</h3>
+    <h3>v2.8.1</h3><ul><li>GitHub設定をバージョン非依存の端末設定へ分離</li><li>トークンは初回登録後、バージョンアップしても継続利用</li><li>設定画面からOwner・Repository・Branch・ファイル名・PATを変更可能</li><li>Googleマイマップの閲覧・編集URLも設定画面で管理</li><li>旧セッション保存トークンがある場合は自動移行</li></ul><h3>v2.8</h3><ul><li>園詳細画面に編集モードを追加</li><li>延長保育・サブスク・おむつ・園庭・ICT・保育内容をWeb画面から編集可能</li><li>端末下書き保存とGitHub正本保存に対応</li><li>保存後にトップ画面のアイコンと詳細表示へ即時反映</li></ul><h3>v2.7.4</h3><ul><li>v2.7.1で正常動作していたGoogleマイマップ閲覧URLへ回帰</li><li>閲覧リンクの遷移方式もv2.7.1と同じ構成へ復元</li><li>編集URLは現行の中心座標・ズーム付きURLを維持</li></ul><h3>v2.7.3</h3><ul><li>マイマップ閲覧URLをGoogle My Mapsのviewer URLへ修正</li><li>閲覧時にマイマップのレイヤーが正しく表示される構成へ変更</li><li>編集URLは従来のedit URLを維持</li></ul><h3>v2.7.2</h3><ul><li>Googleマイマップを閲覧用・編集用の2ボタンへ分離</li><li>閲覧ボタンを「📍 マイマップを開く」に変更</li><li>編集ボタンを「✏️ マイマップを編集」に変更</li><li>編集URLを中心座標・ズーム付きURLへ更新</li></ul><h3>v2.7.1</h3><ul><li>トップ画面のデータ品質パネルを削除</li><li>園カードの充足率バッジを削除</li><li>データ品質情報は内部JSONに保持し、保守用メタデータとして継続利用</li><li>利用者向けUIを候補園比較と活動管理に集中</li></ul><h3>v2.7</h3><ul><li>hokatsu-data.jsonをv2.7正規化スキーマへ再設計</li><li>基本情報・公式情報・通園・サービス・運用・評価を責務別に分離</li><li>プレースホルダー文字列を削除し、未確認値をnullで統一</li><li>園別のデータ充足率・未確認項目・最終精査日を追加</li><li>旧形式JSONの読み込み互換性を維持</li></ul><h3>v2.6.6</h3><ul><li>ぱずくる保育園の公式HPを https://www.puzzcle.com/ へ修正</li><li>おれんじハウス西葛西を認可（小規模）へ区分修正</li><li>ダッシュボード・絞り込みの小規模集計へ反映</li><li>PWAキャッシュをv2.6.6へ更新</li></ul><h3>v2.6.5</h3><ul><li>ほっぺるランド西葛西の公式HPを直接リンクで登録</li><li>西葛西きらきら保育園の公式HPを直接リンクで登録</li><li>公式サイト種別と確認日をデータ項目として保持</li><li>PWAキャッシュをv2.6.5へ更新</li></ul><h3>v2.6.4</h3><ul><li>ユーザー確認済みの直線距離・徒歩時間・自転車時間へ更新</li><li>トップ画面に距離・徒歩・自転車をまとめて表示</li><li>概算値を廃止し、確認済み値を正本化</li><li>起点情報は成果物に保存しない運用を維持</li></ul><h3>v2.6.3</h3><ul><li>指定地点からの徒歩時間・自転車時間を園別に表示</li><li>トップ画面を「徒歩○分｜自転車○分」に統一</li><li>起点情報は成果物に保存しない設計</li></ul><h3>v2.6.2</h3><ul><li>公式HPを各園の直接リンクへ統一</li><li>Google検索への代替リンクを廃止</li><li>既存Excel・見学評価・戦略資料から詳細情報を再移行</li><li>ICT、園庭、延長、通園、家庭負荷、保育内容を精査</li><li>情報の確認元を詳細画面に表示</li></ul><h3>v2.6.1</h3><ul><li>Service Workerの更新方式を修正</li><li>旧キャッシュを自動削除</li><li>画面遷移はネットワーク優先に変更</li><li>更新後すぐ新バージョンへ切替</li></ul><h3>v2.6</h3>
     <ul>
       <li>画面上に現在のバージョンを表示</li>
       <li>更新履歴を折りたたみ表示</li>
@@ -67,9 +83,91 @@
   </div>
 </section>
 <section class="panel"><h2>ダッシュボード</h2><div class="metrics"><div class="metric"><span>対象園</span><b id="total">0</b></div><div class="metric"><span>見学済</span><b id="done">0</b></div><div class="metric"><span>平均評価</span><b id="avg">-</b></div><div class="metric"><span>順位設定</span><b id="ranked">0</b></div></div><div id="progress"></div><h3>志望順位</h3><ol id="ranklist" class="rank"></ol></section>
-<section class="panel"><h2>園別管理</h2><div class="tools" id="filters"></div><div class="tools" id="sorts"></div><div id="count" class="note"></div><div id="cards" class="grid"></div></section></main><script>
-const APP_VERSION='2.8';const O='shakamarthi',R='hokatsu-map',B='main',P='hokatsu-data.json',API=`https://api.github.com/repos/${O}/${R}/contents/${P}`,SK='hokatsu-v28-draft',TK='hokatsu-token';let state=[],sha=null,filter='all',sort='default';const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function token(){return sessionStorage.getItem(TK)||''}function setStatus(t,type='ok'){$('sync').textContent=t;$('sync').dataset.type=type}function enc(s){let b=new TextEncoder().encode(s),x='';for(let i=0;i<b.length;i+=32768)x+=String.fromCharCode(...b.subarray(i,i+32768));return btoa(x)}function dec(s){let x=atob(s.replace(/\s/g,''));return new TextDecoder().decode(Uint8Array.from(x,c=>c.charCodeAt(0)))}function draft(){try{return JSON.parse(localStorage.getItem(SK))}catch{return null}}function saveDraft(){localStorage.setItem(SK,JSON.stringify(state));setStatus('端末下書き保存済','warning')}
+<section class="panel"><h2>園別管理</h2><div class="tools" id="filters"></div><div class="tools" id="sorts"></div><div id="count" class="note"></div><div id="cards" class="grid"></div></section></main>
+<div class="settingsOverlay hidden" id="settingsOverlay" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+  <div class="settingsModal">
+    <div class="settingsHeader"><h2 id="settingsTitle">設定</h2><button id="closeSettings" type="button">×</button></div>
+
+    <section class="settingsSection">
+      <h3>GitHub設定</h3>
+      <div class="settingsGrid">
+        <label>Owner<input id="settingOwner" autocomplete="off"></label>
+        <label>Repository<input id="settingRepo" autocomplete="off"></label>
+        <label>Branch<input id="settingBranch" autocomplete="off"></label>
+        <label>データファイル<input id="settingPath" autocomplete="off"></label>
+        <label class="wide">Personal Access Token
+          <div class="tokenRow">
+            <input id="settingToken" type="password" autocomplete="off" placeholder="未設定">
+            <button id="toggleToken" type="button">表示</button>
+          </div>
+        </label>
+      </div>
+      <div class="settingNote">トークンはこの端末のブラウザ内に保存され、GitHub PagesやJSONには書き込みません。</div>
+    </section>
+
+    <section class="settingsSection">
+      <h3>Googleマイマップ設定</h3>
+      <div class="settingsGrid">
+        <label class="wide">閲覧URL<input id="settingMapViewer" type="url"></label>
+        <label class="wide">編集URL<input id="settingMapEditor" type="url"></label>
+      </div>
+    </section>
+
+    <section class="settingsSection">
+      <h3>データ管理</h3>
+      <div class="settingsButtons">
+        <button id="settingsReloadGithub" type="button">GitHubから再読込</button>
+        <button id="settingsClearDraft" type="button">端末下書きを削除</button>
+        <button id="settingsClearToken" type="button">トークンを削除</button>
+      </div>
+    </section>
+
+    <section class="settingsSection">
+      <h3>バージョン情報</h3>
+      <div class="settingVersion">保活管理システム v2.8.1</div>
+    </section>
+
+    <div class="settingsActions">
+      <button id="cancelSettings" type="button">キャンセル</button>
+      <button id="saveSettings" class="primaryAction" type="button">設定を保存</button>
+    </div>
+  </div>
+</div>
+<script>
+const APP_VERSION='2.8.1';
+const SETTINGS_KEY='hokatsu-settings',SK='hokatsu-userdata',LEGACY_TOKEN_KEY='hokatsu-token';
+const DEFAULT_SETTINGS={
+  github:{owner:'shakamarthi',repo:'hokatsu-map',branch:'main',path:'hokatsu-data.json',token:''},
+  map:{
+    viewerUrl:'https://www.google.com/maps/d/viewer?hl=ja&mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o',
+    editorUrl:'https://www.google.com/maps/d/edit?mid=1e-j7oInXYik7FxnCbqqKAr7oqHCAa7o&ll=35.66216420142517%2C139.85870817502527&z=15'
+  }
+};
+let state=[],sha=null,filter='all',sort='default',settings=null;const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function readSettings(){
+  try{
+    let saved=JSON.parse(localStorage.getItem(SETTINGS_KEY)||'null')||{};
+    let migrated=sessionStorage.getItem(LEGACY_TOKEN_KEY)||'';
+    let merged={
+      github:{...DEFAULT_SETTINGS.github,...(saved.github||{})},
+      map:{...DEFAULT_SETTINGS.map,...(saved.map||{})}
+    };
+    if(!merged.github.token&&migrated){
+      merged.github.token=migrated;
+      localStorage.setItem(SETTINGS_KEY,JSON.stringify(merged));
+      sessionStorage.removeItem(LEGACY_TOKEN_KEY);
+    }
+    return merged;
+  }catch{return JSON.parse(JSON.stringify(DEFAULT_SETTINGS))}
+}
+function persistSettings(next){settings=next;localStorage.setItem(SETTINGS_KEY,JSON.stringify(settings));applySettings()}
+function token(){return settings?.github?.token||''}
+function apiUrl(){
+  let g=settings.github;
+  return `https://api.github.com/repos/${encodeURIComponent(g.owner)}/${encodeURIComponent(g.repo)}/contents/${g.path.split('/').map(encodeURIComponent).join('/')}`;
+}
+function branch(){return settings.github.branch||'main'}
+function setStatus(t,type='ok'){$('sync').textContent=t;$('sync').dataset.type=type}function enc(s){let b=new TextEncoder().encode(s),x='';for(let i=0;i<b.length;i+=32768)x+=String.fromCharCode(...b.subarray(i,i+32768));return btoa(x)}function dec(s){let x=atob(s.replace(/\s/g,''));return new TextDecoder().decode(Uint8Array.from(x,c=>c.charCodeAt(0)))}function draft(){try{return JSON.parse(localStorage.getItem(SK))}catch{return null}}function saveDraft(){localStorage.setItem(SK,JSON.stringify(state));setStatus('端末下書き保存済','warning')}
 function fromCanonical(doc){
   let rows=Array.isArray(doc)?doc:(doc?.nurseries||[]);
   return rows.map(n=>{
@@ -138,8 +236,8 @@ function toCanonical(rows){
   }));
   return {schemaVersion:'2.7',lastUpdatedAt:new Date().toISOString().slice(0,10),nurseries};
 }
-async function load(){try{let h={'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};if(token())h.Authorization='Bearer '+token();let r=await fetch(API+'?ref='+B,{headers:h,cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);let p=await r.json();sha=p.sha;let base=fromCanonical(JSON.parse(dec(p.content))),d=draft();state=base.map(x=>{let y=Array.isArray(d)&&d.find(z=>z.id===x.id);return y?{...x,...y}:x});setStatus(d?'GitHub正本＋端末下書きを読込':'GitHub正本を読込');render()}catch(e){setStatus('読込失敗: '+e.message,'error')}}
-async function saveGit(){if(!token())return alert('GitHubトークンを入力してください');setStatus('GitHubへ保存中…','warning');let payload=toCanonical(state);let r=await fetch(API,{method:'PUT',headers:{'Accept':'application/vnd.github+json','Authorization':'Bearer '+token(),'X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'},body:JSON.stringify({message:'Update nursery details v2.8',content:enc(JSON.stringify(payload,null,2)),sha,branch:B})});if(!r.ok){setStatus('保存失敗 HTTP '+r.status,'error');return}let p=await r.json();sha=p.content.sha;localStorage.removeItem(SK);setStatus('GitHub正本へ保存しました');alert('保存しました')}
+async function load(){try{let h={'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};if(token())h.Authorization='Bearer '+token();let r=await fetch(apiUrl()+'?ref='+encodeURIComponent(branch()),{headers:h,cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);let p=await r.json();sha=p.sha;let base=fromCanonical(JSON.parse(dec(p.content))),d=draft();state=base.map(x=>{let y=Array.isArray(d)&&d.find(z=>z.id===x.id);return y?{...x,...y}:x});setStatus(d?'GitHub正本＋端末下書きを読込':'GitHub正本を読込');render()}catch(e){setStatus('読込失敗: '+e.message,'error')}}
+async function saveGit(){if(!token()){alert('GitHubトークンが未設定です。設定画面で登録してください。');openSettings();return;}setStatus('GitHubへ保存中…','warning');let payload=toCanonical(state);let r=await fetch(apiUrl(),{method:'PUT',headers:{'Accept':'application/vnd.github+json','Authorization':'Bearer '+token(),'X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'},body:JSON.stringify({message:'Update nursery details v2.8',content:enc(JSON.stringify(payload,null,2)),sha,branch:branch()})});if(!r.ok){setStatus('保存失敗 HTTP '+r.status,'error');return}let p=await r.json();sha=p.content.sha;localStorage.removeItem(SK);setStatus('GitHub正本へ保存しました');alert('保存しました')}
 function mapurl(a,p){let q=encodeURIComponent(a);return p==='g'?`https://www.google.com/maps/search/?api=1&query=${q}`:`https://maps.apple.com/?q=${q}`}function cls(c){return c==='認可'?'認可':c==='認可（小規模）'?'小規模':'認可外'}
 
 function val(v,yes='○',no='×'){return v===true?yes:v===false?no:'要確認'}
@@ -349,6 +447,71 @@ document.querySelectorAll('[data-memo]').forEach(t=>{let z;t.oninput=()=>{clearT
 }
 function mkTools(){let fs=[['all','全件'],['認可','認可'],['認可（小規模）','小規模'],['認可外・企業主導型','認可外'],['見学済','見学済'],['見学予定','見学予定'],['未見学','未見学']];$('filters').innerHTML=fs.map(([v,l])=>`<button data-f="${v}" class="${filter===v?'active':''}">${l}</button>`).join('');$('sorts').innerHTML=[['default','登録順'],['rank','志望順位'],['rating','評価'],['visit','見学状況']].map(([v,l])=>`<button data-s="${v}" class="${sort===v?'active':''}">${l}</button>`).join('');document.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{filter=b.dataset.f;mkTools();render()});document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{sort=b.dataset.s;mkTools();render()})}
 
+
+function applySettings(){
+  $('mapViewerLink').href=settings.map.viewerUrl||DEFAULT_SETTINGS.map.viewerUrl;
+  $('mapEditorLink').href=settings.map.editorUrl||DEFAULT_SETTINGS.map.editorUrl;
+  let configured=Boolean(settings.github.owner&&settings.github.repo&&settings.github.branch&&settings.github.path&&settings.github.token);
+  $('githubConfigStatus').textContent=configured?'GitHub設定済み':'GitHubトークン未設定';
+  $('githubConfigStatus').dataset.type=configured?'ok':'warning';
+}
+function fillSettingsForm(){
+  $('settingOwner').value=settings.github.owner||'';
+  $('settingRepo').value=settings.github.repo||'';
+  $('settingBranch').value=settings.github.branch||'';
+  $('settingPath').value=settings.github.path||'';
+  $('settingToken').value=settings.github.token||'';
+  $('settingMapViewer').value=settings.map.viewerUrl||'';
+  $('settingMapEditor').value=settings.map.editorUrl||'';
+}
+function openSettings(){
+  fillSettingsForm();
+  $('settingToken').type='password';
+  $('toggleToken').textContent='表示';
+  $('settingsOverlay').classList.remove('hidden');
+}
+function closeSettings(){$('settingsOverlay').classList.add('hidden')}
+$('openSettings').onclick=openSettings;
+$('closeSettings').onclick=closeSettings;
+$('cancelSettings').onclick=closeSettings;
+$('settingsOverlay').onclick=e=>{if(e.target===$('settingsOverlay'))closeSettings()};
+$('toggleToken').onclick=()=>{
+  let p=$('settingToken');
+  p.type=p.type==='password'?'text':'password';
+  $('toggleToken').textContent=p.type==='password'?'表示':'隠す';
+};
+$('saveSettings').onclick=()=>{
+  let next={
+    github:{
+      owner:$('settingOwner').value.trim(),
+      repo:$('settingRepo').value.trim(),
+      branch:$('settingBranch').value.trim()||'main',
+      path:$('settingPath').value.trim()||'hokatsu-data.json',
+      token:$('settingToken').value.trim()
+    },
+    map:{
+      viewerUrl:$('settingMapViewer').value.trim()||DEFAULT_SETTINGS.map.viewerUrl,
+      editorUrl:$('settingMapEditor').value.trim()||DEFAULT_SETTINGS.map.editorUrl
+    }
+  };
+  persistSettings(next);
+  closeSettings();
+  setStatus('設定を保存しました');
+};
+$('settingsClearToken').onclick=()=>{
+  if(!confirm('この端末に保存したGitHubトークンを削除しますか？'))return;
+  settings.github.token='';
+  persistSettings(settings);
+  fillSettingsForm();
+};
+$('settingsClearDraft').onclick=()=>{
+  if(!confirm('端末下書きを削除しますか？GitHub正本は削除されません。'))return;
+  localStorage.removeItem(SK);setStatus('端末下書きを削除しました','warning');
+};
+$('settingsReloadGithub').onclick=()=>{
+  localStorage.removeItem(SK);closeSettings();load();
+};
+
 $('releaseToggle').onclick=()=>{
   const notes=$('releaseNotes');
   const hidden=notes.classList.toggle('hidden');
@@ -365,12 +528,12 @@ const refreshed=new URL(location.href).searchParams.has('refresh');
 if(refreshed){
   $('versionStatus').textContent=`最新版として再読込しました（v${APP_VERSION}）`;
 }
-$('token').value=token();$('token').oninput=e=>sessionStorage.setItem(TK,e.target.value.trim());$('save').onclick=saveGit;$('reload').onclick=()=>{localStorage.removeItem(SK);load()};$('export').onclick=()=>{let u=URL.createObjectURL(new Blob([JSON.stringify(toCanonical(state),null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download='hokatsu-data.json';a.click();URL.revokeObjectURL(u)};$('import').onclick=()=>$('file').click();$('file').onchange=async e=>{try{let d=JSON.parse(await e.target.files[0].text());state=state.map(x=>({...x,...(d.find(y=>y.id===x.id)||{})}));saveDraft();render()}catch{alert('読込失敗')}};mkTools();load();
+settings=readSettings();applySettings();$('save').onclick=saveGit;$('reload').onclick=()=>{localStorage.removeItem(SK);load()};$('export').onclick=()=>{let u=URL.createObjectURL(new Blob([JSON.stringify(toCanonical(state),null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download='hokatsu-data.json';a.click();URL.revokeObjectURL(u)};$('import').onclick=()=>$('file').click();$('file').onchange=async e=>{try{let d=JSON.parse(await e.target.files[0].text());state=fromCanonical(d);saveDraft();render()}catch{alert('読込失敗')}};mkTools();load();
 
 if('serviceWorker' in navigator){
   window.addEventListener('load',async()=>{
     try{
-      const reg=await navigator.serviceWorker.register('./sw.js?v=28',{updateViaCache:'none'});
+      const reg=await navigator.serviceWorker.register('./sw.js?v=281',{updateViaCache:'none'});
       await reg.update();
       if(reg.waiting) reg.waiting.postMessage({type:'SKIP_WAITING'});
       reg.addEventListener('updatefound',()=>{

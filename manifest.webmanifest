@@ -1,11 +1,11 @@
 {
   "name": "保活管理システム",
   "short_name": "保活管理",
-  "start_url": "./?source=pwa-v28",
+  "start_url": "./?source=pwa-v281",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f4f6f8",
   "theme_color": "#f4f6f8",
   "lang": "ja",
-  "description": "園詳細をWeb画面から編集し、端末下書きまたはGitHub正本へ保存できる保活管理システム v2.8"
+  "description": "GitHub・Googleマイマップ設定を端末に保持し、園詳細を編集・同期できる保活管理システム v2.8.1"
 }
