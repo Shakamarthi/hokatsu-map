@@ -1,11 +1,11 @@
 {
   "name": "保活管理システム",
   "short_name": "保活管理",
-  "start_url": "./?source=pwa-v272",
+  "start_url": "./?source=pwa-v273",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f4f6f8",
   "theme_color": "#f4f6f8",
   "lang": "ja",
-  "description": "候補園管理とGoogleマイマップ閲覧・編集をスマホで使い分けられる保活支援アプリ v2.7.2"
+  "description": "候補園管理とGoogle My Mapsの閲覧・編集をスマホで使い分けられる保活支援アプリ v2.7.3"
 }
